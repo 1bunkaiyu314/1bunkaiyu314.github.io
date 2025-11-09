@@ -38,14 +38,16 @@ btn.addEventListener("click", async () => {
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", async () => {
     try {
-      const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js");
+      const registration = await navigator.serviceWorker.register(
+        "./firebase-messaging-sw.js", // ← ./ をつけるのが重要
+        { scope: "./" } // ← スコープも指定
+      );
       console.log("Service Worker 登録成功:", registration);
     } catch (err) {
       console.error("Service Worker 登録失敗:", err);
     }
   });
 }
-
 
 // Firebase初期化済みなので、ここでMessagingを取得
 const messaging = getMessaging(app);
