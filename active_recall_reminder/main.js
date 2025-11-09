@@ -2,6 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
 import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-messaging.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
 
 // Firebase設定
 const firebaseConfig = {
@@ -71,3 +72,13 @@ onMessage(messaging, (payload) => {
   console.log("📩 フォアグラウンドで通知を受信:", payload);
   alert(`通知: ${payload.notification.title}\n${payload.notification.body}`);
 });
+
+// 最後の行
+const db = getFirestore(app);
+
+// 通知許可ボタン押下後：
+async function registerToken(courseName) {
+  const token = await getToken(messaging, { vapidKey: "BJVXLbi4GLmDawhkkmo1LVH7pqKxeGZ9yPRmF5rIBuLghrjdsUHPknFBIj0k7DZMbvj8tRyhczwO9wudzy9V-Mw" });
+  await setDoc(doc(db, "tokens", token), { course: courseName });
+  alert(`${courseName} に登録しました！`);
+}
