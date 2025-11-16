@@ -6,11 +6,11 @@ body {
 
 h1 {
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .grade h2 {
     margin-bottom: 10px;
-    text-align: center;
 }
 
 /* 試験ボタン */
