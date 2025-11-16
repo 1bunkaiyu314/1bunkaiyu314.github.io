@@ -1,0 +1,105 @@
+body {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* グリッドレイアウト */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 横に5列 */
+  gap: 120px; /* カード間の隙間 */
+}
+
+/* カードデザイン */
+.card {
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card .title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  
+}
+
+/* 上質なボタンデザイン */
+.subject-block {
+    margin-bottom: 8px;
+}
+
+/* 教科ボタン */
+.subject-toggle {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    color: #333;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.subject-toggle:hover {
+    background: #e6f0ff;
+    border-color: #4a90e2;
+}
+
+.pdf-list {
+    display: none; /* 初期非表示 */
+    margin-left: 16px;
+}
+
+.pdf-list a {
+    display: block;
+    padding: 6px 12px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #004080;
+    border-bottom: 1px solid #ddd;
+}
+
+.pdf-list a:hover {
+    background: #f0f8ff;
+}
+
+
+/* レスポンシブ対応：画面が狭くなったら列数を減らす */
+@media (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
