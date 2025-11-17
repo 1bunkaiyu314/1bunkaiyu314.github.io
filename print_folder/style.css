@@ -103,3 +103,17 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.site-footer--center {
+  position: fixed;
+  bottom: 0;          /* 画面下に固定 */
+  left: 0;
+  width: 100%;        /* 横幅いっぱい */
+  text-align: center; /* 中央寄せ */
+  background: #fafafa;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #444;
+  border-top: 1px solid #eee;
+  z-index: 100;       /* 他要素より前に出すが、覆い尽くさない */
+}

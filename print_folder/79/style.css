@@ -1,109 +1,139 @@
+/* 基本レイアウト */
 body {
-    font-family: sans-serif;
-    background-color: white;
-    padding: 20px;
+  font-family: sans-serif;
+  background-color: #fff;
+  color: #17184b;
+  padding: 20px;
 }
 
 h1 {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.grade h2 {
-    margin-bottom: 10px;
+/* 学年タブ（簡易） */
+#grade-tabs {
+  display:flex;
+  gap:8px;
+  margin:12px 0 18px 32px;
+}
+
+#grade-tabs button {
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  background:#e0e6ed;
+  cursor:pointer;
+}
+
+#grade-tabs button.active {
+  background: #007acc;
+  color:#fff;
+  box-shadow:0 4px 8px rgba(0,0,0,0.12);
 }
 
 /* 試験ボタン */
 .exam-toggle {
-    display: block;
-    width: calc(100% - 32px);
-    padding: 12px 20px;
-    margin-bottom: 8px;
-    margin-left: 32px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    background-color: #505050;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: left;
+  display: block;
+  width: calc(100% - 32px);
+  padding: 12px 20px;
+  margin-bottom: 8px;
+  margin-left: 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2c3e50;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
 }
 
 .exam-toggle:hover {
-    background-color: #757575;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-    transform: translateY(-2px);
+  background-color: #3e566e;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
 }
 
 .exam-toggle:active {
-    background-color: #505050;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transform: translateY(1px);
+  background-color: #52769b;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transform: translateY(1px);
 }
 
 /* 教科ブロック */
-.subject-block {
-    margin-bottom: 8px;
-}
+.subject-block { margin-bottom: 8px; }
 
 /* 教科ボタン */
 .subject-toggle {
-    display: block;
-    width: calc(100% - 32px);
-    padding: 10px 16px;
-    margin-bottom: 4px;
-    margin-left: 32px;
-    font-size: 15px;
-    font-weight: 500;
-    text-align: left;
-    color: #000000;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.15s ease;
+  display: block;
+  width: calc(100% - 32px);
+  padding: 10px 16px;
+  margin-bottom: 4px;
+  margin-left: 32px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  color: #000000;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
 }
 
 .subject-toggle:hover {
-    background: #e6f0ff;
-    border-color: #aaaaaa;
+  background: #e6f0ff;
+  border-color: #aaaaaa;
 }
 
 /* PDFリンク */
 .pdf-list {
-    width: calc(100% - 48px);
-    margin-left: 48px;
+  width: calc(100% - 48px);
+  margin-left: 48px;
 }
 
 .pdf-list a {
-    display: block;
-    padding: 6px 12px;
-    font-size: 14px;
-    text-decoration: none;
-    color: #004080;
-    border-bottom: 1px solid #ddd;
+  display: block;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: #007acc;
+  text-decoration: none;
 }
 
-.pdf-list a:hover {
-    background: #f0f8ff;
-}
+.pdf-list a:hover { text-decoration: underline; }
 
 /* 学年タイトル */
 .grade h2 {
-    background-color: #000000;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    font-size: 20px;
-    margin-bottom: 16px;
+  background-color: #192f60;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-size: 20px;
+  margin-bottom: 16px;
 }
 
-
+/* アコーディオン用 */
 .subject-list, .pdf-list {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 320ms ease;
+  will-change: max-height;
+}
+
+.site-footer--center {
+  position: fixed;
+  bottom: 0;          /* 画面下に固定 */
+  left: 0;
+  width: 100%;        /* 横幅いっぱい */
+  text-align: center; /* 中央寄せ */
+  background: #fafafa;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #444;
+  border-top: 1px solid #eee;
+  z-index: 100;       /* 他要素より前に出すが、覆い尽くさない */
 }

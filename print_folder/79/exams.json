@@ -1,0 +1,221 @@
+[
+  {
+    "grade": 1,
+    "title": "１年生",
+    "exams": [
+      {
+        "title": "前期第一中間考査",
+        "subjects": [
+          { "name": "現代文", "links": [ ] },
+          { "name": "古典", "links": [ ] },
+          { "name": "地理総合", "links": [ ] },
+          { "name": "歴史総合", "links": [ ] },
+          { "name": "理数数学Iα", "links": [ ] },
+          { "name": "理数数学Iβ", "links": [ ] },
+          { "name": "英語R", "links": [ ] },
+          { "name": "英語DI", "links": [ ] }
+        ]
+      },
+      {
+        "title": "前期第二中間考査",
+        "subjects": [
+          { "name": "現代文A", "links": [ { "label": "プリント1", "href": "pdf/1年/現代文A_1.pdf" } ] },
+          { "name": "地理A", "links": [ { "label": "資料", "href": "pdf/1年/地理A_資料.pdf" } ] }
+        ]
+      },
+      {
+        "title": "前期期末考査",
+        "subjects": [
+          { "name": "数学I", "links": [ { "label": "プリント1", "href": "pdf/1年/数学I_1.pdf" } ] }
+        ]
+      },
+      {
+        "title": "後期中間考査",
+        "subjects": [
+          { "name": "英語I", "links": [ { "label": "プリント1", "href": "pdf/1年/英語I_1.pdf" } ] }
+        ]
+      },
+      {
+        "title": "学年末考査",
+        "subjects": [
+          { "name": "総合科目", "links": [ { "label": "まとめ", "href": "pdf/1年/まとめ.pdf" } ] }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 2,
+    "title": "２年生",
+    "exams": [
+      {
+        "title": "前期第一中間考査",
+        "subjects": [
+          { 
+            "name": "現代文B", 
+            "links": [
+               { "label": "現代文アチーブ.pdf", "href": "assets/grade2/1-1S-Mid1/01-JP-GenB/現代文アチーブ.pdf" }, 
+               { "label": "現代文まとめ（動的平衡の回復と事実なのか考えなのか）.pdf", "href": "assets/grade2/1-1S-Mid1/01-JP-GenB/現代文まとめ（動的平衡の回復と事実なのか考えなのか）.pdf" } 
+            ] 
+          },
+          { "name": "古典探究",
+            "links": [
+               { "label": "古典劇.pdf", "href": "assets/grade2/1-1S-Mid1/02-JP-Classics/古典劇.pdf" }, 
+               { "label": "古典対策スライド.pdf", "href": "assets/grade2/1-1S-Mid1/02-JP-Classics/古典対策スライド.pdf" }, 
+               { "label": "古典対策プリント.pdf", "href": "assets/grade2/1-1S-Mid1/02-JP-Classics/古典対策プリント.pdf" }, 
+               { "label": "用言フラッシュガード.pdf", "href": "assets/grade2/1-1S-Mid1/02-JP-Classics/用言フラッシュガード.pdf" } 
+            ] 
+          },
+          { "name": "文系数学", "links": [ { "label": "文系のための数学.pdf", "href": "assets/grade2/1-1S-Mid1/07-MATH/文系のための数学.pdf" } ] },
+          { "name": "英語DII",
+            "links": [
+               { "label": "CNN爆速解説.mp4", "href": "assets/grade2/1-1S-Mid1/15-ENG-DII/CNN爆速解説.mp4" },
+               { "label": "文法範囲演習.pdf", "href": "assets/grade2/1-1S-Mid1/15-ENG-DII/文法範囲演習.pdf" },
+               { "label": "文法範囲演習 解答.pdf", "href": "assets/grade2/1-1S-Mid1/15-ENG-DII/文法範囲演習 解答.pdf" },
+               { "label": "英語Dの完成.pdf", "href": "assets/grade2/1-1S-Mid1/15-ENG-DII/英語Dの完成.pdf" } 
+            ] 
+          },
+          { "name": "その他", "links": [ ] }
+        ]
+      },
+      {
+        "title": "前期第二中間考査",
+        "subjects": [
+          { "name": "古典",
+            "links": [
+               { "label": "漢文劇.pdf", "href": "assets/grade2/2-1S-Mid2/02-JP-Classics/漢文劇.pdf" }, 
+               { "label": "古文劇.pdf", "href": "assets/grade2/2-1S-Mid2/02-JP-Classics/古文劇.pdf" }, 
+               { "label": "助動詞総合問題《詳細解説》.pdf", "href": "assets/grade2/2-1S-Mid2/02-JP-Classics/助動詞総合問題《詳細解説》.pdf" }, 
+               { "label": "対策スライド.pdf", "href": "assets/grade2/2-1S-Mid2/02-JP-Classics/対策スライド.pdf" }, 
+               { "label": "対策プリント.pdf", "href": "assets/grade2/2-1S-Mid2/02-JP-Classics/対策プリント.pdf" }
+            ] 
+          },
+          { "name": "日本史探究", "links": [ { "label": "愛の日本史♥️ 遺跡・古墳対策プリント.pdf", "href": "assets/grade2/2-1S-Mid2/04-SOC-JHistory/愛の日本史♥️ 遺跡・古墳対策プリント.pdf" } ] },
+          { "name": "地理探究",
+            "links": [
+               { "label": "（改）地理 暗記.pdf", "href": "assets/grade2/2-1S-Mid2/03-SOC-Geography/（改）地理 暗記.pdf" }, 
+               { "label": "地理資料集要点まとめ.pdf", "href": "assets/grade2/2-1S-Mid2/03-SOC-Geography/地理資料集要点まとめ.pdf" }
+            ] 
+          },
+          { "name": "化学特講", "links": [ { "label": "林の無機化学攻略 No.7 (模試) .pdf", "href": "assets/grade2/2-1S-Mid2/11-SCI-Chemistry/林の無機化学攻略 No.7 (模試) .pdf" } ] },
+          { "name": "総合英語IIR",
+            "links": [
+               { "label": "■Unit2-Reading2英語RⅡ完全理解プリント.pdf", "href": "assets/grade2/2-1S-Mid2/14-ENG-GenIIR/■Unit2-Reading2英語RⅡ完全理解プリント.pdf" }, 
+               { "label": "■Unit3-Reading1英語RⅡ完全理解プリント.pdf", "href": "assets/grade2/2-1S-Mid2/14-ENG-GenIIR/■Unit3-Reading1英語RⅡ完全理解プリント.pdf" }, 
+               { "label": "■Unit3-Reading2英語RⅡ完全理解プリント.pdf", "href": "assets/grade2/2-1S-Mid2/14-ENG-GenIIR/■Unit3-Reading2英語RⅡ完全理解プリント.pdf" }, 
+               { "label": "■Unit4-Reading1英語RⅡ完全理解プリント.pdf", "href": "assets/grade2/2-1S-Mid2/14-ENG-GenIIR/■Unit4-Reading1英語RⅡ完全理解プリント.pdf" }
+            ] 
+          },
+          { "name": "その他", "links": [ { "label": "範囲表.pdf", "href": "assets/grade2/2-1S-Mid2/others/範囲表.pdf" } ] }
+        ]
+      },
+      {
+        "title": "前期期末考査",
+        "subjects": [
+          { "name": "現代文B", "links": [ { "label": "プリント1", "href": "pdf/現代文B_1.pdf" }, { "label": "プリント2", "href": "pdf/現代文B_2.pdf" } ] },
+          { "name": "古典探究", "links": [ { "label": "プリント1", "href": "pdf/古典探究_1.pdf" }, { "label": "プリント2", "href": "pdf/古典探究_2.pdf" }, { "label": "プリント3", "href": "pdf/古典探究_3.pdf" } ] },
+          { "name": "地理探究", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "日本史探究", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "世界史探求", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "公共", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "理数数学IIα", "links": [ { "label": "プリント1", "href": "pdf/理数数学IIα_1.pdf" }, { "label": "プリント2", "href": "pdf/理数数学IIα_2.pdf" } ] },
+          { "name": "理数数学IIβL", "links": [ { "label": "プリント1", "href": "pdf/現代文B_1.pdf" }, { "label": "プリント2", "href": "pdf/現代文B_2.pdf" } ] },
+          { "name": "理数数学IIβS", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "数学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "物理特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "化学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "生物特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "地学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "総合英語IIR", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "英語DII", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "総合英語II長文", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "保険", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "IBARAMA III", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] }
+        ]
+      },
+      {
+        "title": "後期中間考査",
+        "subjects": [
+          { "name": "現代文B", "links": [ { "label": "プリント1", "href": "pdf/現代文B_1.pdf" }, { "label": "プリント2", "href": "pdf/現代文B_2.pdf" } ] },
+          { "name": "古典探究", "links": [ { "label": "プリント1", "href": "pdf/古典探究_1.pdf" }, { "label": "プリント2", "href": "pdf/古典探究_2.pdf" }, { "label": "プリント3", "href": "pdf/古典探究_3.pdf" } ] },
+          { "name": "地理探究", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "日本史探究", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "世界史探求", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "公共", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "理数数学IIα", "links": [ { "label": "プリント1", "href": "pdf/理数数学IIα_1.pdf" }, { "label": "プリント2", "href": "pdf/理数数学IIα_2.pdf" } ] },
+          { "name": "理数数学IIβL", "links": [ { "label": "プリント1", "href": "pdf/現代文B_1.pdf" }, { "label": "プリント2", "href": "pdf/現代文B_2.pdf" } ] },
+          { "name": "理数数学IIβS", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "数学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "物理特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "化学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "生物特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "地学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "総合英語IIR", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "英語DII", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "総合英語II長文", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "保険", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "IBARAMA III", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] }
+        ]
+      },
+      {
+        "title": "学年末考査",
+        "subjects": [
+          { "name": "現代文B", "links": [ { "label": "プリント1", "href": "pdf/現代文B_1.pdf" }, { "label": "プリント2", "href": "pdf/現代文B_2.pdf" } ] },
+          { "name": "古典探究", "links": [ { "label": "プリント1", "href": "pdf/古典探究_1.pdf" }, { "label": "プリント2", "href": "pdf/古典探究_2.pdf" }, { "label": "プリント3", "href": "pdf/古典探究_3.pdf" } ] },
+          { "name": "地理探究", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "日本史探究", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "世界史探求", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "公共", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "理数数学IIα", "links": [ { "label": "プリント1", "href": "pdf/理数数学IIα_1.pdf" }, { "label": "プリント2", "href": "pdf/理数数学IIα_2.pdf" } ] },
+          { "name": "理数数学IIβL", "links": [ { "label": "プリント1", "href": "pdf/現代文B_1.pdf" }, { "label": "プリント2", "href": "pdf/現代文B_2.pdf" } ] },
+          { "name": "理数数学IIβS", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "数学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "物理特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "化学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "生物特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "地学特講", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "総合英語IIR", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "英語DII", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "総合英語II長文", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "保険", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] },
+          { "name": "IBARAMA III", "links": [ { "label": "データの分析・SQL", "href": "bank/grade2/3-1S-Final/18-IBA3/DataAndSQL.pdf" } ] }
+        ]
+      }
+    ]
+  },
+  {
+    "grade": 3,
+    "title": "３年生",
+    "exams": [
+      {
+        "title": "前期第一中間考査",
+        "subjects": [
+
+        ]
+      },
+      {
+        "title": "前期第二中間考査",
+        "subjects": [
+
+        ]
+      },
+      {
+        "title": "前期期末考査",
+        "subjects": [
+
+        ]
+      },
+      {
+        "title": "後期中間考査",
+        "subjects": [
+
+        ]
+      },
+      {
+        "title": "学年末考査",
+        "subjects": [
+
+        ]
+      }
+    ]
+  }
+]
