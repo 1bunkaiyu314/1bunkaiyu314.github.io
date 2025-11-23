@@ -38,11 +38,6 @@ function renderExamsForGrade(gradeObj) {
   const examTpl = document.getElementById('exam-template');
   const subjectTpl = document.getElementById('subject-template');
 
-  const title = document.createElement('h2');
-  title.textContent = gradeObj.title || `Grade ${gradeObj.grade}`;
-  title.style.marginLeft = '32px';
-  container.appendChild(title);
-
   (gradeObj.exams || []).forEach(exam => {
     const examClone = examTpl.content.cloneNode(true);
     const examBlock = examClone.querySelector('.exam-block');

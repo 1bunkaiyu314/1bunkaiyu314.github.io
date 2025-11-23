@@ -14,8 +14,8 @@ h1 {
 /* 学年タブ（簡易） */
 #grade-tabs {
   display:flex;
-  gap:8px;
-  margin:12px 0 18px 32px;
+  gap: 8px;
+  margin:12px 0 18px 0;
 }
 
 #grade-tabs button {
@@ -27,7 +27,7 @@ h1 {
 }
 
 #grade-tabs button.active {
-  background: #007acc;
+  background: #017aca;
   color:#fff;
   box-shadow:0 4px 8px rgba(0,0,0,0.12);
 }
@@ -38,7 +38,6 @@ h1 {
   width: calc(100% - 32px);
   padding: 12px 20px;
   margin-bottom: 8px;
-  margin-left: 32px;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
@@ -72,7 +71,6 @@ h1 {
   width: calc(100% - 32px);
   padding: 10px 16px;
   margin-bottom: 4px;
-  margin-left: 32px;
   font-size: 15px;
   font-weight: 500;
   text-align: left;
@@ -92,7 +90,6 @@ h1 {
 /* PDFリンク */
 .pdf-list {
   width: calc(100% - 48px);
-  margin-left: 48px;
 }
 
 .pdf-list a {
