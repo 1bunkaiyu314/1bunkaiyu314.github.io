@@ -19,27 +19,71 @@
       {
         "title": "前期第二中間考査",
         "subjects": [
-          { "name": "現代文A", "links": [ { "label": "プリント1", "href": "pdf/1年/現代文A_1.pdf" } ] },
-          { "name": "地理A", "links": [ { "label": "資料", "href": "pdf/1年/地理A_資料.pdf" } ] }
+          { "name": "現代文", "links": [ ] },
+          { "name": "古典", "links": [ ] },
+          { "name": "地理総合", "links": [ ] },
+          { "name": "歴史総合", "links": [ ] },
+          { "name": "理数数学Iα", "links": [ ] },
+          { "name": "理数数学Iβ", "links": [ ] },
+          { "name": "英語R", "links": [ ] },
+          { "name": "英語DI", "links": [ ] },
+          { "name": "化学基礎", "links": [ ] },
+          { "name": "物理基礎", "links": [ ] },
+          { "name": "生物基礎", "links": [ ] },
+          { "name": "家庭基礎", "links": [ ] },
+          { "name": "保険", "links": [ ] }
         ]
       },
       {
         "title": "前期期末考査",
         "subjects": [
-          { "name": "数学I", "links": [ { "label": "プリント1", "href": "pdf/1年/数学I_1.pdf" } ] }
-        ]
+          { "name": "現代文", "links": [ ] },
+          { "name": "古典", "links": [ ] },
+          { "name": "地理総合", "links": [ ] },
+          { "name": "歴史総合", "links": [ ] },
+          { "name": "理数数学Iα", "links": [ ] },
+          { "name": "理数数学Iβ", "links": [ ] },
+          { "name": "英語R", "links": [ ] },
+          { "name": "英語DI", "links": [ ] },
+          { "name": "化学基礎", "links": [ ] },
+          { "name": "物理基礎", "links": [ ] },
+          { "name": "生物基礎", "links": [ ] },
+          { "name": "家庭基礎", "links": [ ] },
+          { "name": "保険", "links": [ ] }
       },
       {
         "title": "後期中間考査",
         "subjects": [
-          { "name": "英語I", "links": [ { "label": "プリント1", "href": "pdf/1年/英語I_1.pdf" } ] }
-        ]
+          { "name": "現代文", "links": [ ] },
+          { "name": "古典", "links": [ ] },
+          { "name": "地理総合", "links": [ ] },
+          { "name": "歴史総合", "links": [ ] },
+          { "name": "理数数学Iα", "links": [ ] },
+          { "name": "理数数学Iβ", "links": [ ] },
+          { "name": "英語R", "links": [ ] },
+          { "name": "英語DI", "links": [ ] },
+          { "name": "化学基礎", "links": [ ] },
+          { "name": "物理基礎", "links": [ ] },
+          { "name": "生物基礎", "links": [ ] },
+          { "name": "家庭基礎", "links": [ ] },
+          { "name": "保険", "links": [ ] }
       },
       {
         "title": "学年末考査",
         "subjects": [
-          { "name": "総合科目", "links": [ { "label": "まとめ", "href": "pdf/1年/まとめ.pdf" } ] }
-        ]
+          { "name": "現代文", "links": [ ] },
+          { "name": "古典", "links": [ ] },
+          { "name": "地理総合", "links": [ ] },
+          { "name": "歴史総合", "links": [ ] },
+          { "name": "理数数学Iα", "links": [ ] },
+          { "name": "理数数学Iβ", "links": [ ] },
+          { "name": "英語R", "links": [ ] },
+          { "name": "英語DI", "links": [ ] },
+          { "name": "化学基礎", "links": [ ] },
+          { "name": "物理基礎", "links": [ ] },
+          { "name": "生物基礎", "links": [ ] },
+          { "name": "家庭基礎", "links": [ ] },
+          { "name": "保険", "links": [ ] }
       }
     ]
   },
@@ -189,13 +233,11 @@
       {
         "title": "前期第一中間考査",
         "subjects": [
-
         ]
       },
       {
         "title": "前期第二中間考査",
         "subjects": [
-
         ]
       },
       {
