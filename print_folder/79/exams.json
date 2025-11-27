@@ -459,7 +459,12 @@
           },
           {
             "name": "世界史探究",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "スライド",
+                "href": "https://docs.google.com/presentation/d/1GZh-R6PaXQAQpvzZcdZX83Wv-ZR6tCs9/edit?usp=sharing&ouid=112671603111730290153&rtpof=true&sd=true"
+              }
+            ]
           },
           {
             "name": "公共",
@@ -540,7 +545,12 @@
           },
           {
             "name": "世界史探究",
-            "links": [ ]
+            "links": [
+              {
+                "label": "スライド",
+                "href": "https://docs.google.com/presentation/d/1eMLraJEryrqjZ5IUUuj5RkZ09gOSiwQx3hd2dAoaAdI/edit?usp=drivesdk"
+              }
+            ]
           },
           {
             "name": "公共",
