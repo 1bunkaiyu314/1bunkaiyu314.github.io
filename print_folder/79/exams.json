@@ -92,7 +92,7 @@
             "links": []
           },
           {
-            "name": "保険",
+            "name": "保健",
             "links": []
           }
         ]
@@ -149,7 +149,7 @@
             "links": []
           },
           {
-            "name": "保険",
+            "name": "保健",
             "links": []
           }
         ]
@@ -206,7 +206,7 @@
             "links": []
           },
           {
-            "name": "保険",
+            "name": "保健",
             "links": []
           }
         ]
@@ -263,7 +263,7 @@
             "links": []
           },
           {
-            "name": "保険",
+            "name": "保健",
             "links": []
           }
         ]
@@ -443,194 +443,79 @@
         "subjects": [
           {
             "name": "現代文",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/現代文B_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/現代文B_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "古典",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/古典探究_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/古典探究_2.pdf"
-              },
-              {
-                "label": "プリント3",
-                "href": "pdf/古典探究_3.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "地理探究",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/07_tiri-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "日本史探究",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/10_nihonshi-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
-            "name": "世界史探求",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/12_sekaishi-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "name": "世界史探究",
+            "links": [ ]
           },
           {
             "name": "公共",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/14_koukyou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIα",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/理数数学IIα_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/理数数学IIα_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIβL",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/現代文B_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/現代文B_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIβS",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/20_mathIIbS/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "数学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/24_math-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "物理特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/30_buturi-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "化学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/27_kagaku-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "生物特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/33_seibutu-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "地学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/35_tigaku-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "総合英語IIR",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/39_eigo-IIR/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "英語DII",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/42_eigo-DII/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "総合英語II長文",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/43_eigo-II-tyobun/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
-            "name": "保険",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/47_hoken/DataAndSQL.pdf"
-              }
-            ]
+            "name": "保健",
+            "links": [ ]
           },
           {
             "name": "IBARAMA III",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/48_IBA-III/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           }
         ]
       },
@@ -639,194 +524,79 @@
         "subjects": [
           {
             "name": "現代文B",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/現代文B_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/現代文B_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "古典探究",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/古典探究_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/古典探究_2.pdf"
-              },
-              {
-                "label": "プリント3",
-                "href": "pdf/古典探究_3.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "地理探究",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/07_tiri-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "日本史探究",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/10_nihonshi-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
-            "name": "世界史探求",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/12_sekaishi-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "name": "世界史探究",
+            "links": [ ]
           },
           {
             "name": "公共",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/14_koukyou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIα",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/理数数学IIα_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/理数数学IIα_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIβL",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/現代文B_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/現代文B_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIβS",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/20_mathIIbS/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "数学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/24_math-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "物理特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/30_buturi-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "化学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/27_kagaku-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "生物特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/33_seibutu-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "地学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/35_tigaku-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "総合英語IIR",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/39_eigo-IIR/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "英語DII",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/42_eigo-DII/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "総合英語II長文",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/43_eigo-II-tyobun/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
-            "name": "保険",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/47_hoken/DataAndSQL.pdf"
-              }
-            ]
+            "name": "保健",
+            "links": [ ]
           },
           {
             "name": "IBARAMA III",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/48_IBA-III/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           }
         ]
       },
@@ -835,194 +605,79 @@
         "subjects": [
           {
             "name": "現代文B",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/現代文B_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/現代文B_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "古典探究",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/古典探究_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/古典探究_2.pdf"
-              },
-              {
-                "label": "プリント3",
-                "href": "pdf/古典探究_3.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "地理探究",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/07_tiri-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "日本史探究",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/10_nihonshi-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
-            "name": "世界史探求",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/12_sekaishi-tankyu/DataAndSQL.pdf"
-              }
-            ]
+            "name": "世界史探究",
+            "links": [ ]
           },
           {
             "name": "公共",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/14_koukyou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIα",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/理数数学IIα_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/理数数学IIα_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIβL",
-            "links": [
-              {
-                "label": "プリント1",
-                "href": "pdf/現代文B_1.pdf"
-              },
-              {
-                "label": "プリント2",
-                "href": "pdf/現代文B_2.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "理数数学IIβS",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/20_mathIIbS/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "数学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/24_math-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "物理特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/30_buturi-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "化学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/27_kagaku-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "生物特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/33_seibutu-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "地学特講",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/35_tigaku-tokkou/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "総合英語IIR",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/39_eigo-IIR/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "英語DII",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/42_eigo-DII/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
             "name": "総合英語II長文",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/43_eigo-II-tyobun/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           },
           {
-            "name": "保険",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/47_hoken/DataAndSQL.pdf"
-              }
-            ]
+            "name": "保健",
+            "links": [ ]
           },
           {
             "name": "IBARAMA III",
-            "links": [
-              {
-                "label": "データの分析・SQL",
-                "href": "bank/grade2/3-1S-Final/48_IBA-III/DataAndSQL.pdf"
-              }
-            ]
+            "links": [ ]
           }
         ]
       }
