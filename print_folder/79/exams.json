@@ -586,7 +586,12 @@
           },
           {
             "name": "地学特講",
-            "links": [ ]
+            "links": [
+              {
+                "label": "地学まとめスライド",
+                "href": "assets/grade2/4-2S-Mid/35_tigaku-tokkou/2年後期中間地学まとめ.pdf"
+              }
+            ]
           },
           {
             "name": "総合英語IIR",
