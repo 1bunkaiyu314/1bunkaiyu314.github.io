@@ -607,6 +607,19 @@
           {
             "name": "IBARAMA III",
             "links": [ ]
+          },
+          {
+            "name": "その他",
+            "links": [
+              {
+                "label": "範囲表（科目順）",
+                "href": "assets/grade2/4-2S-Mid/50_sonota/範囲表（科目順）.pdf"
+              },
+              {
+                "label": "範囲表（日程順）",
+                "href": "assets/grade2/4-2S-Mid/50_sonota/範囲表（日程順）.pdf"
+              }
+            ]
           }
         ]
       },
