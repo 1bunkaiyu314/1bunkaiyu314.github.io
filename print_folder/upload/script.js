@@ -6,6 +6,15 @@ const examMap = {
   "5": "5-2S-Final"   // 学年末考査
 };
 
+const examLabelMap = {
+  "1": "前期第一中間考査",
+  "2": "前期第二中間考査",
+  "3": "前期期末考査",
+  "4": "後期中間考査",
+  "5": "学年末考査"
+};
+
+
 const subjectsByGrade = {
   "1": [
     { value: "1", text: "現代文" },
@@ -16,10 +25,12 @@ const subjectsByGrade = {
     { value: "19", text: "理数数学Iβ" },
     { value: "26", text: "理数化学" },
     { value: "29", text: "理数物理" },
+    { value: "32", text: "理数生物" },
     { value: "38", text: "総合英語IR" },
     { value: "41", text: "英語DI" },
     { value: "46", text: "家庭基礎" },
-    { value: "47", text: "保健" }
+    { value: "47", text: "保健" },
+    { value: "50", text: "その他" }   
   ],
 
   "2": [
@@ -130,53 +141,159 @@ const subjectMap = {
   "50": "50_sonota"           // その他
 };
 
-function updateSubjects() {
-  const grade = document.getElementById('grade').value;
-  const subjectSelect = document.getElementById('subject');
-  subjectSelect.innerHTML = "";
+const subjectLabelMap = {
+  "1":  "現代文",
+  "2":  "現代世界を読む",
+  "3":  "古典",
+  "4":  "古典探究",
+  "5":  "古典講読",
+  "6":  "地理総合",
+  "7":  "地理探究",
+  "8":  "地理講究",
+  "9":  "歴史総合",
+  "10": "日本史探究",
+  "11": "日本史特講",
+  "12": "世界史探究",
+  "13": "世界史特講",
+  "14": "公共",
+  "15": "倫政特講",
+  "16": "倫政講究",
+  "17": "理数数学Iα",
+  "18": "理数数学IIα",
+  "19": "理数数学Iβ",
+  "20": "理数数学IIβS",
+  "21": "理数数学IIS",
+  "22": "理数数学IIβL",
+  "23": "理数数学IIL",
+  "24": "数学特講",
+  "25": "数学講究S",
+  "26": "理数化学",
+  "27": "化学特講",
+  "28": "化学講究S",
+  "29": "理数物理",
+  "30": "物理特講",
+  "31": "物理講究S",
+  "32": "理数生物",
+  "33": "生物特講",
+  "34": "生物講究S",
+  "35": "地学特講",
+  "36": "物L化L生L地L",
+  "37": "理科演習L",
+  "38": "総合英語IR",
+  "39": "総合英語IIR",
+  "40": "総合英語IIIR",
+  "41": "英語DI",
+  "42": "英語DII",
+  "43": "総合英語II長文",
+  "44": "総合英語III長文",
+  "45": "英語W",
+  "46": "家庭基礎",
+  "47": "保健",
+  "48": "IBARAMA III",
+  "49": "IBARAMA IV",
+  "50": "その他"
+};
 
-  subjectsByGrade[grade].forEach(subj => {
-    const opt = document.createElement('option');
-    opt.value = subj.value;
-    opt.textContent = subj.text;
-    subjectSelect.appendChild(opt);
-  });
-}
+const termEl = document.getElementById('term');
+const gradeEl = document.getElementById('grade');
+const examEl = document.getElementById('exam');
+const subjectEl = document.getElementById('subject');
+const fileEl = document.getElementById('file-name');
+const displayEl = document.getElementById('display-name');
+const suggestDirEl = document.getElementById('suggest-dir');
+const pathOutputEl = document.getElementById('path-output');
+const downloadBtnEl = document.getElementById('download-btn');
 
-function updateDir() {
-  const term = document.getElementById('term').value;
-  const grade = document.getElementById('grade').value;
-  const exam = document.getElementById('exam').value;
-  const subject = document.getElementById('subject').value;
+function render() {
+  const term = termEl.value;
+  const grade = gradeEl.value;
+  const exam = examEl.value;
+  const subject = subjectEl.value;
+  const fileName = (fileEl.value || "").trim();
+  const displayName = (displayEl.value || "").trim();
 
   const examDir = examMap[exam] || "unknown-exam";
   const subjectDir = subjectMap[subject] || "unknown-subject";
 
+  // GitHubリンクを生成
+  const githubUrl =
+    `https://github.com/1bunkaiyu314/1bunkaiyu314.github.io/tree/main/print_folder/${term}/assets/grade${grade}/${examDir}/${subjectDir}/`;
 
-  const path = `https://github.com/1bunkaiyu314/1bunkaiyu314.github.io/tree/main/print_folder/${term}/assets/grade${grade}/${examDir}/${subjectDir}/`;
+  // ← ここでリンクを表示
+  suggestDirEl.innerHTML = `<a href="${githubUrl}" target="_blank">${githubUrl}</a>`;
 
-  document.getElementById('suggest-dir').innerHTML =
-    `<a href="${path}" target="_blank">${path}</a>`;
+  // 以下は出力テキストやJSONの部分
+  const relativePath = `assets/grade${grade}/${examDir}/${subjectDir}/` + (fileName ? fileName : "");
+
+  pathOutputEl.textContent =
+`期数: ${term}
+学年: ${grade}
+考査名: ${examLabelMap[exam] || examDir}
+教科名: ${subjectLabelMap[subject] || subjectDir}
+ファイル名: ${fileName}
+表示名: ${displayName}
+
+リンク
+${githubUrl}
+
+{
+  "label": "${fileName}",
+  "href": "${relativePath}"
+}`;
+}
+
+
+
+// 入力イベントで更新
+["input","change"].forEach(type => {
+  termEl.addEventListener(type, render);
+  gradeEl.addEventListener(type, render);
+  examEl.addEventListener(type, render);
+  subjectEl.addEventListener(type, render);
+  fileEl.addEventListener(type, render);
+  displayEl.addEventListener(type, render);
+});
+
+// ダウンロード機能のみ
+downloadBtnEl.addEventListener('click', () => {
+  const text = pathOutputEl.textContent;
+  const blob = new Blob([text], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+
+  // 表示名をファイル名に利用
+  const displayName = (displayEl.value || "no-name").trim().replace(/\s+/g, "_");
+  a.download = `JsonInfo_${displayName}.txt`;
+
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+// 教科セレクト更新
+function updateSubjects() {
+  const grade = gradeEl.value;
+  subjectEl.innerHTML = "";
+  (subjectsByGrade[grade] || []).forEach(subj => {
+    const opt = document.createElement("option");
+    opt.value = subj.value;
+    opt.textContent = subj.text;
+    subjectEl.appendChild(opt);
+  });
 }
 
 // イベント設定
-document.getElementById('grade').addEventListener('change', () => {
-  updateSubjects();
-  updateDir();
-});
+gradeEl.addEventListener("change", updateSubjects);
 
-document.getElementById('exam').addEventListener('change', updateDir);
-document.getElementById('subject').addEventListener('change', updateDir);
-document.getElementById('term').addEventListener('change', updateDir);
-
+// 初期化
 document.addEventListener('DOMContentLoaded', () => {
-  // デフォルト値を設定
-  document.getElementById('term').value = 79;
-  document.getElementById('grade').value = "2";
-  document.getElementById('exam').value = "1";
-
-  // 初期化処理
+  termEl.value = 79;
+  gradeEl.value = "1";
+  examEl.value = "1"; // 例: 前期第二中間考査
   updateSubjects();
-  updateDir();
+  subjectEl.value = "50"; // 例: 化学特講
+  render();
 });
-

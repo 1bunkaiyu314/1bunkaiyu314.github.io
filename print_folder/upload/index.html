@@ -1,6 +1,22 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="【79期】考査対策勉強会 資料フォルダ"> 
+    <meta property="og:description" content="LINEグループで配布していた資料を、こちらにまとめました。保存期間が過ぎても閲覧できます。">
+    <meta property="og:image" content="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
 <body>
+    <p>
+        ・ファイル名は正しく拡張子（.pdf, .jpgなど）まで入力してください。<br>
+        ・表示名はWebページで表示される名前です。わかりやすい名前で、"２年後期中間"などの考査名や学年などを含めないでください。<br>
+        ・<strong>assets フォルダ</strong> にあるリンクを開き、ファイルをアップロードしてください。Githubアプリをインストールしている人は、アーカイブや無効するなどしてから行ってください。<br>
+        ・次に、 <strong>JSONファイル書き込み</strong> にあるメタデータやコードを @でや の個人LINEに送信してください。JSONファイルの構造が分かる人は、 <strong>~print_folder/upload/</strong> 直下にある <strong>exam.json</strong> ファイルに書き込んでください。
+    </p>
+
     <form id="upload-form">
         <label>期数:
             <label><input type="number" id="term"></label>
@@ -78,8 +94,18 @@
                 <option value="50">その他</option>
             </select>
         </label><br>
+
+        <label>ファイル名:<input type="text" id="file-name"></label><br>
+        <label>表示名:<input type="text" id="display-name"></label><br>
+
     </form>
 
-    <div id="suggest-dir" style="margin-top:10px; font-weight:bold; color:#007acc;">← 選択するとここにディレクトリが表示されます</div>
+    <h3>assets フォルダ</h3>
+    <div id="suggest-dir" style="margin-top:10px; font-weight:bold; color:#007acc;">← 選択するとここにディレクトリが表示されます</div><br>
+
+    <h3>JSONファイル書き込み</h3>    
+    <pre id="path-output" style="background:#000000; padding:16px; border:1px solid #ccc; color: #fff;"></pre>
+    <button id="download-btn" class="copy-button" type="button">ダウンロード</button>
+
     <script src="script.js"></script>
 </body>
