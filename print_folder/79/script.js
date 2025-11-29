@@ -1,4 +1,3 @@
-// JSON のパス（同じフォルダ）
 const JSON_PATH = 'exams.json';
 
 async function loadAndRenderAll(jsonPath = JSON_PATH) {
@@ -8,7 +7,6 @@ async function loadAndRenderAll(jsonPath = JSON_PATH) {
     const grades = await res.json();
     renderGradeTabs(grades);
     if (grades && grades.length) {
-      // ★ここを変更：インデックス1を選択（２年生）
       selectGrade(1, grades);
     }
   } catch (err) {
@@ -17,7 +15,6 @@ async function loadAndRenderAll(jsonPath = JSON_PATH) {
       '<p style="color:crimson">資料の読み込みに失敗しました。</p>';
   }
 }
-
 
 function renderGradeTabs(grades) {
   const tabs = document.getElementById('grade-tabs');
@@ -44,10 +41,8 @@ function renderExamsForGrade(gradeObj) {
   const subjectTpl = document.getElementById('subject-template');
 
   (gradeObj.exams || []).forEach(exam => {
-    // 空の科目を除外
     const validSubjects = (exam.subjects || []).filter(subject => subject.links && subject.links.length > 0);
 
-    // 科目が1つもなければこの考査をスキップ
     if (validSubjects.length === 0) return;
 
     const examClone = examTpl.content.cloneNode(true);
@@ -84,8 +79,6 @@ function renderExamsForGrade(gradeObj) {
   setupAccordion('.subject-toggle');
 }
 
-
-// 安定したアコーディオン実装
 function setupAccordion(buttonSelector) {
   document.querySelectorAll(buttonSelector).forEach(button => {
     const content = button.nextElementSibling;
@@ -147,7 +140,4 @@ function setupAccordion(buttonSelector) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-
-
-// 実行
 loadAndRenderAll();
