@@ -35,7 +35,7 @@ h1 {
 /* 試験ボタン */
 .exam-toggle {
   display: block;
-  width: calc(100% - 32px);
+  width: 100%;
   padding: 12px 20px;
   margin-bottom: 8px;
   font-size: 16px;
@@ -68,7 +68,7 @@ h1 {
 /* 教科ボタン */
 .subject-toggle {
   display: block;
-  width: calc(100% - 32px);
+  width: 100%;
   padding: 10px 16px;
   margin-bottom: 4px;
   font-size: 15px;
@@ -89,7 +89,7 @@ h1 {
 
 /* PDFリンク */
 .pdf-list {
-  width: calc(100% - 48px);
+  width: 100%;
 }
 
 .pdf-list a {
@@ -133,4 +133,41 @@ h1 {
   color: #444;
   border-top: 1px solid #eee;
   z-index: 100;       /* 他要素より前に出すが、覆い尽くさない */
+}
+
+
+
+.page-layout {
+  display: flex;
+  width: 100%;       /* ← 画面幅いっぱい */
+  gap: 20px;         /* ← 左右の間隔はここで統一 */
+}
+
+
+
+/* PCでは横並び */
+.exams-section {
+  flex: 1;           /* ← 余ったスペースを全部使う */
+  min-width: 0;      /* ← Flexboxで正しく縮むために必要 */
+  max-width: none;   /* ← もし残っていたら解除 */
+}
+
+.form-section {
+  flex: 0 0 500px;   /* ← 固定幅（例:400px） */
+  max-width: 500px;  /* ← 上限を設定 */
+  margin-left: 0;    /* ← 余計なautoや大きなmarginを削除 */
+}
+
+
+
+/* スマホやタブレットでは縦並びに切り替え */
+@media (max-width: 1024px) {
+  .page-layout {
+    flex-direction: column;
+  }
+  .exams-section,
+  .form-section {
+    width: 100%;     /* ← 縦並び時は横幅いっぱい */
+    max-width: 100%;
+  }
 }

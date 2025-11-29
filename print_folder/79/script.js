@@ -7,12 +7,17 @@ async function loadAndRenderAll(jsonPath = JSON_PATH) {
     if (!res.ok) throw new Error('failed to load JSON: ' + res.status);
     const grades = await res.json();
     renderGradeTabs(grades);
-    if (grades && grades.length) selectGrade(0, grades);
+    if (grades && grades.length) {
+      // ★ここを変更：インデックス1を選択（２年生）
+      selectGrade(1, grades);
+    }
   } catch (err) {
     console.error(err);
-    document.getElementById('exams-container').innerHTML = '<p style="color:crimson">資料の読み込みに失敗しました。</p>';
+    document.getElementById('exams-container').innerHTML =
+      '<p style="color:crimson">資料の読み込みに失敗しました。</p>';
   }
 }
+
 
 function renderGradeTabs(grades) {
   const tabs = document.getElementById('grade-tabs');
@@ -39,6 +44,12 @@ function renderExamsForGrade(gradeObj) {
   const subjectTpl = document.getElementById('subject-template');
 
   (gradeObj.exams || []).forEach(exam => {
+    // 空の科目を除外
+    const validSubjects = (exam.subjects || []).filter(subject => subject.links && subject.links.length > 0);
+
+    // 科目が1つもなければこの考査をスキップ
+    if (validSubjects.length === 0) return;
+
     const examClone = examTpl.content.cloneNode(true);
     const examBlock = examClone.querySelector('.exam-block');
     const examBtn = examBlock.querySelector('.exam-toggle');
@@ -46,7 +57,7 @@ function renderExamsForGrade(gradeObj) {
 
     examBtn.textContent = exam.title;
 
-    (exam.subjects || []).forEach(subject => {
+    validSubjects.forEach(subject => {
       const subjectClone = subjectTpl.content.cloneNode(true);
       const subjectBlock = subjectClone.querySelector('.subject-block');
       const subjectBtn = subjectBlock.querySelector('.subject-toggle');
@@ -54,7 +65,7 @@ function renderExamsForGrade(gradeObj) {
 
       subjectBtn.textContent = subject.name;
 
-      (subject.links || []).forEach(link => {
+      subject.links.forEach(link => {
         const a = document.createElement('a');
         a.href = link.href;
         a.target = '_blank';
@@ -72,6 +83,7 @@ function renderExamsForGrade(gradeObj) {
   setupAccordion('.exam-toggle');
   setupAccordion('.subject-toggle');
 }
+
 
 // 安定したアコーディオン実装
 function setupAccordion(buttonSelector) {
@@ -134,6 +146,8 @@ function setupAccordion(buttonSelector) {
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
 
 // 実行
 loadAndRenderAll();
