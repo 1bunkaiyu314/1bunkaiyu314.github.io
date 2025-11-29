@@ -237,7 +237,7 @@ function render() {
 ${githubUrl}
 
 {
-  "label": "${fileName}",
+  "label": "${displayName}",
   "href": "${relativePath}"
 }`;
 }
