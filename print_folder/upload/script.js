@@ -19,7 +19,7 @@ const subjectsByGrade = {
     { value: "38", text: "総合英語IR" },
     { value: "41", text: "英語DI" },
     { value: "46", text: "家庭基礎" },
-    { value: "47", text: "保険" }
+    { value: "47", text: "保健" }
   ],
 
   "2": [
@@ -27,7 +27,7 @@ const subjectsByGrade = {
     { value: "3", text: "古典" },
     { value: "7", text: "地理探究" },
     { value: "10", text: "日本史探究" },
-    { value: "12", text: "世界史探求" },
+    { value: "12", text: "世界史探究" },
     { value: "14", text: "公共" },
     { value: "18", text: "理数数学IIα" },
     { value: "20", text: "理数数学IIβS" },
@@ -40,7 +40,7 @@ const subjectsByGrade = {
     { value: "39", text: "総合英語IIR" },
     { value: "42", text: "英語DII" },
     { value: "43", text: "総合英語II長文" },
-    { value: "47", text: "保険" },
+    { value: "47", text: "保健" },
     { value: "48", text: "IBARAMA III" },
     { value: "50", text: "その他" }
   ],
@@ -48,13 +48,13 @@ const subjectsByGrade = {
   "3": [
     { value: "1", text: "現代文" },
     { value: "2", text: "現代世界を読む" },
-    { value: "4", text: "古典探求" },
+    { value: "4", text: "古典探究" },
     { value: "5", text: "古典講読" },
     { value: "7", text: "地理探究" },
     { value: "8", text: "地理講究" },
     { value: "10", text: "日本史探究" },
     { value: "11", text: "日本史特講" },
-    { value: "12", text: "世界史探求" },
+    { value: "12", text: "世界史探究" },
     { value: "13", text: "世界史特講" },
     { value: "15", text: "倫政特講" },
     { value: "16", text: "倫政講究" },
@@ -81,7 +81,7 @@ const subjectMap = {
   "1":  "01_genbun",          // 現代文
   "2":  "02_genbun-yomu",     // 現代世界を読む
   "3":  "03_koten",           // 古典
-  "4":  "04_koten-tankyu",    // 古典探求
+  "4":  "04_koten-tankyu",    // 古典探究
   "5":  "05_koten-koudoku",   // 古典講読
   "6":  "06_tiri-sougou",     // 地理総合
   "7":  "07_tiri-tankyu",     // 地理探究
@@ -89,7 +89,7 @@ const subjectMap = {
   "9":  "09_rekishi-sougou",  // 歴史総合
   "10": "10_nihonshi-tankyu", // 日本史探究
   "11": "11_nihonshi-tokkou", // 日本史特講
-  "12": "12_sekaishi-tankyu", // 世界史探求
+  "12": "12_sekaishi-tankyu", // 世界史探究
   "13": "13_sekaishi-tokkou", // 世界史特講
   "14": "14_koukyou",         // 公共
   "15": "15_rinsei-tokkou",   // 倫政特講
@@ -124,7 +124,7 @@ const subjectMap = {
   "44": "44_eigo-III-tyobun", // 総合英語III長文
   "45": "45_eigo-W",          // 英語W
   "46": "46_kateikiso",       // 家庭基礎
-  "47": "47_hoken",           // 保険
+  "47": "47_hoken",           // 保健
   "48": "48_IBA-III",         // IBARAMA III
   "49": "49_IBA-IV",          // IBARAMA IV
   "50": "50_sonota"           // その他
@@ -148,10 +148,10 @@ function updateDir() {
   const grade = document.getElementById('grade').value;
   const exam = document.getElementById('exam').value;
   const subject = document.getElementById('subject').value;
-  const other = document.getElementById('other-subject').value;
 
   const examDir = examMap[exam] || "unknown-exam";
-  const subjectDir = subjectMap[subject] || (other ? other : "unknown-subject");
+  const subjectDir = subjectMap[subject] || "unknown-subject";
+
 
   const path = `https://github.com/1bunkaiyu314/1bunkaiyu314.github.io/tree/main/print_folder/${term}/assets/grade${grade}/${examDir}/${subjectDir}/`;
 
@@ -164,11 +164,19 @@ document.getElementById('grade').addEventListener('change', () => {
   updateSubjects();
   updateDir();
 });
+
 document.getElementById('exam').addEventListener('change', updateDir);
 document.getElementById('subject').addEventListener('change', updateDir);
 document.getElementById('term').addEventListener('change', updateDir);
-document.getElementById('other-subject').addEventListener('input', updateDir);
 
-// 初期化
-updateSubjects();
-updateDir();
+document.addEventListener('DOMContentLoaded', () => {
+  // デフォルト値を設定
+  document.getElementById('term').value = 79;
+  document.getElementById('grade').value = "2";
+  document.getElementById('exam').value = "1";
+
+  // 初期化処理
+  updateSubjects();
+  updateDir();
+});
+
