@@ -451,6 +451,10 @@
               {
                 "label": "対策スライド",
                 "href": "assets/grade2/3-1S-Final/03_koten/2年前期期末対策スライド（配布用）.pdf"
+              },
+              {
+                "label": "要点確認",
+                "href": "assets/grade2/3-1S-Final/03_koten/要点確認.pdf"
               }
             ]  
           },
@@ -473,11 +477,25 @@
           },
           {
             "name": "公共",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "公共　前期末まとめ　判例まとめ付き.pdf",
+                "href": "assets/grade2/3-1S-Final/14_koukyou/公共　前期末まとめ　判例まとめ付き.pdf"
+              },
+              {
+                "label": "考査対策　公共　時事　７・８・９月.pdf",
+                "href": "assets/grade2/3-1S-Final/14_koukyou/考査対策　公共　時事　７・８・９月.pdf"
+              }
+            ]
           },
           {
             "name": "理数数学IIα",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "数α(前期期末)解答[1][2].pdf",
+                "href": "assets/grade2/3-1S-Final/18_mathIIa/数α(前期期末)解答[1][2].pdf"
+              }
+            ]
           },
           {
             "name": "理数数学IIβL",
@@ -497,7 +515,16 @@
           },
           {
             "name": "化学特講",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "化学(前期期末)①.pdf",
+                "href": "assets/grade2/3-1S-Final/27_kagaku-tokkou/化学(前期期末)①.pdf"
+              },
+              {
+                "label": "林の無機化学攻略 No.10.pdf",
+                "href": "assets/grade2/3-1S-Final/27_kagaku-tokkou/林の無機化学攻略 No.10.pdf"
+              }
+            ]
           },
           {
             "name": "生物特講",
@@ -517,7 +544,12 @@
           },
           {
             "name": "総合英語II長文",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "英長 前期末試験まとめ.pdf",
+                "href": "assets/grade2/3-1S-Final/43_eigo-II-tyobun/英長 前期末試験まとめ.pdf"
+              }
+            ]
           },
           {
             "name": "保健",
@@ -525,7 +557,28 @@
           },
           {
             "name": "IBARAMA III",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "IBARAMA I.pdf",
+                "href": "assets/grade2/3-1S-Final/48_IBA-III/IBARAMA I.pdf"
+              },
+              {
+                "label": "Excel.pdf",
+                "href": "assets/grade2/3-1S-Final/48_IBA-III/Excel.pdf"
+              },
+              {
+                "label": "データの分析・SQL.pdf",
+                "href": "assets/grade2/3-1S-Final/48_IBA-III/データの分析・SQL.pdf"
+              },
+              {
+                "label": "SQL演習.jpg",
+                "href": "assets/grade2/3-1S-Final/48_IBA-III/SQL演習.jpg"
+              },
+              {
+                "label": "前期末IBARAMAⅢ解答速報 .pdf",
+                "href": "assets/grade2/3-1S-Final/48_IBA-III/前期末IBARAMAⅢ解答速報 .pdf"
+              }
+            ]
           }
         ]
       },
@@ -542,7 +595,12 @@
           },
           {
             "name": "地理探究",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "地理 暗記用 ver.1",
+                "href": "assets/grade2/4-2S-Mid/07_tiri-tankyu/地理 暗記用 ver.1.pdf"
+              }
+            ]
           },
           {
             "name": "日本史探究",
@@ -559,7 +617,12 @@
           },
           {
             "name": "公共",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "公共 暗記用 ver.1",
+                "href": "assets/grade2/4-2S-Mid/35_tigaku-tokkou/公共 暗記用 ver.1.pdf"
+              }
+            ]
           },
           {
             "name": "理数数学IIα",
@@ -587,7 +650,12 @@
           },
           {
             "name": "生物特講",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "生物 暗記用 ver.1",
+                "href": "assets/grade2/4-2S-Mid/33_seibutu-tokkou/生物 暗記用 ver.1.pdf"
+              }
+            ]
           },
           {
             "name": "地学特講",
