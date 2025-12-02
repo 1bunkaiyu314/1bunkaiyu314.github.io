@@ -528,7 +528,12 @@
           },
           {
             "name": "生物特講",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "生物スライド",
+                "href": "https://docs.google.com/presentation/d/1nCAJdlMxRknyRyqH1QKSnf8qCysOH80QTHRnDKHpdKw/edit?usp=drivesdk"
+              }
+          ]
           },
           {
             "name": "地学特講",
@@ -662,6 +667,14 @@
               {
                 "label": "生物 暗記用 ver.1",
                 "href": "assets/grade2/4-2S-Mid/33_seibutu-tokkou/生物 暗記用 ver.1.pdf"
+              },
+              {
+                "label": "生物特攻1",
+                "href": "https://docs.google.com/presentation/d/1oDavlFqVvJ8_hTAW8iQYHMe1k8BB6GUJ9ezRqPUago8/edit?usp=drivesdk"
+              },
+              {
+                "label": "生物特攻 演習プリント",
+                "href": "https://docs.google.com/document/d/1eKqsVfyvoTHSWRhvK2C_VftasugOBEa37l2nhX3qcaA/edit?usp=drivesdk"
               }
             ]
           },
