@@ -592,7 +592,16 @@
         "subjects": [
           {
             "name": "現代文B",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "「内的成長」社会へ　線引き.pdf",
+                "href": "assets/grade2/4-2S-Mid/01_genbun/「内的成長」社会へ　線引き.pdf"
+              },
+              {
+                "label": "「である」ことと「する」こと　線引き.pdf",
+                "href": "assets/grade2/4-2S-Mid/01_genbun/「である」ことと「する」こと　線引き.pdf"
+              }
+            ]
           },
           {
             "name": "古典探究",
@@ -639,7 +648,12 @@
           },
           {
             "name": "理数数学IIα",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "数Ⅱα　後中.pdf",
+                "href": "assets/grade2/4-2S-Mid/18_mathIIa/数Ⅱα　後中.pdf"
+              }
+            ]
           },
           {
             "name": "理数数学IIβL",
