@@ -611,8 +611,16 @@
             "name": "地理探究",
             "links": [ 
               {
-                "label": "地理 暗記用 ver.1",
+                "label": "地理 暗記用 ver.1.pdf",
                 "href": "assets/grade2/4-2S-Mid/07_tiri-tankyu/地理 暗記用 ver.1.pdf"
+              },
+              {
+                "label": "これでばっ地誌・世界の農業.pdf",
+                "href": "assets/grade2/4-2S-Mid/07_tiri-tankyu/これでばっ地誌・世界の農業.pdf"
+              },
+              {
+                "label": "地理　後期中間　暗記用　ver.2.pdf",
+                "href": "assets/grade2/4-2S-Mid/07_tiri-tankyu/地理　後期中間　暗記用　ver.2.pdf"
               }
             ]
           },

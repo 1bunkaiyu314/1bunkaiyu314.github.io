@@ -1,35 +1,61 @@
 body {
   font-family: sans-serif;
-  background-color: #fff;
-  color: #17184b;
   padding: 20px;
 }
 
+/* 見出し */
 h1 {
   margin-bottom: 10px;
   text-align: center;
 }
 
+/* 学年選択タブ */
 #grade-tabs {
-  display:flex;
+  display: flex;
   gap: 8px;
-  margin:12px 0 18px 0;
+  margin: 12px 0 18px 0;
 }
 
 #grade-tabs button {
-  padding:8px 12px;
-  border-radius:8px;
-  border:none;
-  background:#e0e6ed;
-  cursor:pointer;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: #e0e6ed;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
 #grade-tabs button.active {
   background: #017aca;
-  color:#fff;
-  box-shadow:0 4px 8px rgba(0,0,0,0.12);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
 }
 
+/* ダークモード切替ボタン */
+#dark-mode-toggle {
+  padding: 8px 12px;
+  line-height: 1.4;
+  border-radius: 8px;
+  border: none;
+  background: #e0e6ed;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#dark-mode-toggle:hover {
+  background: #017aca;
+  color: #fff;
+}
+
+/* 学年選択とダークモードボタンを横並びに */
+.grade-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+/* 試験ボタン */
 .exam-toggle {
   display: block;
   width: 100%;
@@ -37,30 +63,24 @@ h1 {
   margin-bottom: 8px;
   font-size: 16px;
   font-weight: 600;
-  color: #fff;
-  background-color: #2c3e50;
   border: none;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: left;
 }
 
 .exam-toggle:hover {
-  background-color: #3e566e;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   transform: translateY(-2px);
 }
 
 .exam-toggle:active {
-  background-color: #52769b;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   transform: translateY(1px);
 }
 
+/* 科目ボタン */
 .subject-block {
-  margin-bottom: 8px; 
+  margin-bottom: 8px;
 }
 
 .subject-toggle {
@@ -71,8 +91,6 @@ h1 {
   font-size: 15px;
   font-weight: 500;
   text-align: left;
-  color: #000000;
-  background: white;
   border: 1px solid #ccc;
   border-radius: 6px;
   cursor: pointer;
@@ -80,10 +98,10 @@ h1 {
 }
 
 .subject-toggle:hover {
-  background: #e6f0ff;
-  border-color: #aaaaaa;
+  border-color: #aaa;
 }
 
+/* PDFリンク */
 .pdf-list {
   width: 100%;
 }
@@ -92,22 +110,23 @@ h1 {
   display: block;
   padding: 6px 12px;
   font-size: 14px;
-  color: #007acc;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.pdf-list a:hover { text-decoration: underline; }
+.pdf-list a:hover {
+  text-decoration: underline;
+}
 
+/* 学年見出し */
 .grade h2 {
-  background-color: #192f60;
-  color: #fff;
   padding: 12px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   font-size: 20px;
   margin-bottom: 16px;
 }
 
+/* アコーディオン */
 .subject-list, .pdf-list {
   overflow: hidden;
   max-height: 0;
@@ -115,20 +134,20 @@ h1 {
   will-change: max-height;
 }
 
+/* フッター */
 .site-footer--center {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   text-align: center;
-  background: #fafafa;
   padding: 8px 0;
   font-size: 13px;
-  color: #444;
-  border-top: 1px solid #eee;
+  border-top: 1px solid;
   z-index: 100;
 }
 
+/* レイアウト */
 .page-layout {
   display: flex;
   width: 100%;
@@ -156,4 +175,39 @@ h1 {
     width: 100%;
     max-width: 100%;
   }
+}
+
+/* ===== デフォルトテーマに従う ===== */
+
+/* ライトテーマ */
+@media (prefers-color-scheme: light) {
+  body { background-color: #fff; color: #17184b; }
+  .exam-toggle { background-color: #2c3e50; color: #fff; }
+  .subject-toggle { background: #fff; color: #000; border-color: #ccc; }
+  .pdf-list a { color: #007acc; }
+  .site-footer--center { background: #fafafa; color: #444; border-top-color: #eee; }
+}
+
+/* ダークテーマ */
+@media (prefers-color-scheme: dark) {
+  body { background-color: #121212; color: #e0e0e0; }
+  h1, h2 { color: #fff; }
+  .exam-toggle { background-color: #272d47; color: #fff; }
+  .subject-toggle { background: #121212; color: #fff; border-color: #555; }
+  .pdf-list a { color: #80cbc4; }
+  .site-footer--center { background: #1e1e1e; color: #aaa; border-top-color: #333; }
+  .exam-toggle:hover { background-color: #313652; }
+  .subject-toggle:hover { background: #37474f; border-color: #888; }
+  .pdf-list a:hover { color: #b2dfdb; }
+}
+
+/* ===== ボタンで強制切替 ===== */
+body[data-theme="light"] {
+  background-color: #fff;
+  color: #17184b;
+}
+
+body[data-theme="dark"] {
+  background-color: #121212;
+  color: #e0e0e0;
 }

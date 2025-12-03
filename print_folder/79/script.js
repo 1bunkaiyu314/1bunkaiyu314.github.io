@@ -140,4 +140,25 @@ function setupAccordion(buttonSelector) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const toggleBtn = document.getElementById('dark-mode-toggle');
+
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  // 状態を保存（リロードしても維持）
+  if (document.body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
+
+// ページ読み込み時に前回の設定を反映
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+});
+
+
 loadAndRenderAll();
