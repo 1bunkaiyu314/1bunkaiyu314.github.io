@@ -23,9 +23,17 @@
     <script>hljs.highlightAll();</script>
   </head>
   <body>
-    <h1>VBA基本文法</h1><hr>     
+    <h1>VBA基本文法</h1>     
 
-    
+<p>
+  このページでのVBAのコードは、可読性を高めるために全て色付けされています。<br>
+  　　キーワード：ピンク （Dim, As, If等）<br>
+  　　文字列：緑<br>
+  　　数値：オレンジ<br>
+  もちろん考査では黒一色です。
+</p>
+
+<hr> 
 <h2>0. 基本</h2>
 
 
@@ -54,7 +62,13 @@
     <td>-</td>
     <td>if文の判定に使われる（true / false）</td>
   </tr>
-</table><br>
+</table>
+<p>
+※型ではないが、「定数」という概念がある。定数は、一度値を入れたら変えることができないもの。<br>　例）vbYes, vbNo<br>順に6, 7を意味する。
+</p>
+<br>
+
+
 
 <p>
 算術演算子は計算に使われる。プログラミング固有の記号が使われることも多い
@@ -152,7 +166,68 @@ Cells(2, 1).Value = "Hello World"
 </code></pre>
 <pre>
 A2 のセルを Hello World という文字に置き換える。
+</pre><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+Call MsgBox("円くなるな、無限であれ")
+</code></pre>
+<pre>
+「円くなるな、無限であれ」というメッセージボックスを出す
+</pre><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+Dim score As String
+
+score = InputBox("あなたの前回のIBARAMA IIIの考査の点数は？")
+</code></pre>
+<pre>
+score を文字列型で作成
+「あなたの前回のIBARAMA IIIの考査の点数は？」 と聞き、
+入力された文字列を score に代入する
 </pre>
+<div class="point">注意：InputBox は常に文字列型を返す</div><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+Dim answer As Long
+
+answer = MsgBox("あなたは音楽選択者ですか？", vbYesNo)
+
+If answer = 6 Then
+
+    Call MsgBox("第九の歌い方を教えてください。")
+
+ElseIf answer = 7 Then
+
+    Call MsgBox("あなたに用はないです。")
+
+EndIf
+</code></pre>
+<pre>
+answer を整数型で作成
+「あなたは音楽選択者ですか？」と（はい / いいえ）で聞き、<br>answerに回答を保存する<br>
+もし はい なら、「第九の歌い方を教えてください。」<br>というメッセージボックスを出す<br>
+そうではなくてもし、 いいえ なら、「あなたに用はないです。」<br>という メッセージボックスを出す
+</pre>
+<div class="point">vbYesNo を用いると、Yes = 6, No = 7 という値を返す！！</div><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+'（略）
+If answer = vbYes Then
+
+    Call MsgBox("第九の歌い方を教えてください。")
+
+ElseIf answer = vbNo Then
+
+    Call MsgBox("あなたに用はないです。")
+</code></pre>
+<pre>
+同上
+</pre>
+<div class="point">6, 7 の代わりに、vbYes, vbNo を使うこともできる！</div><br>
 
 
 
@@ -267,12 +342,56 @@ End If
 
 
 <pre class="vba"><code class="language-vbnet"></code>
+Dim i As Long
+
+For i = 1 To 5
+
+    If Cells(i, 1).Value = i 
+
+Next i
+</code></pre>
+<pre>
+i を1から5の範囲で繰り返す
+    (i, 1)のセルの値を i にする
+繰り返し終わり
+</pre>
+<div class="point">A1 = 1, B1 = 2, C1 = 3...という結果になる</div><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+Dim i As Long
+Dim c As Long
+
+c = 0
+For i = 1 To 10
+
+    If Cells(i, 1).Value < 40 Then
+
+        c = c + 1
+
+    End If
+
+Next c
+</code></pre>
+<pre>
+（略）
+i を1から10の範囲で繰り返す
+    もし(i, 1)が40より小さいなら
+        c に 1 を足す
+繰り返し終わり
+</pre>
+<div class="point">c は40より小さいセルの数を数えている</div>
+<div class="point">c = c + 1 の用法に注意！！</div><br>
+
+<!-- TEMPLATE
+<pre class="vba"><code class="language-vbnet"></code>
 
 </code></pre>
-<p>
+<pre>
 
-</p>
+</pre>
 <div class="point"></div><br>
+-->
 
     <script src="script.js"></script>
   </body>
