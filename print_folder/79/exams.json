@@ -630,7 +630,12 @@
           },
           {
             "name": "日本史探究",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "覚える！！〜天平文化と弘仁・貞観文化〜",
+                "href": "https://docs.google.com/presentation/d/1OgSaJlP91-JWhIexh7Lmj-8CF0-Wka1aNT5sjbLxiRc/edit?usp=sharing"
+              }
+            ]
           },
           {
             "name": "世界史探究",
@@ -743,7 +748,20 @@
           },
           {
             "name": "IBARAMA III",
-            "links": [ ]
+            "links": [ 
+              {
+                "label": "補足資料・発展課題解説.pdf",
+                "href": "assets/grade2/4-2S-Mid/48_IBA-III/補足資料・発展課題解説.pdf"
+              },
+              {
+                "label": "VBA基本文法（Web版）",
+                "href": "https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/4-2S-Mid/48_IBA-III/"
+              },
+              {
+                "label": "VBA基本文法.pdf",
+                "href": "assets/grade2/4-2S-Mid/48_IBA-III/VBA基本文法.pdf"
+              }
+            ]
           },
           {
             "name": "その他",
