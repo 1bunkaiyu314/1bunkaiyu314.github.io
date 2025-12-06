@@ -223,13 +223,13 @@ body[data-theme="dark"] h2 { color: #fff; }
 body[data-theme="dark"] #grade-tabs button,
 body[data-theme="dark"] #dark-mode-toggle,
 body[data-theme="dark"] .group-button {
-  background: #37394f;
-  color: #fff;
+  background: #393e4f;
+  color: #ffffff;
 }
 
 
 body[data-theme="dark"] #grade-tabs button.active {
-  background:#6d6f86;
+  background:#7e8cb9;
   color: #fff;
 }
 
@@ -240,7 +240,7 @@ body[data-theme="dark"] .group-button:hover {
 }
 
 body[data-theme="dark"] .exam-toggle {
-  background-color: #37394f;
+  background-color: #393e4f;
   color: #fff;
 }
 
@@ -258,6 +258,6 @@ body[data-theme="dark"] .site-footer--center {
   border-top-color: #333;
 }
 
-body[data-theme="dark"] .exam-toggle:hover { background-color: #313652; }
+body[data-theme="dark"] .exam-toggle:hover { background-color: #525764; }
 body[data-theme="dark"] .subject-toggle:hover { background: #37474f; border-color: #888; }
 body[data-theme="dark"] .pdf-list a:hover { color: #b2dfdb; }
