@@ -1,12 +1,25 @@
 /* 全体の基本設定 */
 body {
   font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
   padding: 0 20px;
   max-width: 900px;
   line-height: 1.75;
   background: #fafafa;
   color: #222;
+}
+
+.page-layout {
+  flex: 1;
+}
+
+hr {
+  border: none;              /* デフォルトの影響を消す */
+  border-top: 2px solid #ccc; /* 好きな色で線を出す */
+  margin: 20px 0;            /* 上下の余白を調整 */
 }
 
 /* 見出し装飾 */
@@ -106,3 +119,12 @@ pre.vba {
   }
 }
 
+.site-footer--center {
+  margin-top: auto; /* フッターを一番下に押し下げる */
+  text-align: center;
+  padding: 12px 0;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  color: #444;
+}

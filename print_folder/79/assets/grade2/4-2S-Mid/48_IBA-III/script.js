@@ -6,3 +6,5 @@ document.querySelectorAll('pre.vba').forEach(block => {
   block.appendChild(code);
   hljs.highlightElement(code);
 });
+
+document.getElementById('year').textContent = new Date().getFullYear();
