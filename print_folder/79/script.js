@@ -142,23 +142,21 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const toggleBtn = document.getElementById('dark-mode-toggle');
 
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-
-  // 状態を保存（リロードしても維持）
-  if (document.body.classList.contains('dark-mode')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
-});
-
-// ページ読み込み時に前回の設定を反映
+// 初期状態: OS/ブラウザの設定に従う
 window.addEventListener('DOMContentLoaded', () => {
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-  }
+  let theme = localStorage.getItem('theme') ||
+    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  document.body.dataset.theme = theme;
+  toggleBtn.textContent = theme === 'dark' ? '☀' : '🌙';
 });
 
+// ボタンで切り替え
+toggleBtn.addEventListener('click', () => {
+  const current = document.body.dataset.theme;
+  const newTheme = current === 'dark' ? 'light' : 'dark';
+  document.body.dataset.theme = newTheme;
+  localStorage.setItem('theme', newTheme);
+  toggleBtn.textContent = newTheme === 'dark' ? '☀' : '🌙';
+});
 
 loadAndRenderAll();

@@ -1,23 +1,23 @@
+/* ===== 共通スタイル ===== */
 body {
   font-family: sans-serif;
   padding: 20px;
 }
 
-/* 見出し */
 h1 {
   margin-bottom: 10px;
   text-align: center;
 }
 
-/* 学年選択タブ */
 #grade-tabs {
   display: flex;
   gap: 8px;
-  margin: 12px 0 18px 0;
 }
 
-#grade-tabs button {
+#grade-tabs button,
+#dark-mode-toggle {
   padding: 8px 12px;
+  margin: 12px 0 8px 0;
   border-radius: 8px;
   border: none;
   background: #e0e6ed;
@@ -31,15 +31,8 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.12);
 }
 
-/* ダークモード切替ボタン */
 #dark-mode-toggle {
-  padding: 8px 12px;
-  line-height: 1.4;
-  border-radius: 8px;
-  border: none;
-  background: #e0e6ed;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  font-size: 18px;
 }
 
 #dark-mode-toggle:hover {
@@ -47,15 +40,13 @@ h1 {
   color: #fff;
 }
 
-/* 学年選択とダークモードボタンを横並びに */
 .grade-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 4px;
 }
 
-/* 試験ボタン */
 .exam-toggle {
   display: block;
   width: 100%;
@@ -70,18 +61,10 @@ h1 {
   text-align: left;
 }
 
-.exam-toggle:hover {
-  transform: translateY(-2px);
-}
+.exam-toggle:hover { transform: translateY(-2px); }
+.exam-toggle:active { transform: translateY(1px); }
 
-.exam-toggle:active {
-  transform: translateY(1px);
-}
-
-/* 科目ボタン */
-.subject-block {
-  margin-bottom: 8px;
-}
+.subject-block { margin-bottom: 8px; }
 
 .subject-toggle {
   display: block;
@@ -97,15 +80,9 @@ h1 {
   transition: all 0.15s ease;
 }
 
-.subject-toggle:hover {
-  border-color: #aaa;
-}
+.subject-toggle:hover { border-color: #aaa; }
 
-/* PDFリンク */
-.pdf-list {
-  width: 100%;
-}
-
+.pdf-list { width: 100%; }
 .pdf-list a {
   display: block;
   padding: 6px 12px;
@@ -113,20 +90,8 @@ h1 {
   text-decoration: none;
   transition: color 0.2s ease;
 }
+.pdf-list a:hover { text-decoration: underline; }
 
-.pdf-list a:hover {
-  text-decoration: underline;
-}
-
-/* 学年見出し */
-.grade h2 {
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-/* アコーディオン */
 .subject-list, .pdf-list {
   overflow: hidden;
   max-height: 0;
@@ -134,7 +99,6 @@ h1 {
   will-change: max-height;
 }
 
-/* フッター */
 .site-footer--center {
   position: fixed;
   bottom: 0;
@@ -147,67 +111,153 @@ h1 {
   z-index: 100;
 }
 
-/* レイアウト */
 .page-layout {
   display: flex;
   width: 100%;
   gap: 20px;
 }
 
-.exams-section {
-  flex: 1;
-  min-width: 0;
-  max-width: none;
+/* ===== PC用（デフォルト） ===== */
+#form-wrapper {
+  display: flex;
+  justify-content: left;   /* 右寄せ */
+  width: 30%;
 }
 
-.form-section {
-  flex: 0 0 500px;
-  max-width: 500px;
-  margin-left: 0;
+#form-container {
+  transform: none;             /* PCでは縮小しない */
+  max-width: 900px;            /* 横幅制限 */
 }
+
+#form-container iframe {
+  width: 580px;
+  border: none;
+  display: block;
+  min-height: 1024px;          /* PC用の高さ */
+}
+
+.exams-section { flex: 1; min-width: 0; }
 
 @media (max-width: 1024px) {
-  .page-layout {
-    flex-direction: column;
-  }
-  .exams-section,
-  .form-section {
+  .page-layout { flex-direction: column; }
+  .exams-section, .form-section { width: 100%; max-width: 100%; }
+  body h1 { font-size: 22px; }
+  body p { font-size: 14px; }
+  #form-wrapper {
+    display: flex;
+    justify-content: center;   /* 中央寄せ */
     width: 100%;
-    max-width: 100%;
+
   }
+
+  #form-container {
+    transform: scale(0.85);    /* 少し縮小して見やすく */
+    transform-origin: top center;
+    min-width: 125%;
+    margin: 0 auto;
+  }
+
+  #form-container iframe {
+    width: 100%;               /* 横幅を広めに補正 */
+    min-height: 575px;         /* 高さも余裕を持たせる */
+    border: none;
+    display: block;
+  }
+
 }
 
-/* ===== デフォルトテーマに従う ===== */
-
-/* ライトテーマ */
-@media (prefers-color-scheme: light) {
-  body { background-color: #fff; color: #17184b; }
-  .exam-toggle { background-color: #2c3e50; color: #fff; }
-  .subject-toggle { background: #fff; color: #000; border-color: #ccc; }
-  .pdf-list a { color: #007acc; }
-  .site-footer--center { background: #fafafa; color: #444; border-top-color: #eee; }
-}
-
-/* ダークテーマ */
-@media (prefers-color-scheme: dark) {
-  body { background-color: #121212; color: #e0e0e0; }
-  h1, h2 { color: #fff; }
-  .exam-toggle { background-color: #272d47; color: #fff; }
-  .subject-toggle { background: #121212; color: #fff; border-color: #555; }
-  .pdf-list a { color: #80cbc4; }
-  .site-footer--center { background: #1e1e1e; color: #aaa; border-top-color: #333; }
-  .exam-toggle:hover { background-color: #313652; }
-  .subject-toggle:hover { background: #37474f; border-color: #888; }
-  .pdf-list a:hover { color: #b2dfdb; }
-}
-
-/* ===== ボタンで強制切替 ===== */
+/* ===== ライトテーマ ===== */
 body[data-theme="light"] {
   background-color: #fff;
   color: #17184b;
 }
 
+body[data-theme="light"] #grade-tabs button,
+body[data-theme="light"] #dark-mode-toggle,
+body[data-theme="light"] .group-button {
+  background: #e0e6ed;
+  color: #17184b;
+}
+
+body[data-theme="light"] #grade-tabs button.active {
+  background: #017aca;
+  color: #fff;
+}
+
+body[data-theme="light"] #dark-mode-toggle:hover,
+body[data-theme="light"] .group-button:hover {
+  background: #017aca;
+  color: #fff;
+}
+
+
+body[data-theme="light"] .exam-toggle {
+  background-color: #2c3e50;
+  color: #fff;
+}
+
+body[data-theme="light"] .subject-toggle {
+  background: #fff;
+  color: #000;
+  border-color: #ccc;
+}
+
+body[data-theme="light"] .pdf-list a { color: #007acc; }
+body[data-theme="light"] .site-footer--center {
+  background: #fafafa;
+  color: #444;
+  border-top-color: #eee;
+}
+
+/* ===== ダークテーマ ===== */
 body[data-theme="dark"] {
   background-color: #121212;
   color: #e0e0e0;
 }
+
+body[data-theme="dark"] a:visited { color: #c58af9; }
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2 { color: #fff; }
+
+/* ===== 学年選択ボタン ===== */
+body[data-theme="dark"] #grade-tabs button,
+body[data-theme="dark"] #dark-mode-toggle,
+body[data-theme="dark"] .group-button {
+  background: #37394f;
+  color: #fff;
+}
+
+
+body[data-theme="dark"] #grade-tabs button.active {
+  background:#6d6f86;
+  color: #fff;
+}
+
+body[data-theme="dark"] #dark-mode-toggle:hover,
+body[data-theme="dark"] .group-button:hover {
+  background: #313652;
+  color: #fff;
+}
+
+body[data-theme="dark"] .exam-toggle {
+  background-color: #37394f;
+  color: #fff;
+}
+
+
+body[data-theme="dark"] .subject-toggle {
+  background: #121212;
+  color: #fff;
+  border-color: #555;
+}
+
+body[data-theme="dark"] .pdf-list a { color: #80cbc4; }
+body[data-theme="dark"] .site-footer--center {
+  background: #1e1e1e;
+  color: #aaa;
+  border-top-color: #333;
+}
+
+body[data-theme="dark"] .exam-toggle:hover { background-color: #313652; }
+body[data-theme="dark"] .subject-toggle:hover { background: #37474f; border-color: #888; }
+body[data-theme="dark"] .pdf-list a:hover { color: #b2dfdb; }
