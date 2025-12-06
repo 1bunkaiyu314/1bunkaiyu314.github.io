@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow">
+    <title>VBA基本文法</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S8J6J20N4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6S8J6J20N4');
+    </script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/vbnet.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <h1>VBA基本文法</h1><hr>     
+
+    
+<h2>0. 基本</h2>
+
+
+<p>
+  プログラミングにおいて「型」は重要。これを間違うとプログラムが動かない。
+</p>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <th>種類</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>文字列</td>
+    <td>String</td>
+    <td>ただの文字を扱う</td>
+  </tr>
+  <tr>
+    <td>数値</td>
+    <td>Long</td>
+    <td>計算に使われる整数型</td>
+  </tr>
+  <tr>
+    <td>真偽値</td>
+    <td>-</td>
+    <td>if文の判定に使われる（true / false）</td>
+  </tr>
+</table><br>
+
+<p>
+算術演算子は計算に使われる。プログラミング固有の記号が使われることも多い
+</p>
+
+<table>
+  <tr>
+    <th>種類</th>
+    <th>意味</th>
+  </tr>
+  <tr>
+    <td>+</td>    
+    <td>加法</td>
+  </tr>
+  <tr>
+    <td>-</td>    
+    <td>減法</td>
+  </tr>
+  <tr>
+    <td>*</td>    
+    <td>乗法</td>
+  <tr>
+    <td>/</td>    
+    <td>除法</td>
+  </tr>
+  <tr>
+    <td>Mod</td>    
+    <td>剰余</td>
+  </tr>
+  </tr>
+</table>
+<p>※A Mod B で、A割るBの余りが求められる。</p><br>
+
+
+<p>
+比較演算子は If 文などで使う。数学の記号とだいたい同じ。
+</p>
+
+<table>
+  <tr>
+    <th>種類</th>
+    <th>意味</th>
+  </tr>
+  <tr>
+    <td>=</td>
+    <td>等しい</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>右より左が大きい</td>
+  </tr>
+  <tr>
+    <td><</td>
+    <td>右より左が大きい</td>
+  </tr>
+  <tr>
+    <td>>=</td>
+    <td>左が右以上</td>
+  </tr>
+  <tr>
+    <td><=</td>
+    <td>左が右以下</td>
+  </tr>
+</table><br>
+
+<h2>1. セル操作</h2>
+
+
+<pre class="vba"><code class="language-vbnet">
+Cells.Interior.Color = RGB(255, 0, 0)
+</code></pre>
+<pre>
+セル全体の色を赤色（＝#FF0000）に変更する。
+</pre><br>
+
+
+<pre class="vba"><code class="language-vbnet">
+Cells(1, 1).Interior.Color = RGB(255, 0, 255)
+</code></pre>
+<pre>
+1行1列（＝A1）のセルをマゼンタに変更する。
+</pre><br>
+
+
+<pre class="vba"><code class="language-vbnet">
+Cells(2, 1).Value = "Hello World"
+</code></pre>
+<pre>
+A2 のセルを Hello World という文字に置き換える。
+</pre><br>
+
+
+<pre class="vba"><code class="language-vbnet">
+Cells(2, 1).Value = "Hello World"
+</code></pre>
+<pre>
+A2 のセルを Hello World という文字に置き換える。
+</pre>
+
+
+
+<h2>2. 変数</h2>
+
+
+
+<pre class="vba"><code class="language-vbnet">
+Dim i As String
+</code></pre>
+<pre>
+i という変数を文字列型で作成
+</pre>
+<div class="point">As の後ろが型（Long / String など）になる！</div><br>
+
+
+
+<pre class="vba"><code class="language-vbnet">
+Dim i As Long
+i = 4
+</code></pre>
+<pre>
+i という変数を整数型で作成
+i に 4 を代入する
+</pre>
+<div class="point">「=」は「等しい」という意味ではない！！</div><br>
+
+
+<pre class="vba"><code class="language-vbnet">
+Dim i1 As Long
+Dim i2 As Long
+
+i1 = 1
+i2 = Cells(1, 1).Value + i1
+</code></pre>
+<pre>
+i1 という変数を整数型で作成
+i2 という変数を整数型で作成
+
+i1 に 1 を代入
+i2 に A1 + i1 を代入
+</pre><br>
+
+
+
+<h2>3. If文</h2>
+
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+If Cells.(1, 1).Value >= 40 Then
+    
+    Cells.(1, 1).Interior.Color = RGB(0, 255, 255)
+
+End If
+</code></pre>
+<pre>
+もし、A1が40以上ならば
+A1をシアンにする
+</pre><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+If Cells.(1, 1).Value >= 40 Then
+    
+    Cells.(1, 1).Interior.Color = RGB(0, 255, 255)
+
+Else
+
+    Cells.(1, 1).Interior.Color = RGB(255, 255, 255)
+
+End If
+</code></pre>
+<pre>
+もし、A1が40以上ならば
+    A1をシアンにする
+
+でなければ
+    A1を白にする
+</pre>
+<div class="point">Else の中を言い換えると、「A1 < 40 である」ということ！</div><br>
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+If Cells.(1, 1).Value >= 20 Then
+    
+    Cells.(1, 1).Interior.Color = RGB(0, 255, 255)
+
+ElseIf Cells.(1, 1).Value >= 10 Then
+
+    Cells.(1, 1).Interior.Color = RGB(255, 255, 255)
+
+Else Cells.(1, 1).Value >= 0 Then
+    
+    Cells.(1, 1).Interior.Color = RGB(0, 0, 0)
+
+End If
+</code></pre>
+<pre>
+もし、A1が20以上なら
+    A1をシアンにする
+そうではなくてもし、A1が10以上なら
+    A1を白にする
+そうではなくてもし、A1が0以上なら
+    A1を黒にする
+</pre>
+<div class="point">複雑な If 文は条件を一つずつ確認！</div><br>
+
+
+<h2>4. For文</h2>
+
+
+
+<pre class="vba"><code class="language-vbnet"></code>
+
+</code></pre>
+<p>
+
+</p>
+<div class="point"></div><br>
+
+    <script src="script.js"></script>
+  </body>

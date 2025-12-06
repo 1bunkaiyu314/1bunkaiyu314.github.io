@@ -1,0 +1,108 @@
+/* 全体の基本設定 */
+body {
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  margin: 32px auto;
+  padding: 0 20px;
+  max-width: 900px;
+  line-height: 1.75;
+  background: #fafafa;
+  color: #222;
+}
+
+/* 見出し装飾 */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3em;
+  color: #334;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 2.2em;
+  border-left: 6px solid #4a7efc;
+  padding-left: 10px;
+  color: #333;
+}
+
+/* 説明文 */
+p, pre {
+  margin: 1em 0;
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+
+
+/* --- 表（table）デザイン --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 16px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+th, td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+th {
+  background: #e9f0ff;
+  font-weight: 700;
+  color: #223;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* --- VBA のコード表示ブロック --- */
+code, pre.vba {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+pre.vba {
+  background: #27292f;
+  color: #f0f0f0;
+  padding: 1px 3px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* === ポイント欄のデザイン === */
+.point {
+  background: #eaf4ff;       /* コードより青みを薄く */
+  border-left: 4px solid #65a0ff;
+  padding: 10px 14px;
+  margin: 12px 0 24px 0;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* 箇条書きを見やすく */
+.point ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.point li {
+  margin-bottom: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+  p, pre { font-size: 14px; }
+  th, td { font-size: 14px; padding: 8px 10px;}
+  code { font-size: 14px;}
+  pre.vba {
+  white-space: pre-wrap;  /* 自動で折り返す */
+  word-break: break-all;  /* 単語の途中でも折り返す */
+  }
+}
+
