@@ -31,54 +31,52 @@
   <script src="exam_subject_map.js"></script>
   
   <script>
-  // 年を自動更新
-  document.getElementById("year").textContent = new Date().getFullYear();
+    // 年を自動更新
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  // URLパラメータを取得
-const params = new URLSearchParams(window.location.search);
-const grade   = params.get('grade');
-const exam    = params.get('exam');
-const subject = params.get('subject');
-const file    = params.get('file');
-const label   = params.get('label');   // ← ここで受け取る
+    // URLパラメータを取得
+    const params = new URLSearchParams(window.location.search);
+    const grade   = params.get('grade');
+    const exam    = params.get('exam');
+    const subject = params.get('subject');
+    const file    = params.get('file');
+    const label   = params.get('label');   // ← ここで受け取る
 
-const gradeLabel   = grade ? grade + "年生" : "";
-const examLabel    = examLabelMap[exam] || exam;
-const subjectLabel = subjectLabelMap[subject] || subject;
+    const gradeLabel   = grade ? grade + "年生" : "";
+    const examLabel    = examLabelMap[exam] || exam;
+    const subjectLabel = subjectLabelMap[subject] || subject;
 
-  gtag('event', 'file_open', {
-    grade: grade,
-    exam: exam,
-    subject: subject,
-    file: file,
-    label: label
-  });
+    gtag('event', 'file_open', {
+      grade: gradeLabel,     // ← "2年生"
+      exam: examLabel,       // ← "前期末考査"
+      subject: subjectLabel, // ← "数学"など
+      file: file,
+      label: fileName
+    });
 
-// label があれば優先、なければ file の末尾
-let fileName;
-if (label) {
-  fileName = decodeURIComponent(label);
-} else if (file) {
-  const clean = file.split(/[?#]/)[0];
-  const seg   = clean.split('/').filter(Boolean).pop();
-  fileName = seg || clean;
-} else {
-  fileName = "";
-}
+    // label があれば優先、なければ file の末尾
+    let fileName;
+    if (label) {
+      fileName = decodeURIComponent(label);
+    } else if (file) {
+      const clean = file.split(/[?#]/)[0];
+      const seg   = clean.split('/').filter(Boolean).pop();
+      fileName = seg || clean;
+    } else {
+      fileName = "";
+    }
 
-const infoText = `
-  <p>学年: ${gradeLabel}</p>
-  <p>考査: ${examLabel}</p>
-  <p>教科: ${subjectLabel}</p>
-  <p>ファイル: ${fileName}</p>
-`;
-document.getElementById("info").innerHTML = infoText;
+    const infoText = `
+      <p>学年: ${gradeLabel}</p>
+      <p>考査: ${examLabel}</p>
+      <p>教科: ${subjectLabel}</p>
+      <p>ファイル: ${fileName}</p>
+    `;
+    document.getElementById("info").innerHTML = infoText;
 
-
-setTimeout(() => {
-  if (file) window.location.href = file;
-}, 1000);
-
+    setTimeout(() => {
+      if (file) window.location.href = file;
+    }, 1000);
   </script>
 </body>
 </html>
