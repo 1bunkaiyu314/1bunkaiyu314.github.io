@@ -125,7 +125,7 @@
   </tr>
   <tr>
     <td><</td>
-    <td>右より左が大きい</td>
+    <td>左より右が大きい</td>
   </tr>
   <tr>
     <td>>=</td>
@@ -153,14 +153,6 @@ Cells(1, 1).Interior.Color = RGB(255, 0, 255)
 </code></pre>
 <pre>
 1行1列（＝A1）のセルをマゼンタに変更する。
-</pre><br>
-
-
-<pre class="vba"><code class="language-vbnet">
-Cells(2, 1).Value = "Hello World"
-</code></pre>
-<pre>
-A2 のセルを Hello World という文字に置き換える。
 </pre><br>
 
 
@@ -349,7 +341,7 @@ Dim i As Long
 
 For i = 1 To 5
 
-    If Cells(i, 1).Value = i 
+    Cells(i, 1).Value = i 
 
 Next i
 </code></pre>
@@ -374,7 +366,7 @@ For i = 1 To 10
 
     End If
 
-Next c
+Next i
 </code></pre>
 <pre>
 （略）
