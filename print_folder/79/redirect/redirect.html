@@ -46,6 +46,14 @@ const gradeLabel   = grade ? grade + "年生" : "";
 const examLabel    = examLabelMap[exam] || exam;
 const subjectLabel = subjectLabelMap[subject] || subject;
 
+  gtag('event', 'file_open', {
+    grade: grade,
+    exam: exam,
+    subject: subject,
+    file: file,
+    label: label
+  });
+
 // label があれば優先、なければ file の末尾
 let fileName;
 if (label) {
