@@ -35,31 +35,42 @@
   document.getElementById("year").textContent = new Date().getFullYear();
 
   // URLパラメータを取得
-  const params = new URLSearchParams(window.location.search);
-  const grade = params.get('grade');   // 学年コード (1,2,3)
-  const exam = params.get('exam');     // 考査コード (1〜5)
-  const subject = params.get('subject'); // 教科コード (1〜50)
-  const file = params.get('file');     // ファイルパス or Webリンク
+const params = new URLSearchParams(window.location.search);
+const grade   = params.get('grade');
+const exam    = params.get('exam');
+const subject = params.get('subject');
+const file    = params.get('file');
+const label   = params.get('label');   // ← ここで受け取る
 
-  // コードをラベルに変換
-  const gradeLabel = grade ? grade + "年生" : "";
-  const examLabel = examLabelMap[exam] || exam;
-  const subjectLabel = subjectLabelMap[subject] || subject;
-  const fileName = file ? file.split('/').pop() : "";
+const gradeLabel   = grade ? grade + "年生" : "";
+const examLabel    = examLabelMap[exam] || exam;
+const subjectLabel = subjectLabelMap[subject] || subject;
 
-  // 表示用テキストを組み立て
-  const infoText = `
-    <p>学年: ${gradeLabel}</p>
-    <p>考査: ${examLabel}</p>
-    <p>教科: ${subjectLabel}</p>
-    <p>ファイル: ${fileName}</p>
-  `;
-  document.getElementById("info").innerHTML = infoText;
+// label があれば優先、なければ file の末尾
+let fileName;
+if (label) {
+  fileName = decodeURIComponent(label);
+} else if (file) {
+  const clean = file.split(/[?#]/)[0];
+  const seg   = clean.split('/').filter(Boolean).pop();
+  fileName = seg || clean;
+} else {
+  fileName = "";
+}
 
-  // 数秒後にリンクへリダイレクト（PDFでもWebリンクでも同じ）
-  setTimeout(() => {
-    if (file) window.location.href = file;
-  }, 1000);
+const infoText = `
+  <p>学年: ${gradeLabel}</p>
+  <p>考査: ${examLabel}</p>
+  <p>教科: ${subjectLabel}</p>
+  <p>ファイル: ${fileName}</p>
+`;
+document.getElementById("info").innerHTML = infoText;
+
+
+setTimeout(() => {
+  if (file) window.location.href = file;
+}, 1000);
+
   </script>
 </body>
 </html>

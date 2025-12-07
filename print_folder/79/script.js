@@ -60,15 +60,32 @@ function renderExamsForGrade(gradeObj) {
 
       subjectBtn.textContent = subject.name;
 
-      subject.links.forEach(link => {
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.target = '_blank';
-        a.rel = 'noopener';
-        // label が無ければファイル名を自動利用
-        a.textContent = link.label || link.href.split('/').pop();
-        pdfList.appendChild(a);
-      });
+subject.links.forEach(link => {
+  const a = document.createElement('a');
+  a.href = link.href;
+  a.target = '_blank';
+  a.rel = 'noopener';
+
+  // Extract file and label from the href query
+  let displayName = link.label;
+  try {
+    const q = new URL(link.href).searchParams;
+    const fileParam  = q.get('file');
+    const labelParam = q.get('label');
+    displayName = displayName || labelParam;
+    if (!displayName && fileParam) {
+      displayName = decodeURIComponent(fileParam.split(/[?#]/)[0].split('/').filter(Boolean).pop());
+    }
+  } catch {
+    // Fallback: last segment of the href if parsing fails
+    displayName = displayName || link.href.split(/[?#]/)[0].split('/').filter(Boolean).pop();
+  }
+
+  // Final fallback to href itself
+  a.textContent = displayName || link.href;
+  pdfList.appendChild(a);
+});
+
 
 
       subjectList.appendChild(subjectBlock);
