@@ -28,8 +28,6 @@
     <div class="license">© <span id="year"></span> 考査対策勉強会 All Rights Reserved</div>
   </footer>
 
-  <script src="exam_subject_map.js"></script>
-  
   <script>
     // 年を自動更新
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -45,14 +43,6 @@
     const gradeLabel   = grade ? grade + "年生" : "";
     const examLabel    = examLabelMap[exam] || exam;
     const subjectLabel = subjectLabelMap[subject] || subject;
-
-    gtag('event', 'file_open', {
-      grade: gradeLabel,     // ← "2年生"
-      exam: examLabel,       // ← "前期末考査"
-      subject: subjectLabel, // ← "数学"など
-      file: file,
-      label: fileName
-    });
 
     // label があれば優先、なければ file の末尾
     let fileName;
@@ -72,8 +62,19 @@
       <p>教科: ${subjectLabel}</p>
       <p>ファイル: ${fileName}</p>
     `;
+
     document.getElementById("info").innerHTML = infoText;
 
+    if (typeof gtag === 'function') {
+      gtag('event', 'file_open', {
+        grade: gradeLabel,
+        exam: examLabel,
+        subject: subjectLabel,
+        file: file,
+        label: fileName
+      });
+    }
+    
     setTimeout(() => {
       if (file) window.location.href = file;
     }, 1000);
