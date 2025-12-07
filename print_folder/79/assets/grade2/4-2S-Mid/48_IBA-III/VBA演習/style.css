@@ -1,0 +1,175 @@
+/* 全体の基本設定 */
+body {
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 900px;
+  line-height: 1.75;
+  background: #fafafa;
+  color: #222;
+}
+
+
+.page-layout {
+  flex: 1;
+}
+
+hr {
+  border: none;              /* デフォルトの影響を消す */
+  border-top: 2px solid #ccc; /* 好きな色で線を出す */
+  margin: 20px 0;            /* 上下の余白を調整 */
+}
+
+/* 見出し装飾 */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.3em;
+  color: #334;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* 説明文 */
+p, pre {
+  margin: 1em 0;
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.question {
+  font-family: "Yu Mincho", "游明朝", serif;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+.question p {
+  font-family: "Yu Mincho", "游明朝", serif;
+  margin: 14px 0;
+}
+
+.question h2 {
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+}
+
+.answer {
+  font-family: "Yu Gothic UI", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background: #f9f9f9;
+  border-left: 8px solid #19345e;
+  padding: 12px 16px;
+  margin: 20px 0 10px 0;
+  border-radius: 6px;
+}
+
+.answer h3 {
+  font-size: 22px;
+  margin-top: 0;
+  color: #334;
+}
+
+.answer pre {
+  background: #27292f;
+  color: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.accordion {
+  background: #f9f9f9;
+  color: #334;
+  cursor: pointer;
+  padding: 0px;
+  width: 100%;
+  height: 60px;            /* 高さを固定 */
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 22px;
+  margin: 0px;
+  border-radius: 4px;
+}
+
+.accordion:hover {
+  background: #bebebe;
+}
+
+.panel {
+  padding: 0 14px;
+  display: none; /* 初期状態は非表示 */
+  margin-top: 4px;
+  margin-bottom: 0;
+  border-radius: 4px;
+}
+
+
+
+.answer h3{
+  padding: 10px 10px;
+  border-radius: 4px;
+}
+
+/* --- VBA のコード表示ブロック --- */
+code, pre.vba {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+pre.vba {
+  background: #27292f;
+  color: #f0f0f0;
+  padding: 1px 3px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+/* === ポイント欄のデザイン === */
+.point {
+  background: #eaf4ff;       /* コードより青みを薄く */
+  border-left: 4px solid #65a0ff;
+  padding: 10px 14px;
+  margin: 12px 0 24px 0;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* 箇条書きを見やすく */
+.point ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.point li {
+  margin-bottom: 4px;
+}
+
+@media screen and (max-width: 600px) {
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+  p, pre { font-size: 14px; }
+  th, td { font-size: 14px; padding: 8px 10px;}
+  code { font-size: 14px;}
+  pre.vba {
+  white-space: pre-wrap;  /* 自動で折り返す */
+  word-break: break-all;  /* 単語の途中でも折り返す */
+  }
+}
+
+.site-footer--center {
+  margin-top: auto; /* フッターを一番下に押し下げる */
+  text-align: center;
+  padding: 12px 0;
+  font-size: 13px;
+  border-top: 1px solid #eee;
+  background: #fafafa;
+  color: #444;
+}

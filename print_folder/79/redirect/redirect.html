@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <meta name="robots" content="noindex, nofollow">
+      <title>ページに移動中...</title>
+      <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      <link rel="stylesheet" href="redirect.css"/>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S8J6J20N4"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6S8J6J20N4');
+      </script>
+      <script src="exam_subject_map.js"></script>
+  </head>
+  <body>
+  <div class="card" role="status" aria-live="polite" aria-busy="true">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="message">資料を読み込んでいます...</div>
+    <div class="sub">少々お待ちください</div>
+    <div id="info" class="info"></div>
+  </div>
+  <footer>
+    <div class="license">© <span id="year"></span> 考査対策勉強会 All Rights Reserved</div>
+  </footer>
+
+  <script src="exam_subject_map.js"></script>
+  
+  <script>
+  // 年を自動更新
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // URLパラメータを取得
+  const params = new URLSearchParams(window.location.search);
+  const grade = params.get('grade');   // 学年コード (1,2,3)
+  const exam = params.get('exam');     // 考査コード (1〜5)
+  const subject = params.get('subject'); // 教科コード (1〜50)
+  const file = params.get('file');     // ファイルパス or Webリンク
+
+  // コードをラベルに変換
+  const gradeLabel = grade ? grade + "年生" : "";
+  const examLabel = examLabelMap[exam] || exam;
+  const subjectLabel = subjectLabelMap[subject] || subject;
+  const fileName = file ? file.split('/').pop() : "";
+
+  // 表示用テキストを組み立て
+  const infoText = `
+    <p>学年: ${gradeLabel}</p>
+    <p>考査: ${examLabel}</p>
+    <p>教科: ${subjectLabel}</p>
+    <p>ファイル: ${fileName}</p>
+  `;
+  document.getElementById("info").innerHTML = infoText;
+
+  // 数秒後にリンクへリダイレクト（PDFでもWebリンクでも同じ）
+  setTimeout(() => {
+    if (file) window.location.href = file;
+  }, 1000);
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ffffff; /* 白基調 */
+  color: #222;
+  position: relative;
+}
+
+.card {
+  background: #ffffff;
+  padding: 40px 60px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  border: 1px solid #e5e5e5;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 6px solid #e0e0e0;
+  border-top-color: #555;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+
+}
+
+.message {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.sub {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 0.95rem;
+  color: #444;
+  text-align: left;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

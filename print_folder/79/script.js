@@ -65,9 +65,11 @@ function renderExamsForGrade(gradeObj) {
         a.href = link.href;
         a.target = '_blank';
         a.rel = 'noopener';
-        a.textContent = link.label;
+        // label が無ければファイル名を自動利用
+        a.textContent = link.label || link.href.split('/').pop();
         pdfList.appendChild(a);
       });
+
 
       subjectList.appendChild(subjectBlock);
     });

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="VBA基本文法"> 
+    <meta property="og:description" content="２年後期中間 IBARAMA III の対策資料">
+    <meta property="og:image" content="favicon.ico">
+    <title>VBA基本文法</title>
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S8J6J20N4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6S8J6J20N4');
+    </script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/vbnet.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </head>
+  <body>
+    <h1>VBA演習</h1><hr>
+
+
+<div class="question">
+<h2>第１問</h2>
+    <p>
+      以下は２以上の自然数を素数判定するものである。このプログラムに関する次の問いに答えよ。<br>
+      (1)　[1]に入るプログラムは、nを整数にするプログラムである。[1]に入るプログラムを答えよ。<br>
+      (2)　[2]に入るプログラムを次の中から選べ。<br>
+      　　　　　⓪ <code class="language-vbnet">x / i = 0　</code>①<code class="language-vbnet">i / x = 0　</code>② <code class="language-vbnet"></code>x Mod i = 0　</code>③ <code class="language-vbnet"></code>i Mod x = 0</code>
+
+    </p>    
+
+<pre class="vba"><code class="language-vbnet"></code>
+Sub ボタン1_Click()
+    Dim n As Long
+    Dim isP As Long
+    Dim i As Long
+    n = InputBox("2以上の自然数を入力")
+    isP = 0
+    If n < 2 Then
+        Call MsgBox("2以上の自然数を入力してください")
+    Else
+        If _____[1]_____ Then
+            Call MsgBox("2以上の自然数を入力してください")  
+        Else
+            For i = 2 To n
+                If _____[2]_____ Then
+                    isP = 1
+                End If
+            Next i
+            If isP = 0 Then
+                Call MsgBox(n & "は素数。")
+            Else
+                Call MsgBox(n & "は合成数。")
+            End If
+        End If
+    End If
+End Sub
+</code></pre>
+<pre>
+
+</pre>
+<div class="point"></div><br>
+
+<!-- TEMPLATE
+<pre class="vba"><code class="language-vbnet"></code>
+
+</code></pre>
+<pre>
+
+</pre>
+<div class="point"></div><br>
+-->
+
+<div class="answer">
+  <button class="accordion"><h3>解答</h3></button>
+  <div class="panel">
+    <p>
+      (1)　<code class="language-vbnet">n - (n Mod 1)</code><br>
+      n Mod 1 でnの小数部だけを取り出す。
+    </p>
+    <p>(2)　2<br>
+      x÷2, x÷3, x÷4...という処理になる。
+    </p>
+
+    <div class="mermaid">
+      flowchart TD
+          Start([開始])
+          Input[nを入力]
+          Check{n < 2 ?}
+          MsgInvalid["MsgBox: 2以上の数字を入力してください"]
+          MsgValid[nの切り下げをxに代入]
+          Loop[/iを2からxの範囲で繰り返す\]
+          CheckPrime{iでxを割れる？}
+          SetIsP[ isP = 1]
+          NextI[\次のi/]
+          CheckFinal{isP = 0 ?}
+          Prime["n は素数"]
+          Composite["n は合成数"]
+          End([終了])
+
+          Start --> Input
+          Input --> Check
+          Check -- Yes --> MsgInvalid
+          Check -- No --> MsgValid --> Loop
+          Loop --> CheckPrime
+          CheckPrime -- Yes --> SetIsP --> NextI --> Loop
+          CheckPrime -- No --> NextI
+          Loop --> CheckFinal
+          CheckFinal -- Yes --> Prime --> End
+          CheckFinal -- No --> Composite --> End
+    </div>
+  </div>
+</div>
+
+</div>
+    <footer class="site-footer site-footer--center">
+      <div>© <span id="year"></span> 考査対策勉強会 All rights reserved.</div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+          startOnLoad: true, 
+          theme: "neutral",
+          flowchart: {
+            curve: 'linear'   // 矢印を直線に
+          }
+        });
+    </script>
+  </body>
