@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+      <meta property="og:title" content="全クラス統一時間割"> 
+      <meta property="og:description" content="クラスや選択科目によってバラバラな79期の時間割を、一元化するために生まれました。">
+      <meta property="og:image" content="thumbnail.png">
+      <link rel="stylesheet" href="style.css">
+      <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+      <title>全クラス統一時間割</title>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-6S8J6J20N4"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6S8J6J20N4');
+      </script>
+  </head>
+  <body>
+    <div class="card" role="status" aria-live="polite" aria-busy="true">
+      <div class="spinner" aria-hidden="true"></div>
+      <div class="message">資料を読み込んでいます...</div>
+      <div class="sub">少々お待ちください</div>
+      <div id="info" class="info"></div>
+    </div>
+    <footer>
+      <div class="license">© <span id="year"></span> 考査対策勉強会 All Rights Reserved</div>
+    </footer>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const infoText = `
+        <p>学年: 2年生</p>
+        <p>ファイル: 全クラス統一時間割</p>
+      `;
+
+      document.getElementById("info").innerHTML = infoText;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'file_open', {
+          grade: "2年生",
+          subject: "ツール",
+          file: "全クラス統一時間割",
+          label: "全クラス統一時間割"
+        });
+      }
+      
+      setTimeout(function () {
+        window.location.href = "https://docs.google.com/spreadsheets/d/1Uq5KWqREVTXSGioUnjy7Wfe7R238IkNhwvg0u5x58jM/edit?usp=sharing";
+      }, 1000);
+    </script>
+  </body>
+</html>
