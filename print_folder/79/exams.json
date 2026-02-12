@@ -709,7 +709,11 @@
           },
           {
             "name": "化学特講",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=27&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/27_kagaku-tokkou/後期期末.有機[反応原理].pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=27&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/27_kagaku-tokkou/後期期末.有機[芳香族].pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=27&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/27_kagaku-tokkou/後期中間.有機[脂肪族].pdf"}
+            ]
           },
           {
             "name": "生物特講",
@@ -738,6 +742,12 @@
           {
             "name": "IBARAMA III",
             "links": []
+          },
+          {
+            "name": "その他",
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=50&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/50_sonota/考査対策講座の日程一覧.jpg"}
+            ]
           }
         ]
       }
