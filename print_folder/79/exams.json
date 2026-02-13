@@ -681,11 +681,15 @@
           },
           {
             "name": "世界史探究",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=12&label=世界史探究～学年末考査～&file=https://docs.google.com/presentation/d/1ceEwHcz3HgaguiurRgUS6HrWFgFN2RSf/edit?usp=sharing&ouid=112671603111730290153&rtpof=true&sd=true"}
+            ]
           },
           {
             "name": "公共",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=14&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/14_koukyou/後期期末　公共　単語帳.pdf"}
+            ]
           },
           {
             "name": "理数数学IIα",
@@ -705,7 +709,10 @@
           },
           {
             "name": "物理特講",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=30&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/30_buturi-tokkou/欠回避に向けて.pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=30&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/30_buturi-tokkou/予想問題.pdf"}
+            ]
           },
           {
             "name": "化学特講",
@@ -717,7 +724,9 @@
           },
           {
             "name": "生物特講",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=33&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/33_seibutu-tokkou/後期期末　生物　単語帳　ver.1.pdf"}
+            ]
           },
           {
             "name": "地学特講",
