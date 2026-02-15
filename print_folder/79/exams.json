@@ -776,7 +776,8 @@
           {
             "name": "その他",
             "links": [
-              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=50&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/50_sonota/(準備中)"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=50&label=範囲表(Web版)&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/50_sonota/範囲表"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=50&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/50_sonota/範囲表.pdf"},
               { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=50&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/50_sonota/考査対策講座の日程一覧.jpg"}
             ]
           }
