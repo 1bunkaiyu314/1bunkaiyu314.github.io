@@ -674,7 +674,8 @@
           {
             "name": "地理探究",
             "links": [
-              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=7&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/07_tiri-tankyu/後期期末　地理　暗期用　ver1.pdf"}
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=7&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/07_tiri-tankyu/後期期末_地理_暗期用_ver1.pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=7&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/07_tiri-tankyu/共通テスト地理過去問(2026~2004)-2年学年末.pdf"}
             ]
           },
           {
@@ -732,7 +733,8 @@
             "name": "物理特講",
             "links": [
               { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=30&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/30_buturi-tokkou/欠回避に向けて.pdf"},
-              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=30&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/30_buturi-tokkou/予想問題.pdf"}
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=30&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/30_buturi-tokkou/予想問題.pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=30&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/30_buturi-tokkou/予想問題解答.pdf"}
             ]
           },
           {
@@ -764,7 +766,11 @@
           },
           {
             "name": "総合英語II長文",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=43&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/43_eigo-II-tyobun/CuttingEdge10本文解説.pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=43&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/43_eigo-II-tyobun/CuttingEdge16本文解説.pdf"},
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=43&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/43_eigo-II-tyobun/CuttingEdge18本文解説.pdf"}
+            ]
           },
           {
             "name": "保健",
