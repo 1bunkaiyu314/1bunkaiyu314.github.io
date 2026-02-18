@@ -665,7 +665,9 @@
         "subjects": [
           {
             "name": "現代文B",
-            "links": []
+            "links": [
+              { "href": "https://1bunkaiyu314.github.io/print_folder/79/redirect/redirect.html?grade=2&exam=5&subject=1&file=https://1bunkaiyu314.github.io/print_folder/79/assets/grade2/5-2S-Final/01_genbun/「こころ」解説.pdf"}
+            ]
           },
           {
             "name": "古典探究",
