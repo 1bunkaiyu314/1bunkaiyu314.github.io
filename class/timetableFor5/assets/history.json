@@ -1,5 +1,9 @@
 [
     {
+        "version": "0.0.3",
+        "detail": "<ul><li>パス間違いを修正</li></ul>"
+    },
+    {
         "version": "0.0.2",
         "detail": "<ul><li>不具合の調整</li></ul>"
     },
