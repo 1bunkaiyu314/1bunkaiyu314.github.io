@@ -1,0 +1,275 @@
+:root {
+    --main-color: #230b57;
+    --accent-color: #00a1e9;
+    --border-color: #333;
+    --background-color: #121212;
+    --selectable-color: #cab8d9;
+}
+
+body {
+    background: var(--background-color);
+    font-family: serif;
+    color: #e0e0e0;
+    font-size: 12px;
+}
+
+button { font-family: serif; }
+
+#title { font-size: 32px; text-align: center;}
+
+table.timetable {
+    width: 90%;
+    border-collapse: collapse;
+    margin: auto;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    table-layout: fixed;
+}
+
+.timetable thead {
+    background: #272727;
+}
+
+.timetable thead th {
+    color: var(--accent-color);
+    border-bottom: 2px solid #777;
+}
+
+.timetable tbody th {
+    background-color: #151515;
+}
+
+.timetable th, .timetable td {
+    padding: 12px 0px;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+.timetable th {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+
+.timetable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.selected {
+    background-color: rgba(0, 161, 233, 0.3);
+    box-shadow: 0 0 10px #00a1e9;
+    transition: 0.2s;
+}
+
+/* クリック可能 */
+.timetable td,
+.timetable .date-cell {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* 日付セルの選択色 */
+.timetable .date-selected {
+    background-color: rgba(0, 161, 233, 0.3);
+    box-shadow: 0 0 10px #00a1e9;
+    transition: 0.2s;
+}
+
+.timetable .subject-selected {
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.2s;
+}
+
+table.other-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    table-layout: fixed;
+}
+
+.other-table th, .other-table td {
+    height: 64px;
+    padding: 8px 0;
+    text-align: center;
+    border-right: 2px solid var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.other-table td {
+    padding: 8px;
+    text-align: justify;
+    vertical-align: top;
+}
+
+.other-table thead th:last-child, .other-table tbody td:last-child {
+    border-bottom: none;
+    border-right: none;
+}
+
+.other-table thead td:last-child {
+    border-right: none;
+}
+
+@media (max-width: 600px) {
+    #title { font-size: 18px; text-align: center;}
+    .timetable th:nth-child(n+6),
+    .timetable td:nth-child(n+6) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 40px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+8),
+    .timetable td:nth-child(n+8) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+
+@media (min-width: 900px) {
+    * {font-size: 18px;}
+    .timetable th,
+    .timetable td { display: table-cell; }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 120px;
+        height: 120px;
+        white-space: nowrap;
+    }
+
+}
+
+.timetable th[style*="display: none"],
+.timetable td[style*="display: none"] {
+    pointer-events: none;
+}
+
+#memo-cell {color: var(--selectable-color);}
+
+#memo-cell:focus {outline: none;}
+
+.nav-bar {
+    width: 90%;
+    margin: 10px auto;
+    
+}
+
+.nav-bar-1, .nav-bar-2 {
+    margin: 10px auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.nav-bar button {
+    padding: 6px 12px;
+    background: #272727;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+/* 月・日セレクト共通 */
+#month-select,
+#day-select {
+    padding: 6px 10px;
+    font-size: 16px;
+    font-family: serif;
+    border: 1.5px solid #888;
+    border-radius: 6px;
+    background-color: var(--border-color);
+    color: var(--selectable-color);
+    cursor: pointer;
+    appearance: none; /* デフォルト矢印を消す（iOS/Androidでも有効） */
+    outline: none;
+}
+
+#go-btn {
+    padding: 6px 12px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    opacity: 0;
+    transition: opacity 0.25s ease; /* ← これがフェード */
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--background-color);
+    border: 1px solid #555;
+    padding: 20px;
+    width: 85%;
+    max-width: 420px;
+    max-height: 70vh;      /* 画面の70%までの高さに制限 */
+    overflow-y: auto;      /* 内容が長いとスクロール */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: scale(0.95);
+}
+
+button.close-modal {
+    margin: 12px auto;
+    padding: 4px 10px;
+    background: #272727;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-body li {
+    text-align: justify;
+}
+
+button.external::after {
+    content: "↗";
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+    font-size: 0.9em;
+}
+
+body.blocked *:not(.modal):not(.modal *) {
+    pointer-events: none;
+    opacity: 0.4;
+}
