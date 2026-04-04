@@ -4,14 +4,23 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="robots" content="noindex, nofollow">
+        <meta property="og:image" content="favicon.ico">
         <meta property="og:title" content="title"> 
         <meta property="og:description" content="discription">
-        <meta property="og:image" content="favicon.ico">
+        <meta name="theme-color" content="#4a90e2">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <title></title>
         <link rel="stylesheet" href="style.css"/>
         <link rel="icon" href="favicon.ico" type="image/x-icon"/>
         <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="./assets/icon-192.png">
     </head>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js");
+        }
+    </script>
     <body>
         <h1 id="title">3年5組 時間割表</h1>
             <table class="timetable">

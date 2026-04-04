@@ -1,6 +1,10 @@
 [
     {
-        "version": "0.1",
+        "version": "0.0.1",
+        "detail": "<ul><li>Service Worker追加。</li><li>メタデータの微調整。</li><li>ヘルプの微調整。</li></ul>"
+    },
+    {
+        "version": "0.0.0",
         "detail": "<ul><li>主要機能は実装済み。</li><li>データベース類は未入力。</li><li>PWA動作確認のためリリース。</li></ul>"
     }
 ]
