@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         // 3. どれにも一致しない → "-"
-        return item?.rooms || "-";
+        return item?.rooms || "HR教室";
     }
 
 
