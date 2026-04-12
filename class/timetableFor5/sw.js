@@ -1,16 +1,6 @@
-const CACHE_NAME = "timetable-cache-v3";
+const CACHE_NAME = "timetable-cache-v0.1.0";
 const urlsToCache = [
   "./",
-  "./index.html",
-  "./style.css",
-  "./script.js",
-  "./assets/events.json",
-  "./assets/Hensoku.json",
-  "./assets/AorBorHen.json",
-  "./assets/terms.html",
-  "./assets/help.html",
-  "./assets/setting.html",
-  "./assets/source.html"
 ];
 
 self.addEventListener("install", (event) => {

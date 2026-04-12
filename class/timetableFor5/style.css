@@ -2,14 +2,56 @@
     --main-color: #230b57;
     --accent-color: #00a1e9;
     --border-color: #333;
+    --border-strong-color: #777;
     --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --surface-2-color: #272727;
+    --surface-3-color: #151515;
+    --text-color: #e0e0e0;
+    --text-strong-color: #ffffff;
     --selectable-color: #cab8d9;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+    --background-color: #fff;      /* ほんのり青みのある白で洗練感 */
+    --surface-color: #ffffff;         /* カードは純白で軽い */
+    --surface-2-color: #192f60;       /* 透明感のある薄いグレー */
+    --surface-3-color: #192f60;
+    --button-color: #192f60;          /* 階層の差を柔らかく */
+
+    --border-color: #d0d0d5;          /* 薄いグレーで上品 */
+    --border-strong-color: #b8b8c0;   /* 少し濃いグレー */
+
+    --text-color: #2a2a2e;            /* 黒すぎないチャコール */
+    --text-strong-color: #FFF;     /* 見出しは濃いチャコール */
+
+    --accent-color: #c1ab05;          /* おしゃれな青。強すぎず弱すぎず */
+    --selectable-color: #b79fcb;      /* 淡い青で上品な選択色 */
+    }
+}
+
+body.theme-light {
+    --background-color: #fff;      /* ほんのり青みのある白で洗練感 */
+    --surface-color: #ffffff;         /* カードは純白で軽い */
+    --surface-2-color: #192f60;       /* 透明感のある薄いグレー */
+    --surface-3-color: #192f60;
+    --button-color: #192f60;          /* 階層の差を柔らかく */
+
+    --border-color: #d0d0d5;          /* 薄いグレーで上品 */
+    --border-strong-color: #b8b8c0;   /* 少し濃いグレー */
+
+    --text-color: #2a2a2e;            /* 黒すぎないチャコール */
+    --text-strong-color: #FFF;     /* 見出しは濃いチャコール */
+
+    --accent-color: #c1ab05;          /* おしゃれな青。強すぎず弱すぎず */
+    --selectable-color: #b79fcb;      /* 淡い青で上品な選択色 */
 }
 
 body {
     background: var(--background-color);
     font-family: serif;
-    color: #e0e0e0;
+    color: var(--text-color);
     font-size: 12px;
 }
 
@@ -21,7 +63,7 @@ table.timetable {
     width: 90%;
     border-collapse: collapse;
     margin: auto;
-    background: #1e1e1e;
+    background: var(--surface-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
@@ -29,16 +71,16 @@ table.timetable {
 }
 
 .timetable thead {
-    background: #272727;
+    background: var(--button-color);
 }
 
 .timetable thead th {
     color: var(--accent-color);
-    border-bottom: 2px solid #777;
+    border-bottom: 2px solid var(--border-strong-color);
 }
 
 .timetable tbody th {
-    background-color: #151515;
+    background-color: var(--surface-3-color);
 }
 
 .timetable th, .timetable td {
@@ -50,12 +92,18 @@ table.timetable {
 
 .timetable th {
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-strong-color);
 }
 
 
 .timetable tbody tr:last-child td {
     border-bottom: none;
+}
+
+.timetable #toggle-header {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 .selected {
@@ -87,7 +135,7 @@ table.other-table {
     width: 90%;
     border-collapse: collapse;
     margin: 20px auto;
-    background: #1e1e1e;
+    background: var(--surface-color);
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
@@ -117,7 +165,7 @@ table.other-table {
     border-right: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     #title { font-size: 18px; text-align: center;}
     .timetable th:nth-child(n+6),
     .timetable td:nth-child(n+6) {
@@ -131,7 +179,7 @@ table.other-table {
     }
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (min-width: 700px) and (max-width: 900px) {
     * {font-size: 18px;}
     #title { font-size: 24px; text-align: center;}
     .timetable th:nth-child(n+8),
@@ -147,17 +195,49 @@ table.other-table {
 }
 
 
-@media (min-width: 900px) {
+@media (min-width: 900px) and (max-width: 1300px) {
     * {font-size: 18px;}
-    .timetable th,
-    .timetable td { display: table-cell; }
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+10),
+    .timetable td:nth-child(n+10) {
+        display: none;
+    }
     .other-table thead th:nth-child(1),
     .other-table tbody th:nth-child(1) {
-        width: 120px;
-        height: 120px;
+        width: 80px;
+        height: 50px;
         white-space: nowrap;
     }
+}
 
+@media (min-width: 1300px) and (max-width: 1500px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+14),
+    .timetable td:nth-child(n+14) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1880px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+18),
+    .timetable td:nth-child(n+18) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
 }
 
 .timetable th[style*="display: none"],
@@ -171,27 +251,67 @@ table.other-table {
 
 .nav-bar {
     width: 90%;
-    margin: 10px auto;
-    
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.nav-bar-1, .nav-bar-2 {
-    margin: 10px auto;
+.nav-bar-1 {
+    width: 100%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-bar-2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-bar-1 button, .nav-bar-2 button {
+    min-width: 60px;
+    padding: 8px 22px;
+}
+
+#setting button {
+    min-width: 10px;
+    width: 100%;
+}
+
+.nav-bar button {
+    padding: 10px 16px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 
-.nav-bar button {
-    padding: 6px 12px;
-    background: #272727;
-    color: white;
-    border: 1px solid #555;
-    border-radius: 6px;
-    cursor: pointer;
-    gap: 10px;
+
+.nav-bar button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+#today-btn {
+    min-width: 120px;
+    width: 40%;
+}
+
+#prev-btn,
+#next-btn {
+    min-width: 64px;
+    width: 20%;
 }
 
 /* 月・日セレクト共通 */
@@ -200,17 +320,28 @@ table.other-table {
     padding: 6px 10px;
     font-size: 16px;
     font-family: serif;
-    border: 1.5px solid #888;
+    border: 1.5px solid var(--border-strong-color);
     border-radius: 6px;
-    background-color: var(--border-color);
+    background-color: var(--button-color);
     color: var(--selectable-color);
     cursor: pointer;
     appearance: none; /* デフォルト矢印を消す（iOS/Androidでも有効） */
     outline: none;
+    min-width: 60px;
+    width: 50%;
 }
 
-#go-btn {
-    padding: 6px 12px;
+.date-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#theme-btn {
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal {
@@ -251,15 +382,40 @@ table.other-table {
 button.close-modal {
     margin: 12px auto;
     padding: 4px 10px;
-    background: #272727;
-    color: white;
-    border: 1px solid #555;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid var(--border-color);
     border-radius: 6px;
     cursor: pointer;
 }
 
 .modal-body li {
     text-align: justify;
+}
+
+.modal-body .settings-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal-body .settings-menu button {
+    width: 100%;
+    padding: 10px 12px;
+    background: #272727;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-body .settings-menu button:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 650px) {
+    /* モバイルでも設定メニューは2列のまま */
 }
 
 button.external::after {

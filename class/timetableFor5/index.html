@@ -27,7 +27,17 @@
             <table class="timetable">
                 <thead>
                     <tr>
-                        <th>日程</th>
+                        <th id="toggle-header">日程</th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
+                        <th class="date-cell"></th>
                         <th class="date-cell"></th>
                         <th class="date-cell"></th>
                         <th class="date-cell"></th>
@@ -47,6 +57,13 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <th>2限</th>
@@ -57,7 +74,13 @@
                         <td></td>
                         <td></td>
                         <td></td>
-
+                        <td></td>
+                        <td></td>                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <th>3限</th>
@@ -66,7 +89,14 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>                        <td></td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
                         <td></td>
                     </tr>
                     <tr>
@@ -78,15 +108,29 @@
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
+                        <td></td>                   <td></td>
                     </tr>
                     <tr>
                         <th>5限</th>
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>                        <td></td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -110,34 +154,29 @@
             <div class="nav-bar">
                 <div class="nav-bar-1">
                     <button id="prev-btn">前へ</button>
-                    <button id="next-btn">次へ</button>
-                    <select id="month-select">
-                        <option value="1">1月</option>
-                        <option value="2">2月</option>
-                        <option value="3">3月</option>
-                        <option value="4">4月</option>
-                        <option value="5">5月</option>
-                        <option value="6">6月</option>
-                        <option value="7">7月</option>
-                        <option value="8">8月</option>
-                        <option value="9">9月</option>
-                        <option value="10">10月</option>
-                        <option value="11">11月</option>
-                        <option value="12">12月</option>
-                    </select>
-                    <select id="day-select"></select>
-                    <button id="go-btn">決定</button>
-                </div>
-                <div class="nav-bar-2">
                     <button id="today-btn">今日に戻る</button>
-                    <button id="history">更新履歴</button>
-                    <button id="help">ヘルプ</button>
-                    <button id="setting">設定</button>
+                    <button id="next-btn">次へ</button>
                 </div>
                 <div class="nav-bar-2">
-                    <button id="report" class="external">不具合の報告</button>
-                    <button id="terms">利用規約</button>
-                    <button id="source">ソース</button>
+                    <button id="theme-btn" type="button">テーマ</button>
+                    <div class="date-group">
+                        <select id="month-select">
+                            <option value="1">1月</option>
+                            <option value="2">2月</option>
+                            <option value="3">3月</option>
+                            <option value="4">4月</option>
+                            <option value="5">5月</option>
+                            <option value="6">6月</option>
+                            <option value="7">7月</option>
+                            <option value="8">8月</option>
+                            <option value="9">9月</option>
+                            <option value="10">10月</option>
+                            <option value="11">11月</option>
+                            <option value="12">12月</option>
+                        </select>
+                        <select id="day-select"></select>
+                    </div>
+                    <button id="setting">設定</button>
                 </div>
             </div>
 
@@ -152,5 +191,6 @@
             </template>
 
         <script src="script.js"></script>
+        <script src="setting.js"></script>
     </body>
 </html>
