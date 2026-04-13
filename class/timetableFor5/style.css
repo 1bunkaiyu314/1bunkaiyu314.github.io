@@ -55,7 +55,9 @@ body {
     font-size: 12px;
 }
 
-button { font-family: serif; }
+button {
+    font-family: serif;    
+}
 
 #title { font-size: 32px; text-align: center;}
 
@@ -403,8 +405,8 @@ button.close-modal {
 .modal-body .settings-menu button {
     width: 100%;
     padding: 10px 12px;
-    background: #272727;
-    color: white;
+    background: var(--button-color);
+    color: var(--text-strong-color);
     border: 1px solid #555;
     border-radius: 10px;
     cursor: pointer;
