@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const memoCell = document.getElementById("memo-cell");
     const monthSelect = document.getElementById("month-select");
     const daySelect = document.getElementById("day-select");
+    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const today = new Date();
 
     let db;
@@ -97,10 +98,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return item?.rooms || "HR教室";
     }
 
-
-
-
-
     function applyMovingTimetable() {
         const rows = document.querySelectorAll(".timetable tbody tr");
 
@@ -167,14 +164,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (typeof text !== "string") {
             return text;
         }
-        if (!/^[A-Z][0-9]+$/.test(text)) {
-            return text;
-        }
 
         const choices = getSubjectChoices();
         const chosen = choices[text];
+
         if (typeof chosen === "string" && chosen.trim().length > 0) {
-            // "__CODE__" means "show the code as-is"
             return chosen === "__CODE__" ? text : chosen;
         }
 
@@ -1044,6 +1038,7 @@ function updateAllSubjects() {
         }
     });
 
+    document.body.classList.add(isDark ? 'theme-dark' : 'theme-light');
 
     // Note: history/help/report/terms/source buttons live inside the settings modal (fetched HTML).
     // Their click handling is implemented in setting.js via event delegation.

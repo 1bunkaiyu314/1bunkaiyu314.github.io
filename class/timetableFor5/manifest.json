@@ -1,10 +1,11 @@
 {
-  "name": "3年5組時間割表",
+  "name": "時間割・移動教室・行事予定表",
   "short_name": "時間割表",
   "start_url": "./index.html",
   "display": "fullscreen",
   "background_color": "#ffffff",
-  "theme_color": "#007aff",
+  "theme_color": "#192F60",
+  "id": "/class/timetableFor5/",
   "icons": [
     {
       "src": "./assets/icons/icon-192.png",

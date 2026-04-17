@@ -1,4 +1,4 @@
-:root {
+body.theme-dark {
     --main-color: #230b57;
     --accent-color: #00a1e9;
     --border-color: #333;
@@ -10,42 +10,24 @@
     --text-color: #e0e0e0;
     --text-strong-color: #ffffff;
     --selectable-color: #cab8d9;
-}
-
-@media (prefers-color-scheme: light) {
-    :root {
-    --background-color: #fff;      /* ほんのり青みのある白で洗練感 */
-    --surface-color: #ffffff;         /* カードは純白で軽い */
-    --surface-2-color: #192f60;       /* 透明感のある薄いグレー */
-    --surface-3-color: #192f60;
-    --button-color: #192f60;          /* 階層の差を柔らかく */
-
-    --border-color: #d0d0d5;          /* 薄いグレーで上品 */
-    --border-strong-color: #b8b8c0;   /* 少し濃いグレー */
-
-    --text-color: #2a2a2e;            /* 黒すぎないチャコール */
-    --text-strong-color: #FFF;     /* 見出しは濃いチャコール */
-
-    --accent-color: #c1ab05;          /* おしゃれな青。強すぎず弱すぎず */
-    --selectable-color: #b79fcb;      /* 淡い青で上品な選択色 */
-    }
+    --button-color: #151515;
 }
 
 body.theme-light {
-    --background-color: #fff;      /* ほんのり青みのある白で洗練感 */
-    --surface-color: #ffffff;         /* カードは純白で軽い */
-    --surface-2-color: #192f60;       /* 透明感のある薄いグレー */
+    --background-color: #fff;
+    --surface-color: #ffffff;
+    --surface-2-color: #192f60;
     --surface-3-color: #192f60;
-    --button-color: #192f60;          /* 階層の差を柔らかく */
+    --button-color: #192f60;
 
-    --border-color: #d0d0d5;          /* 薄いグレーで上品 */
-    --border-strong-color: #b8b8c0;   /* 少し濃いグレー */
+    --border-color: #d0d0d5;
+    --border-strong-color: #b8b8c0;
 
-    --text-color: #2a2a2e;            /* 黒すぎないチャコール */
-    --text-strong-color: #FFF;     /* 見出しは濃いチャコール */
+    --text-color: #2a2a2e;
+    --text-strong-color: #FFF;
 
-    --accent-color: #c1ab05;          /* おしゃれな青。強すぎず弱すぎず */
-    --selectable-color: #b79fcb;      /* 淡い青で上品な選択色 */
+    --accent-color: #c1ab05;
+    --selectable-color: #b79fcb;
 }
 
 body {
