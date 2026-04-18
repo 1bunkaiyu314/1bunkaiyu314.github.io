@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const memoCell = document.getElementById("memo-cell");
     const monthSelect = document.getElementById("month-select");
     const daySelect = document.getElementById("day-select");
-    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const today = new Date();
 
     let db;
@@ -15,6 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let subjectMap = {};
     let currentDate = null;
     let movingData = [];
+    let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     const TERMS_MODAL_TITLE = "利用規約";
     const TERMS_VIEW_TITLE = "利用規約（再掲）";
@@ -54,14 +54,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             title: "ソース",
             file: "./assets/html/source.html",
             type: "html"
+        },
+        issues: {
+            title: "既知の問題",
+            file: "./assets/html/issues.html",
+            type: "html"
         }
     };
 
     function applyTheme(theme) {
-        document.body.classList.toggle("theme-light", theme === "light");
+        document.body.className = (theme === "light" ? "theme-light" : "theme-dark");
         currentTheme = theme;
 
         const btn = document.getElementById("theme-btn");
+        isDark = !!((isDark + 1) % 2);
+
         if (btn) {
             if (theme === "dark") {
                 btn.innerHTML = '<img src="./assets/images/moon-dark.svg" alt="🌙" style="width: 24px; height: 24px;">';
@@ -804,10 +811,10 @@ function updateAllSubjects() {
         console.error("localStorage からの移行に失敗しました", error);
     }
 
-    // Load app settings from IndexedDB (no localStorage)
+    // Load app settings from IndexedDB
     try {
         const storedTheme = await getSetting(SETTING_THEME);
-        currentTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "dark";
+        currentTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "light";
         applyTheme(currentTheme);
 
         const storedChoices = await getSetting(SETTING_SUBJECT_CHOICES);

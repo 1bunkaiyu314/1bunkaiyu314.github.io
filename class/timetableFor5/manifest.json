@@ -1,5 +1,5 @@
 {
-  "name": "時間割・移動教室・行事予定表",
+  "name": "時間割表",
   "short_name": "時間割表",
   "start_url": "./index.html",
   "display": "fullscreen",

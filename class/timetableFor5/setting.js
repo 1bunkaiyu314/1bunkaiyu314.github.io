@@ -46,7 +46,7 @@
             return;
         }
 
-        if (id === "history" || id === "help" || id === "setting" || id === "source") {
+        if (id === "history" || id === "help" || id === "setting" || id === "source" || id === "issues") {
             event.preventDefault();
             openModalById(id);
             return;
