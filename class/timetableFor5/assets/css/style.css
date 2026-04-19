@@ -11,6 +11,7 @@ body.theme-dark {
     --text-strong-color: #ffffff;
     --selectable-color: #cab8d9;
     --button-color: #151515;
+    --link-color: #00FFFF;
 }
 
 body.theme-light {
@@ -28,6 +29,7 @@ body.theme-light {
 
     --accent-color: #c1ab05;
     --selectable-color: #b79fcb;
+    --link-color: #3366ff;
 }
 
 body {
@@ -45,6 +47,10 @@ select {
     border-radius: 6px;
     padding: 6px 10px;
     cursor: pointer;
+}
+
+a {
+    color: var(--link-color);
 }
 
 button {
@@ -439,4 +445,14 @@ table.issues-table {
     border: 1px solid #333;
     padding: 8px;
     text-align: left;
+}
+
+#isClassroomCode {
+    color: var(--text-color);
+    background: none;
+    border: none;
+    margin: 0 0 0 5%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
 }

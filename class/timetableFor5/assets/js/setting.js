@@ -47,6 +47,7 @@
         }
 
         if (id === "history" || id === "help" || id === "setting" || id === "source" || id === "issues") {
+            gtag('event', 'open_modal', {'modal_id': id});
             event.preventDefault();
             openModalById(id);
             return;

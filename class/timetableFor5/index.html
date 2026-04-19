@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
     <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4089Q2JD7J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4089Q2JD7J');
+        </script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="robots" content="noindex, nofollow">
@@ -12,11 +21,11 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <title>時間割・移動教室・行事予定表</title>
-        <link rel="stylesheet" href="style.css"/>
-        <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/icon-192.png">
-	<link rel="icon" type="image/png" sizes="512x512" href="./assets/icons/icon-512.png">
+        <link rel="stylesheet" href="./assets/css/style.css"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icons/icon-192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="./assets/images/icons/icon-512.png">
         <link rel="manifest" href="manifest.json">
-        <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
+        <link rel="apple-touch-icon" href="./assets/images/icons/icon-192.png">
     </head>
     <script>
         if ("serviceWorker" in navigator) {
@@ -25,6 +34,10 @@
     </script>
     <body>
         <h1 id="title">時間割表</h1>
+            <select id="isClassroomCode">
+                <option value="false">クラス名</option>
+                <option value="true">コード</option>
+            </select>
             <table class="timetable">
                 <thead>
                     <tr>
@@ -118,17 +131,18 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>                        <td></td>
                         <td></td>
-                        <td></td>                        <td></td>
-                        <td></td>                   <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <th>5限</th>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -137,7 +151,10 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -166,6 +183,7 @@
                 </div>
                 <div class="nav-bar-2">
                     <button id="theme-btn" type="button">テーマ</button>
+
                     <div class="date-group">
                         <select id="month-select">
                             <option value="1">1月</option>
@@ -197,7 +215,7 @@
                 </div>
             </template>
 
-        <script src="script.js"></script>
-        <script src="setting.js"></script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/setting.js"></script>
     </body>
 </html>

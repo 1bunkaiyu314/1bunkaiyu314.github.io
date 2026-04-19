@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const monthSelect = document.getElementById("month-select");
     const daySelect = document.getElementById("day-select");
     const today = new Date();
-
+    
     let db;
     let currentColumnIndex = 0;
     let baseDate = new Date();
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let currentDate = null;
     let movingData = [];
     let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
+    
     const TERMS_MODAL_TITLE = "利用規約";
     const TERMS_VIEW_TITLE = "利用規約（再掲）";
     const SUBJECT_SETUP_TITLE = "選択科目の設定";
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     let classNumber = null;
 
     function getTimetableFileForClass(classNo) {
-        return `./assets/timetable/timetable_class-${classNo}.json`;
+        return `./assets/json/timetable/timetable_class-${classNo}.json`;
     }
 
     const modalContent = {
@@ -55,12 +55,31 @@ document.addEventListener("DOMContentLoaded", async () => {
             file: "./assets/html/source.html",
             type: "html"
         },
+        detail: {
+            title: "詳細設定",
+            file: "./assets/html/detail.html",
+            type: "html"
+        },
         issues: {
             title: "既知の問題",
             file: "./assets/html/issues.html",
             type: "html"
         }
     };
+
+    const class2homeRoom = {
+        1: "B11",
+        2: "B12",
+        3: "B13",
+        4: "B14",
+        5: "C11",
+        6: "C12",
+        7: "C13",
+        8: "C14",
+        9: "C15",
+    };
+
+    const homeroom2class = Object.fromEntries(Object.entries(class2homeRoom).map(([k, v]) => [v, k + "組教室"]));
 
     function applyTheme(theme) {
         document.body.className = (theme === "light" ? "theme-light" : "theme-dark");
@@ -102,11 +121,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         // 3. どれにも一致しない → "-"
-        return item?.rooms || "HR教室";
+        if (isClassroomCode === true) {
+            return item?.rooms || class2homeRoom[classNumber] || "不明";
+        } else {
+            return item?.name || homeroom2class[class2homeRoom[classNumber]] || "不明";
+        }
     }
 
     function applyMovingTimetable() {
         const rows = document.querySelectorAll(".timetable tbody tr");
+        console.log("Applying moving timetable with choices:", getSubjectChoices(), "and class number:", classNumber);
 
         rows.forEach((row, rowIndex) => {
             const cells = row.querySelectorAll("td");
@@ -141,7 +165,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function loadMovingData() {
         try {
-            movingData = await fetchJson("./assets/subjects_rooms_map.json"); // ←あなたの JSON ファイル名
+            movingData = await fetchJson("./assets/json/subjects_rooms_map.json"); // ←あなたの JSON ファイル名
         } catch (e) {
             console.error("移動教室データの読み込みに失敗", e);
             movingData = [];
@@ -156,7 +180,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             row.forEach(cell => {
                 if (typeof cell === "string") {
-                    // A1, A2, E1… だけでなく 数Ⅱ S/La なども対象にする
                     if (subjectMap[cell]) {
                         codes.add(cell);
                     }
@@ -165,7 +188,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
         return Array.from(codes).sort();
     }
-
 
     function resolveSubjectCellText(text) {
         if (typeof text !== "string") {
@@ -283,6 +305,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 classNumber = nextClass;
+                console.log("Selected class:", classNumber);
+                gtag('event', 'select_class', {'class_number': classNumber});
                 updatePageTitle();
                 await setSetting(SETTING_CLASS_NUMBER, nextClass);
                 await loadAndApplyTimetable();
@@ -555,7 +579,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             };
         });
     }
-
+    
     function saveMemo(date, text) {
         const tx = db.transaction("memos", "readwrite");
         const store = tx.objectStore("memos");
@@ -582,7 +606,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    function setSetting(key, value) {
+    async function setSetting(key, value) {
         return new Promise((resolve, reject) => {
             const tx = db.transaction("settings", "readwrite");
             const store = tx.objectStore("settings");
@@ -617,30 +641,30 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-function updateAllSubjects() {
-    const rows = document.querySelectorAll(".timetable tbody tr");
+    function updateAllSubjects() {
+        const rows = document.querySelectorAll(".timetable tbody tr");
 
-    // 各日付列ごとに処理
-    dateCells.forEach((cell, colIndex) => {
-        const dateText = cell.textContent.trim();
-        const schedule = getScheduleFor(dateText).map(resolveSubjectCellText);
+        // 各日付列ごとに処理
+        dateCells.forEach((cell, colIndex) => {
+            const dateText = cell.textContent.trim();
+            const schedule = getScheduleFor(dateText).map(resolveSubjectCellText);
 
-        rows.forEach((row, rowIndex) => {
-            const td = row.querySelectorAll("td")[colIndex];
-            if (!td) return; // ← 存在しない列はスキップ（スマホ幅対策）
+            rows.forEach((row, rowIndex) => {
+                const td = row.querySelectorAll("td")[colIndex];
+                if (!td) return; // ← 存在しない列はスキップ（スマホ幅対策）
 
-            // 未選択の科目は ""（空欄）にする
-            td.textContent = schedule[rowIndex] ?? "";
+                // 未選択の科目は ""（空欄）にする
+                td.textContent = schedule[rowIndex] ?? "";
+            });
         });
-    });
 
-    // メモ・行事の更新
-    const selectedDate = dateCells[currentColumnIndex]?.textContent.trim();
-    if (selectedDate) {
-        updateEvent(selectedDate);
-        updateMemo(selectedDate);
+        // メモ・行事の更新
+        const selectedDate = dateCells[currentColumnIndex]?.textContent.trim();
+        if (selectedDate) {
+            updateEvent(selectedDate);
+            updateMemo(selectedDate);
+        }
     }
-}
 
 
     function updateDayOptions() {
@@ -843,11 +867,21 @@ function updateAllSubjects() {
     // Always show dates + selection immediately
     generateDates();
     selectColumn(0);
+    
+    let value = await getSetting("isClassroomCode");
+
+    if (value === undefined) {
+        value = "false";
+        await setSetting("isClassroomCode", value);
+    }
+
+    let isClassroomCode = value;
 
     const updateDateDisplay = () => {
         const month = Number(monthSelect.value);
         const day = Number(daySelect.value);
         showDate(new Date(today.getFullYear(), month - 1, day));
+        updateTable();
     };
 
     monthSelect.addEventListener("change", updateDateDisplay);
@@ -894,7 +928,7 @@ function updateAllSubjects() {
     async function loadSubjectMapForClass(classNum) {
         try {
             // ベースの subject_map.json を読み込む
-            const baseResponse = await fetch("./assets/expansion_map.json");
+            const baseResponse = await fetch("./assets/js/expansion_map.json");
             const baseMap = baseResponse.ok ? await baseResponse.json() : {};
 
             // クラスごとの有効なコードを取得
@@ -916,12 +950,12 @@ function updateAllSubjects() {
     async function loadAppData() {
         try {
             const [eventsData, expansionMapData] = await Promise.all([
-                fetchJson("./assets/events.json"),
-                fetchJson("./assets/class_expansion_map.json")
+                fetchJson("./assets/json/events.json"),
+                fetchJson("./assets/json/class_expansion_map.json")
             ]);
             events = eventsData;
             expansionMap = expansionMapData || [];
-            subjectMap = await fetchJson("./assets/expansion_map.json");
+            subjectMap = await fetchJson("./assets/json/expansion_map.json");
             console.log("subjectMap loaded:", subjectMap);
             await loadAndApplyTimetable();
         } catch (error) {
@@ -987,6 +1021,7 @@ function updateAllSubjects() {
             const dateText = dateCells[colIndex].textContent.trim();
             updateFromJSON(dateText);
             updateMemo(dateText);
+            updateTable();
         });
     });
 
@@ -997,12 +1032,14 @@ function updateAllSubjects() {
             const dateText = cell.textContent.trim();
             updateFromJSON(dateText);
             updateMemo(dateText);
+            updateTable();
         });
     });
 
     monthSelect.addEventListener("change", () => {
         updateDayOptions();
         updateDateDisplay();
+        updateTable();
     });
 
     document.getElementById("today-btn").addEventListener("click", () => {
@@ -1011,6 +1048,7 @@ function updateAllSubjects() {
         updateDayOptions();
         daySelect.value = current.getDate();
         showDate(current);
+        updateTable();
     });
 
     // 利用規約の表示は、設定読み込み後に判定して表示する
@@ -1019,21 +1057,21 @@ function updateAllSubjects() {
         const prevDate = new Date(baseDate);
         prevDate.setDate(prevDate.getDate() - 1);
         showDate(prevDate);
+        updateTable();
     });
 
     document.getElementById("next-btn").addEventListener("click", () => {
         const nextDate = new Date(baseDate);
         nextDate.setDate(nextDate.getDate() + 1);
         showDate(nextDate);
+        updateTable();
     });
 
     let isMovingMode = false;
 
     const toggleHeader = document.getElementById("toggle-header");
 
-    toggleHeader.addEventListener("click", () => {
-        isMovingMode = !isMovingMode;
-
+    function updateTable() {
         if (isMovingMode) {
             applyMovingTimetable();
             toggleHeader.classList.add("active");
@@ -1043,10 +1081,21 @@ function updateAllSubjects() {
             toggleHeader.classList.remove("active");
             toggleHeader.textContent = "日程";
         }
+    };
+
+    toggleHeader.addEventListener("click", () => {
+        isMovingMode = !isMovingMode;
+        updateTable();
     });
 
     document.body.classList.add(isDark ? 'theme-dark' : 'theme-light');
-
+    
+    document.getElementById("isClassroomCode").addEventListener("change", event => {
+        isClassroomCode = event.target.value === "true";
+        setSetting("isClassroomCode", isClassroomCode).catch(() => {});
+        console.log("Classroom code mode:", isClassroomCode);
+        updateTable();
+    });
     // Note: history/help/report/terms/source buttons live inside the settings modal (fetched HTML).
     // Their click handling is implemented in setting.js via event delegation.
 });
