@@ -1,0 +1,509 @@
+body.theme-dark {
+    --main-color: #230b57;
+    --accent-color: #00a1e9;
+
+    --background-color: #000;
+    --surface-color: #1e1e1e;
+    --surface-2-color: #272727;
+    --surface-3-color: #151515;
+
+    --border-color: #333;
+    --border-strong-color: #777;
+
+    --text-color: #e0e0e0;
+    --text-strong-color: #ffffff;
+
+    --selectable-color: #cab8d9;
+
+    --button-color: #000;
+
+    --link-color: #00FFFF;
+
+    --today-color: #e4007f;
+}
+
+body.theme-light {
+    --main-color: #230b57;
+    --accent-color: #fff;
+
+    --background-color: #fff;
+    --surface-color: #ffffff;
+    --surface-2-color: #192f60;
+    --surface-3-color: #192f60;
+
+    --border-color: #d0d0d5;
+    --border-strong-color: #b8b8c0;
+
+    --text-color: #2a2a2e;
+    --text-strong-color: #FFF;
+
+    --selectable-color: #c1ab05;
+
+    --button-color: #192f60;
+
+    --link-color: #3366ff;
+
+    --today-color: #e4007f;
+}
+
+body {
+    background: var(--background-color);
+    font-family: serif;
+    color: var(--text-color);
+    font-size: 12px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+}
+
+select {
+    font-family: serif;
+    background-color: var(--button-color);
+    color: var(--selectable-color);
+    border: 1.5px solid var(--border-strong-color);
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+a {
+    color: var(--link-color);
+}
+
+button {
+    font-family: serif;    
+}
+
+#title { font-size: 32px; text-align: center;}
+
+.timetable-wrapper, .other-table-wrapper {
+    height: clamp(220px, 30vh, 300px);
+    margin: 0px auto;
+    width: 90%;
+    overflow-y: auto;
+    display: flex;
+}
+
+table.timetable {
+    border-collapse: collapse;
+    margin: 10px auto;
+    background: var(--surface-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    table-layout: fixed;
+}
+.nav-bar {
+    flex: 0 0 auto;
+}
+
+table.timetable,
+table.other-table {
+    flex: 1 1 auto;
+}
+
+.other-table th,
+.other-table td {
+    height: 86px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.timetable thead {
+    background: var(--surface-3-color);
+}
+
+.timetable thead th {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--border-strong-color);
+}
+
+.timetable thead th.today  { color: var(--today-color); }
+
+.timetable tbody th {
+    background-color: var(--surface-3-color);
+}
+
+.timetable th, .timetable td {
+    padding: 6px 0px;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+.timetable th {
+    font-weight: 600;
+    color: var(--text-strong-color);
+}
+
+
+.timetable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.timetable #toggle-header {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: rgba(0, 161, 233, 0.3);
+    box-shadow: 0 0 10px #00a1e9;
+    transition: 0.2s;
+}
+
+/* クリック可能 */
+.timetable td,
+.timetable .date-cell {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* 日付セルの選択色 */
+.timetable .date-selected {
+    background-color: rgba(0, 161, 233, 0.3);
+    box-shadow: 0 0 10px #00a1e9;
+    transition: 0.2s;
+}
+
+.timetable .subject-selected {
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.2s;
+}
+
+table.other-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background: var(--surface-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    table-layout: fixed;
+}
+
+.other-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.other-table th,
+.other-table td {
+    height: auto;
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.other-table th {
+    width: 120px; /* 左列固定 */
+    text-align: left;
+    padding: 8px;
+    border-right: 2px solid var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.other-table td {
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.other-table thead th:last-child, .other-table tbody td:last-child {
+    border-bottom: none;
+    border-right: none;
+}
+
+@media (max-width: 700px) {
+    #title { font-size: 18px; text-align: center;}
+    .timetable th:nth-child(n+6),
+    .timetable td:nth-child(n+6) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 40px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+8),
+    .timetable td:nth-child(n+8) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+
+@media (min-width: 900px) and (max-width: 1300px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+10),
+    .timetable td:nth-child(n+10) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+14),
+    .timetable td:nth-child(n+14) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1880px) {
+    * {font-size: 18px;}
+    #title { font-size: 24px; text-align: center;}
+    .timetable th:nth-child(n+18),
+    .timetable td:nth-child(n+18) {
+        display: none;
+    }
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+.timetable th[style*="display: none"],
+.timetable td[style*="display: none"] {
+    pointer-events: none;
+}
+
+#memo-cell {color: var(--selectable-color);}
+
+#memo-cell:focus {outline: none;}
+
+.nav-bar {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-bar-1 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-bar-2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.nav-bar-1 button, .nav-bar-2 button {
+    min-width: 60px;
+    padding: 8px 22px;
+}
+
+#setting button {
+    min-width: 10px;
+    width: 100%;
+}
+
+.nav-bar button {
+    padding: 10px 16px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+
+.nav-bar button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+#today-btn {
+    min-width: 120px;
+    width: 40%;
+}
+
+#prev-btn,
+#next-btn {
+    min-width: 64px;
+    width: 20%;
+}
+
+/* 月・日セレクト共通 */
+#month-select,
+#day-select {
+    padding: 6px 10px;
+    font-size: 16px;
+    font-family: serif;
+    border: 1.5px solid var(--border-strong-color);
+    border-radius: 6px;
+    background-color: var(--button-color);
+    color: var(--selectable-color);
+    cursor: pointer;
+    appearance: none; /* デフォルト矢印を消す（iOS/Androidでも有効） */
+    outline: none;
+    min-width: 60px;
+    width: 50%;
+}
+
+.date-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#theme-btn {
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    opacity: 0;
+    transition: opacity 0.25s ease; /* ← これがフェード */
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--background-color);
+    border: 1px solid #555;
+    padding: 20px;
+    width: 85%;
+    max-width: 420px;
+    max-height: 70vh;      /* 画面の70%までの高さに制限 */
+    overflow-y: auto;      /* 内容が長いとスクロール */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: scale(0.95);
+}
+
+button.close-modal {
+    margin: 12px auto;
+    padding: 4px 10px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-body li {
+    text-align: justify;
+}
+
+.modal-body .settings-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal-body .settings-menu button {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-body .settings-menu button:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 650px) {
+    /* モバイルでも設定メニューは2列のまま */
+}
+
+button.external::after {
+    content: "↗";
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2px;
+    font-size: 0.9em;
+}
+
+body.blocked *:not(.modal):not(.modal *) {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+table.issues-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.issues-table p { text-align: justify; }
+
+.issues-table thead td {
+    text-align: center;
+}
+
+.issues-table th, .issues-table  td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
+
+#isClassroomCode {
+    display: inline-block;
+    width: fit-content;
+    padding: 0;
+    color: var(--text-color);
+    background: none;
+    border: none;
+    margin: 0 0 0 5%;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+}

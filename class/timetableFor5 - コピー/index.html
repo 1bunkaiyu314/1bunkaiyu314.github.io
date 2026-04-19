@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4089Q2JD7J"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4089Q2JD7J');
+        </script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        <meta property="og:image" content="https://1bunkaiyu314.github.io/class/timetableFor5/assets/icons/icon-512.png">
+        <meta property="og:title" content="時間割・移動教室・行事予定表"> 
+        <meta property="og:description" content="選択科目に応じて時間割、移動教室、行事予定表を確認できます。">
+        <meta name="theme-color" content="#192F60">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <title>時間割・移動教室・行事予定表</title>
+        <link rel="stylesheet" href="./assets/css/style.css"/>
+        <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icons/icon-192.png">
+	<link rel="icon" type="image/png" sizes="512x512" href="./assets/images/icons/icon-512.png">
+        <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="./assets/images/icons/icon-192.png">
+    </head>
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("./sw.js");
+        }
+    </script>
+    <body>
+        <h1 id="title">時間割表</h1>
+            <select id="isClassroomCode">
+                <option value="false">クラス名</option>
+                <option value="true">コード</option>
+            </select>
+            <div class="timetable-wrapper">
+                <table class="timetable">
+                    <thead>
+                        <tr>
+                            <th id="toggle-header">日程</th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                            <th class="date-cell"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>1限</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>2限</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>3限</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>4限</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>5限</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="other-table-wrapper">
+                <table class="other-table">
+                    <tr>
+                        <th>行事</th>
+                        <td id="event-cell"></td>
+                    </tr>
+                    <tr id="memo-box">
+                        <th>メモ</th>
+                        <td id="memo-cell" contenteditable="true"></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="nav-bar">
+                <div class="nav-bar-1">
+                    <button id="prev-btn">前へ</button>
+                    <button id="today-btn">今日に戻る</button>
+                    <button id="next-btn">次へ</button>
+                </div>
+                <div class="nav-bar-2">
+                    <button id="theme-btn" type="button">テーマ</button>
+
+                    <div class="date-group">
+                        <select id="month-select">
+                            <option value="1">1月</option>
+                            <option value="2">2月</option>
+                            <option value="3">3月</option>
+                            <option value="4">4月</option>
+                            <option value="5">5月</option>
+                            <option value="6">6月</option>
+                            <option value="7">7月</option>
+                            <option value="8">8月</option>
+                            <option value="9">9月</option>
+                            <option value="10">10月</option>
+                            <option value="11">11月</option>
+                            <option value="12">12月</option>
+                        </select>
+                        <select id="day-select"></select>
+                    </div>
+                    <button id="setting">設定</button>
+                </div>
+            </div>
+
+            <template id="modal-template">
+                <div class="modal">
+                    <div class="modal-content">
+                        <h2 class="modal-title"></h2>
+                        <div class="modal-body"></div>
+                        <button class="close-modal">閉じる</button>
+                    </div>
+                </div>
+            </template>
+
+        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/setting.js"></script>
+    </body>
+</html>
