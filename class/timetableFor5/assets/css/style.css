@@ -54,6 +54,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0;
 }
 
@@ -77,17 +78,19 @@ button {
 
 #title { font-size: 32px; text-align: center;}
 
-.timetable {
-    flex: 1;
+.timetable-wrapper, .other-table-wrapper {
+    height: clamp(220px, 30vh, 300px);
+    margin: 0px auto;
+    width: 90%;
+    overflow-y: auto;
+    display: flex;
 }
 
 table.timetable {
-    width: 90%;
     border-collapse: collapse;
     margin: 10px auto;
     background: var(--surface-color);
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     table-layout: fixed;
 }
