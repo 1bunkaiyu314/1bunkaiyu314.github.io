@@ -91,6 +91,7 @@ table.timetable {
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     table-layout: fixed;
 }
+
 .nav-bar {
     flex: 0 0 auto;
 }
@@ -179,6 +180,7 @@ table.other-table {
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     table-layout: fixed;
+
 }
 
 .other-table {
@@ -190,7 +192,8 @@ table.other-table {
 .other-table td {
     height: auto;
     padding: 8px;
-    vertical-align: middle;
+    text-align: justify;
+    vertical-align: top;
 }
 
 .other-table th {
