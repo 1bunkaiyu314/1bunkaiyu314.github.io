@@ -54,6 +54,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center; /* 縦中央 */
     margin: 0;
 }
 
@@ -77,10 +78,6 @@ button {
 
 #title { font-size: 32px; text-align: center;}
 
-.timetable {
-    flex: 1;
-}
-
 table.timetable {
     width: 90%;
     border-collapse: collapse;
@@ -90,21 +87,6 @@ table.timetable {
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0,0,0,0.4);
     table-layout: fixed;
-}
-.nav-bar {
-    flex: 0 0 auto;
-}
-
-table.timetable,
-table.other-table {
-    flex: 1 1 auto;
-}
-
-.other-table th,
-.other-table td {
-    height: 86px;
-    padding: 0;
-    vertical-align: middle;
 }
 
 .timetable thead {
@@ -188,9 +170,9 @@ table.other-table {
 
 .other-table th,
 .other-table td {
-    height: auto;
-    padding: 8px;
-    vertical-align: middle;
+    height: 86px;
+    padding: 8px 0;
+    text-align: center;
 }
 
 .other-table th {
@@ -199,14 +181,27 @@ table.other-table {
     padding: 8px;
     border-right: 2px solid var(--border-color);
     border-bottom: 1px dashed var(--border-color);
+    vertical-align: top;
 }
 
 .other-table td {
+    padding: 8px;
     border-bottom: 1px dashed var(--border-color);
+    vertical-align: top;
+}
+
+.other-table td {
+    padding: 8px;
+    text-align: justify;
+    vertical-align: top;
 }
 
 .other-table thead th:last-child, .other-table tbody td:last-child {
     border-bottom: none;
+    border-right: none;
+}
+
+.other-table thead td:last-child {
     border-right: none;
 }
 
