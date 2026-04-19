@@ -1,25 +1,35 @@
 body.theme-dark {
     --main-color: #230b57;
     --accent-color: #00a1e9;
-    --border-color: #333;
-    --border-strong-color: #777;
-    --background-color: #121212;
+
+    --background-color: #000;
     --surface-color: #1e1e1e;
     --surface-2-color: #272727;
     --surface-3-color: #151515;
+
+    --border-color: #333;
+    --border-strong-color: #777;
+
     --text-color: #e0e0e0;
     --text-strong-color: #ffffff;
+
     --selectable-color: #cab8d9;
-    --button-color: #151515;
+
+    --button-color: #000;
+
     --link-color: #00FFFF;
+
+    --today-color: #e4007f;
 }
 
 body.theme-light {
+    --main-color: #230b57;
+    --accent-color: #fff;
+
     --background-color: #fff;
     --surface-color: #ffffff;
     --surface-2-color: #192f60;
     --surface-3-color: #192f60;
-    --button-color: #192f60;
 
     --border-color: #d0d0d5;
     --border-strong-color: #b8b8c0;
@@ -27,9 +37,13 @@ body.theme-light {
     --text-color: #2a2a2e;
     --text-strong-color: #FFF;
 
-    --accent-color: #c1ab05;
-    --selectable-color: #b79fcb;
+    --selectable-color: #c1ab05;
+
+    --button-color: #192f60;
+
     --link-color: #3366ff;
+
+    --today-color: #e4007f;
 }
 
 body {
@@ -71,7 +85,7 @@ table.timetable {
 }
 
 .timetable thead {
-    background: var(--button-color);
+    background: var(--surface-3-color);
 }
 
 .timetable thead th {
@@ -79,12 +93,14 @@ table.timetable {
     border-bottom: 2px solid var(--border-strong-color);
 }
 
+.timetable thead th.today  { color: var(--today-color); }
+
 .timetable tbody th {
     background-color: var(--surface-3-color);
 }
 
 .timetable th, .timetable td {
-    padding: 12px 0px;
+    padding: 6px 0px;
     text-align: center;
     border-right: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
@@ -142,12 +158,31 @@ table.other-table {
     table-layout: fixed;
 }
 
-.other-table th, .other-table td {
-    height: 64px;
+.other-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.other-table th,
+.other-table td {
+    height: 86px;
     padding: 8px 0;
     text-align: center;
+}
+
+.other-table th {
+    width: 120px; /* 左列固定 */
+    text-align: left;
+    padding: 8px;
     border-right: 2px solid var(--border-color);
     border-bottom: 1px dashed var(--border-color);
+    vertical-align: top;
+}
+
+.other-table td {
+    padding: 8px;
+    border-bottom: 1px dashed var(--border-color);
+    vertical-align: top;
 }
 
 .other-table td {

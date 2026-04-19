@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const today = new Date();
     
     let db;
+    let extraEvents = {};
     let currentColumnIndex = 0;
     let baseDate = new Date();
     let events = {};
@@ -81,12 +82,48 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const homeroom2class = Object.fromEntries(Object.entries(class2homeRoom).map(([k, v]) => [v, k + "組教室"]));
 
+    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vR1dN6poNIpBsmis-JO2N2Hjiu96bkMuqs2fDtf1V3FH6iBs3BuQZVskaDq8n-xhoKEMdGYD-P5LscW/pub?gid=0&single=true&output=csv")
+        .then(res => res.text())
+        .then(text => {
+            Papa.parse(text, {
+            header: true,
+            skipEmptyLines: true,
+            transformHeader: h => h.trim(),
+            complete: (result) => {
+
+                extraEvents = result.data.reduce((acc, item) => {
+                const datesinCSV = item.dates;
+
+                if (!acc[datesinCSV]) {
+                    acc[datesinCSV] = [];
+                }
+
+                acc[datesinCSV].push({
+                    content: item.contents,
+                    dark_color: item.dark_color,
+                    light_color: item.light_color
+                });
+
+                return acc;
+                }, {});
+
+                console.log(extraEvents);
+            }
+            });
+        });
+
     function applyTheme(theme) {
         document.body.className = (theme === "light" ? "theme-light" : "theme-dark");
         currentTheme = theme;
 
         const btn = document.getElementById("theme-btn");
         isDark = !!((isDark + 1) % 2);
+
+        const selectedDate = dateCells[currentColumnIndex]?.textContent.trim();
+        if (selectedDate) {
+            updateEvent(selectedDate);
+            updateMemo(selectedDate);
+        }
 
         if (btn) {
             if (theme === "dark") {
@@ -517,28 +554,25 @@ document.addEventListener("DOMContentLoaded", async () => {
         return new Date(today.getFullYear(), month - 1, day);
     }
 
-    function parseTimetableKey(key) {
-        const match = key.match(/^(\d+)月(\d+)日$/);
-        if (!match) {
-            return null;
-        }
-
-        return new Date(today.getFullYear(), Number(match[1]) - 1, Number(match[2]));
-    }
-
-    function getFirstTimetableDate() {
-        const dates = Object.keys(timetableData)
-            .map(parseTimetableKey)
-            .filter(date => date instanceof Date && !Number.isNaN(date.getTime()))
-            .sort((a, b) => a - b);
-
-        return dates[0] || null;
-    }
-
     function getEventFor(dateText) {
         const date = parseCellDate(dateText);
         const eventKey = formatTimetableKey(date);
-        return events[eventKey] || events[dateText] || "";
+
+        let base = events[eventKey] || events[dateText] || "";
+        base = base ? "【行事予定表】<br>" + base : base;
+
+        const extra =
+            extraEvents[eventKey]?.length
+                ? "【入試対策勉強会の予定】<br>" +
+                extraEvents[eventKey]
+                    .map(e => {
+                        const color = isDark ? e.dark_color : e.light_color;
+
+                        return `<span style="color:${color || "inherit"}">${e.content}</span>`;
+                    })
+                    .join("<br>")
+                : "";
+        return [base, extra].filter(Boolean).join("<br>");
     }
 
     function getScheduleFor(dateText) {
@@ -548,10 +582,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function generateDates() {
+        const today0clock = today
+        today0clock.setHours(0, 0, 0, 0);
+
         for (let i = 0; i < dateCells.length; i++) {
             const date = new Date(baseDate);
             date.setDate(baseDate.getDate() + i);
+
+            const cellDate = new Date(date);
+            cellDate.setHours(0, 0, 0, 0);
+
             dateCells[i].textContent = formatCellDate(date);
+
+            if (cellDate.getTime() === today0clock.getTime()) {
+                dateCells[i].classList.add("today");
+                dateCells[i].classList.remove("not-today");
+            } else {
+                dateCells[i].classList.remove("today");
+                dateCells[i].classList.add("not-today");
+            }
         }
     }
 
@@ -618,8 +667,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function updateEvent(dateText) {
-        document.querySelector(".other-table thead td").innerHTML =
-            getEventFor(dateText).replace(/\n/g, "<br>");
+        const cell = document.querySelector("#event-cell");
+
+        if (!cell) return;
+
+        const html = getEventFor(dateText);
+
+        cell.innerHTML = html.replace(/\n/g, "<br>");
     }
 
     function updateFromJSON(dateText) {
@@ -701,25 +755,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         const todayKey = formatCellDate(today);
         const todaySchedule = getScheduleFor(todayKey);
 
-        if (todaySchedule.length > 0) {
+        if (true) {
             showDate(today);
             return;
         }
-
-        const firstTimetableDate = getFirstTimetableDate();
-        if (firstTimetableDate) {
-            showDate(firstTimetableDate);
-            monthSelect.value = firstTimetableDate.getMonth() + 1;
-            updateDayOptions();
-            daySelect.value = firstTimetableDate.getDate();
-            return;
-        }
-
-        generateDates();
-        selectColumn(0);
-        const firstDate = dateCells[0].textContent.trim();
-        updateFromJSON(firstDate);
-        updateMemo(firstDate);
     }
 
     function openModal(title, content) {

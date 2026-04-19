@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="theme-color" content="#00FFFF">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+    </head>
+    <body>
+        <style>
+            :root {
+                --text-color: #00ffff;
+                --result-background-color: #ff0000;
+            }
+
+            * {
+                font-family: serif;
+            }
+
+            body {
+                background-color: #f7f6fb;
+            }
+
+            #result {
+                border: 2px solid black;
+                display: flex;
+                justify-content: space-between;
+                margin: 40px;
+                padding: 4px;
+                color: var(--text-color);
+                background-color: var(--result-background-color);
+            }
+
+            h1 {
+                font-size: 48px;
+                text-align: center;
+            }
+
+            div#background {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                padding: 8px;
+                background: linear-gradient(
+                    to right,
+                    #fff 50%,
+                    #1e1e1e 50%
+                );
+            }
+
+            p.text {
+                color: var(--text-color);
+                
+                text-align: justify;
+                margin: auto;
+            }
+        </style>
+        <div id="result">
+            <div id="light">不合格</div>
+            <div id="hex">#00ffff</div>
+            <div id="dark">合格</div>
+        </div>
+
+        <h1 id="title">Color test</h1>
+        <input type="color" id="color-picker" value="#00FFFF">
+        <p>ダミーテキストの謎言語の文は、キケロの『善と悪の究極について』（ラテン語）の一部です。出版・デザイン業界ではよく用いられているみたい（Hello worldのようなもの）<br><br>上の合否は、WCAGと呼ばれる配色のガイドラインに則ってるかを示したものです。これを目安に選んでください。</p>
+        
+        <div id="background">
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p class="text">私はその人を常に先生と呼んでいた。だからここでもただ先生と書くだけで本名は打ち明けない。</p>
+        </div>
+
+        <script>
+        function hexToRgb(hex) {
+            hex = hex.replace("#", "");
+            return {
+                r: parseInt(hex.slice(0, 2), 16),
+                g: parseInt(hex.slice(2, 4), 16),
+                b: parseInt(hex.slice(4, 6), 16),
+            };
+        }
+
+        function luminance({ r, g, b }) {
+            const a = [r, g, b].map(v => {
+                v /= 255;
+                return v <= 0.03928
+                    ? v / 12.92
+                    : Math.pow((v + 0.055) / 1.055, 2.4);
+            });
+            return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+        }
+
+        function contrast(hex1, hex2) {
+            const L1 = luminance(hexToRgb(hex1));
+            const L2 = luminance(hexToRgb(hex2));
+            const light = Math.max(L1, L2);
+            const dark = Math.min(L1, L2);
+            return (light + 0.05) / (dark + 0.05);
+        }
+
+        function getComplement(hex) {
+            hex = hex.replace("#", "");
+
+            const r = 255 - parseInt(hex.slice(0, 2), 16);
+            const g = 255 - parseInt(hex.slice(2, 4), 16);
+            const b = 255 - parseInt(hex.slice(4, 6), 16);
+
+            return "#" + [r, g, b]
+                .map(v => v.toString(16).padStart(2, "0"))
+                .join("");
+        }
+
+        const root = document.documentElement;
+
+        document.getElementById("color-picker").addEventListener("input", (e) => {
+            const text = e.target.value;
+
+            root.style.setProperty("--text-color", text);
+
+            const whiteOK = contrast("#ffffff", text) >= 4.5;
+            const blackOK = contrast("#1e1e1e", text) >= 4.5;
+
+            document.getElementById("light").textContent = whiteOK ? "合格" : "不合格";
+            document.getElementById("dark").textContent = blackOK ? "合格" : "不合格";
+            root.style.setProperty("--result-background-color", getComplement(text));
+            document.getElementById("hex").textContent = text;
+        });
+        </script>
