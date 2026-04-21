@@ -39,16 +39,10 @@ self.addEventListener("install", (event) => {
         "./assets/json/class_expansion_map.json",
         "./assets/setting.html",
         "./assets/json/subjects_rooms_map.json",
-        "./assets/json/holidays.json",
         "./index.html",
         "./manifest.json",
-        "./assets/js/app.js",
-        "./assets/js/modules/db.js",
-        "./assets/js/modules/modal.js",
-        "./assets/js/modules/net.js",
-        "./assets/js/modules/settingMenu.js",
-        "./assets/js/modules/theme.js",
-        "./assets/js/modules/utils.js",
+        "./assets/js/script.js",
+        "./assets/js/setting.js",
         "./assets/css/style.css",
       ])
     )

@@ -34,15 +34,11 @@
     </script>
     <body>
         <h1 id="title">時間割表</h1>
-            <div class="timetable-toolbar" aria-label="時間割ツール">
-                <select id="isClassroomCode">
-                    <option value="false">クラス名</option>
-                    <option value="true">コード</option>
-                </select>
-                <!--
-                <button id="filter-btn" type="button">フィルタ</button>-->
-            </div>
-            <table class="timetable" id="timetable-main">
+            <select id="isClassroomCode">
+                <option value="false">クラス名</option>
+                <option value="true">コード</option>
+            </select>
+            <table class="timetable">
                 <thead>
                     <tr>
                         <th class="toggle-header">日程</th>
@@ -164,55 +160,6 @@
                 </tbody>
             </table>
 
-            <table class="timetable timetable-split" id="timetable-split" aria-label="時間割（続き）">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>1限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>2限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>3限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>4限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>5限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                </tbody>
-            </table>
-
             <div class="box">
                 <div class="label">行事</div>
                 <div id="event-cell">内容...</div>
@@ -246,7 +193,7 @@
                         </select>
                         <select id="day-select"></select>
                     </div>
-                    <button id="setting">その他</button>
+                    <button id="setting">設定</button>
                 </div>
             </div>
 
@@ -261,6 +208,7 @@
             </template>
 
         <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-        <script type="module" src="./assets/js/app.js"></script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/setting.js"></script>
     </body>
 </html>

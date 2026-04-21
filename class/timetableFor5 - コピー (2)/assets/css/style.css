@@ -286,9 +286,6 @@ table.timetable {
     padding: 8px;
 }
 
-.subject-row span, .subject-row select {
-    font-size: small;
-}
 
 @media (max-width: 700px) {
     * {font-size: 14px;}
