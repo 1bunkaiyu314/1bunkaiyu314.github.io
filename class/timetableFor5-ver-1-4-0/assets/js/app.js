@@ -509,6 +509,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
         modal.querySelector("#filter-save")?.addEventListener("click", async () => {
             subjectFilter = String(sel?.value || "");
+            gtag('event', 'filter_subject', {
+                subject: subjectFilter
+            });
             applySubjectFilter();
             modal.querySelector(".close-modal")?.click();
         });
@@ -605,8 +608,8 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 classNumber = nextClass;
-                updatePageTitle();
                 setSetting(SETTING_CLASS_NUMBER, nextClass);
+                gtag('event', 'class', `${classNumber}組`);
                 await loadAndApplyTimetable();
 
                 if (typeof onSave === "function") {
@@ -1475,19 +1478,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    function updatePageTitle() {
-        if (typeof classNumber !== "number") {
-            return;
-        }
-        const titleText = `3年${classNumber}組 時間割表`;
-        const titleEl = document.getElementById("title");
-        if (titleEl) {
-            titleEl.textContent = titleText;
-        }
-        document.title = titleText;
-        
-    }
-
     async function loadAndApplyTimetable() {
         if (typeof classNumber !== "number") {
             return;
@@ -1508,7 +1498,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                     }
                 }
             }
-            updatePageTitle();
             log("[timetable] loadAndApplyTimetable() done", { days: Object.keys(timetableData || {}).length });
         } catch (error) {
             openModal("時間割の読み込みに失敗", `<p style="text-align:left"><code>${escapeHtml(file)}</code></p><p style="text-align:left">${escapeHtml(String(error))}</p>`);
@@ -1573,7 +1562,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function continueAfterDataLoaded() {
-            updatePageTitle();
             const usedCodes = findUsedSubjectCodes();
             const stored = getSubjectChoices() || {};
             const firstVisit =
@@ -1650,6 +1638,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             }).catch(() => {});
         });
         startAfterRender(); // 後処理へ
+
+        gtag('event', 'page_view');
     }
 
     start();
@@ -1769,6 +1759,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     toggleHeader.addEventListener("click", () => {
         isMovingMode = !isMovingMode;
+        gtag('event', 'toggle_mode', {
+            mode: isMovingMode ? 'room' : 'schedule'
+        });
         updateTable();
     });
 

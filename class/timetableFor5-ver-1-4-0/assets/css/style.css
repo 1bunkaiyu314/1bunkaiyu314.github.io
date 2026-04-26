@@ -69,7 +69,6 @@ html {
 body {
     height: 100%;
     background: var(--background-color);
-    font-family: serif;
     color: var(--text-color);
     font-size: 12px;
     min-height: 100vh;
@@ -78,9 +77,12 @@ body {
     margin: 0;
 }
 
+* {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+}
+
 select {
     text-align: center;
-    font-family: serif;
     background-color: var(--button-color);
     color: var(--selectable-color);
     border: 1.5px solid var(--border-color);
@@ -118,10 +120,6 @@ select::-webkit-scrollbar {
 
 a {
     color: var(--link-color);
-}
-
-button {
-    font-family: serif;
 }
 
 #title {
@@ -410,7 +408,6 @@ table.timetable {
     text-align: center;
     padding: 10px 12px;
     font-size: 16px;
-    font-family: serif;
 
     border: 1px solid var(--border-color);
     border-radius: 6px;
@@ -503,7 +500,6 @@ button.close-modal {
 
 button.external::after {
     content: "↗";
-    font-family: Arial, Helvetica, sans-serif;
     margin-left: 2px;
     font-size: 0.9em;
 }
