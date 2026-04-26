@@ -41,6 +41,13 @@
                     }
 
                     var root = document.documentElement;
+
+                    var setAppHeight = function () {
+                        root.style.setProperty("--app-height", window.innerHeight + "px");
+                    };
+                    setAppHeight();
+                    window.addEventListener("resize", setAppHeight);
+
                     root.classList.toggle("theme-dark", theme === "dark");
                     root.classList.toggle("theme-light", theme !== "dark");
                     root.style.colorScheme = theme;

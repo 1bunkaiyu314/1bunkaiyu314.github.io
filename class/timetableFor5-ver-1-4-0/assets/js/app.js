@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         timetableChangesKeys: Object.keys(timetableChanges || {}).length,
     });
 
-    const SPLIT_MIN_VIEWPORT_HEIGHT = 720;
+    const SPLIT_MIN_VIEWPORT_HEIGHT = 830;
     const SPLIT_OFFSET = 4;
 
     function updateSplitLayout() {
