@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const TERMS_MODAL_TITLE = "利用規約";
     const TERMS_VIEW_TITLE = "利用規約（再掲）";
     const SUBJECT_SETUP_TITLE = "選択科目の設定";
-    const APP_VERSION = "2.0.0";
+    const APP_VERSION = "2.0.0-alpha";
 
     const DEBUG =
         (() => {
