@@ -1,3 +1,7 @@
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+html.theme-dark,
 body.theme-dark {
     --main-color: #230b57;
     --accent-color: #fff;
@@ -23,8 +27,10 @@ body.theme-dark {
     --saturday-color: #8c7ec4;
     --holiday-color: #c17d93;
     --filter-hit-color: #00FFFF;
+    --timetable-changed-color: #ee7800;
 }
 
+html.theme-light,
 body.theme-light {
     --main-color: #230b57;
     --accent-color: #fff;
@@ -49,9 +55,13 @@ body.theme-light {
     --today-color: #e4007f;
     --saturday-color: #58a0e4;
     --holiday-color: #e25882;
-    --filter-hit-color: #192f60;
+    --filter-hit-color: #006a6c;
+    --timetable-changed-color: #f8991c;
 }
 
+/* =========================================================
+   BASE LAYOUT
+========================================================= */
 html {
     height: 100%;
 }
@@ -59,37 +69,43 @@ html {
 body {
     height: 100%;
     background: var(--background-color);
-    font-family: serif;
     color: var(--text-color);
     font-size: 12px;
-    min-height: 100vh;
+    min-height: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
     display: flex;
     flex-direction: column;
     margin: 0;
 }
 
+* {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+}
+
 select {
-    font-family: serif;
+    text-align: center;
     background-color: var(--button-color);
     color: var(--selectable-color);
-    border: 1.5px solid var(--border-strong-color);
+    border: 1.5px solid var(--border-color);
     border-radius: 6px;
     padding: 6px 10px;
     cursor: pointer;
 }
 
-#isClassroomCode {
-    display: inline-block;
-    width: fit-content;
-    padding: 0;
-    color: var(--text-color);
-    background: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    box-shadow: none;
+select::-webkit-scrollbar {
+    width: 0;
 }
 
+#isClassroomCode {
+    color: var(--selectable-color);
+    display: inline-block;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+}
 
 #isClassroomCode,
 .timetable-toolbar button {
@@ -99,16 +115,22 @@ select {
     margin-bottom: 4px;
 }
 
+#toolbar-now {
+    color: var(--text-color);
+}
+
 a {
     color: var(--link-color);
 }
 
-button {
-    font-family: serif;    
+#title {
+    font-size: 32px;
+    text-align: center;
 }
 
-#title { font-size: 32px; text-align: center;}
-
+/* =========================================================
+   TIMETABLE BASE
+========================================================= */
 .timetable {
     flex: 1;
 }
@@ -116,7 +138,7 @@ button {
 table.timetable {
     width: 90%;
     border-collapse: collapse;
-    margin: 10px auto;
+    margin: 8px auto;
     background: var(--surface-color);
     border-radius: 10px;
     overflow: hidden;
@@ -128,12 +150,27 @@ table.timetable {
     width: 90%;
     margin: 0 auto -6px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 10px;
 }
 
-.timetable-toolbar button {
+.timetable-toolbar .toolbar-now {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-strong-color);
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timetable-toolbar #filter-btn {
+    margin-left: auto;
+}
+
+.timetable-toolbar button, .timetable-toolbar select {
     padding: 6px 10px;
     background: var(--button-color);
     color: var(--text-strong-color);
@@ -174,7 +211,6 @@ table.timetable {
     flex: 1 1 auto;
 }
 
-
 .timetable thead {
     background: var(--surface-3-color);
 }
@@ -202,7 +238,8 @@ table.timetable {
     background-color: var(--surface-3-color);
 }
 
-.timetable th, .timetable td {
+.timetable th,
+.timetable td {
     padding: 6px 0px;
     text-align: center;
     border-right: 1px solid var(--border-color);
@@ -213,7 +250,6 @@ table.timetable {
     font-weight: 600;
     color: var(--text-strong-color);
 }
-
 
 .timetable tbody tr:last-child td {
     border-bottom: none;
@@ -245,11 +281,20 @@ table.timetable {
     transition: 0.2s;
 }
 
+/* 選択中でも「今日」色の背景は保持する（date-selected の青が上書きしないように） */
+.timetable thead th.today.date-selected {
+    background: var(--today-color);
+    background-color: var(--today-color);
+}
+
 .timetable .subject-selected {
     background: rgba(255, 255, 255, 0.05);
     transition: 0.2s;
 }
 
+/* =========================================================
+   EVENT & MEMO BOX
+========================================================= */
 .box {
     margin: 8px auto;
     display: grid;
@@ -266,214 +311,120 @@ table.timetable {
 .label {
     border-right: 2px solid var(--border-color);
     display: flex;
-    align-items: top;
+    align-items: flex-start;
     justify-content: center;
     padding: 8px;
 }
 
 .content {
-  padding: 5px;
-  overflow: auto;
+    padding: 5px;
+    overflow: auto;
 }
 
 /* 区切り線 */
 .label:nth-of-type(3),
 #memo-cell {
-  border-top: 1px dashed var(--border-color);
+    border-top: 1px dashed var(--border-color);
 }
 
-#event-cell, #memo-cell {
+#event-cell,
+#memo-cell {
     padding: 8px;
 }
 
-.subject-row span, .subject-row select {
+.subject-row span,
+.subject-row select {
     font-size: small;
 }
 
-@media (max-width: 700px) {
-    * {font-size: 14px;}
-    .subject {font-size: 12px;}
-    #title { font-size: 24px; text-align: center;}
-    .timetable th:nth-child(n+6),
-    .timetable td:nth-child(n+6) {
-        display: none;
-    }
-    .other-table thead th:nth-child(1),
-    .other-table tbody th:nth-child(1) {
-        width: 40px;
-        height: 50px;
-        white-space: nowrap;
-    }
+#memo-cell {
+    color: var(--selectable-color);
 }
 
-/* 2段表示の出し分けはJSで行う（縦サイズ基準） */
-
-@media (min-width: 700px) and (max-width: 900px) {
-    * {font-size: 18px;}
-    .subject {font-size: 16px;}
-    #title { font-size: 24px; text-align: center;}
-    .timetable th:nth-child(n+8),
-    .timetable td:nth-child(n+8) {
-        display: none;
-    }
-    .other-table thead th:nth-child(1),
-    .other-table tbody th:nth-child(1) {
-        width: 80px;
-        height: 50px;
-        white-space: nowrap;
-    }
+#memo-cell:focus {
+    outline: none;
 }
 
-
-@media (min-width: 900px) and (max-width: 1300px) {
-    * {font-size: 20px;}
-    #title { font-size: 24px; text-align: center;}
-    .timetable th:nth-child(n+10),
-    .timetable td:nth-child(n+10) {
-        display: none;
-    }
-    .other-table thead th:nth-child(1),
-    .other-table tbody th:nth-child(1) {
-        width: 80px;
-        height: 50px;
-        white-space: nowrap;
-    }
-}
-
-@media (min-width: 1300px) and (max-width: 1500px) {
-    * {font-size: 20px;}
-    #title { font-size: 24px; text-align: center;}
-    .timetable th:nth-child(n+14),
-    .timetable td:nth-child(n+14) {
-        display: none;
-    }
-    .other-table thead th:nth-child(1),
-    .other-table tbody th:nth-child(1) {
-        width: 80px;
-        height: 50px;
-        white-space: nowrap;
-    }
-}
-
-@media (min-width: 1500px) {
-    * {font-size: 20px;}
-    #title { font-size: 24px; text-align: center;}
-    .timetable th:nth-child(n+18),
-    .timetable td:nth-child(n+18) {
-        display: none;
-    }
-    .other-table thead th:nth-child(1),
-    .other-table tbody th:nth-child(1) {
-        width: 80px;
-        height: 50px;
-        white-space: nowrap;
-    }
-}
-
-.timetable th[style*="display: none"],
-.timetable td[style*="display: none"] {
-    pointer-events: none;
-}
-
-#memo-cell {color: var(--selectable-color);}
-
-#memo-cell:focus {outline: none;}
+/* =========================================================
+   NAVIGATION BAR
+========================================================= */
 
 .nav-bar {
     width: 90%;
-    margin: 20px auto;
+    margin: 8px auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    flex: 0 0 auto;
 }
 
-.nav-bar-1 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
+.nav-bar-1,
 .nav-bar-2 {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     gap: 8px;
-    flex-wrap: wrap;
+    align-items: stretch;
 }
 
-.nav-bar-1 button, .nav-bar-2 button {
-    min-width: 60px;
-    padding: 8px 22px;
+.date-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    min-width: 0;
 }
 
-#setting button {
-    min-width: 10px;
-    width: 100%;
+.nav-bar button,
+#month-select,
+#day-select {
+    height: 44px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
 }
 
 .nav-bar button {
-    padding: 10px 16px;
+    min-width: 0;
+    padding: 10px 12px;
     background: var(--button-color);
     color: var(--text-strong-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-
 
 .nav-bar button:active {
     transform: translateY(0);
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-#today-btn {
-    min-width: 120px;
-    width: 40%;
-}
 
-#prev-btn,
-#next-btn {
-    min-width: 64px;
-    width: 20%;
-}
-
-/* 月・日セレクト共通 */
 #month-select,
 #day-select {
-    padding: 6px 10px;
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: 44px;
+    box-sizing: border-box;
+
+    text-align: center;
+    padding: 10px 12px;
     font-size: 16px;
-    font-family: serif;
-    border: 1.5px solid var(--border-strong-color);
+
+    border: 1px solid var(--border-color);
     border-radius: 6px;
+
     background-color: var(--button-color);
     color: var(--selectable-color);
+
     cursor: pointer;
-    appearance: none; /* デフォルト矢印を消す（iOS/Androidでも有効） */
+    appearance: none;
+    -webkit-appearance: none;
     outline: none;
-    min-width: 60px;
-    width: 50%;
 }
 
-.date-group {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-#theme-btn {
-    padding: 6px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
+/* =========================================================
+   MODAL
+========================================================= */
 .modal {
     display: none;
     position: fixed;
@@ -487,7 +438,7 @@ table.timetable {
     z-index: 1000;
 
     opacity: 0;
-    transition: opacity 0.25s ease; /* ← これがフェード */
+    transition: opacity 0.25s ease;
 }
 
 .modal.show {
@@ -501,8 +452,8 @@ table.timetable {
     padding: 20px;
     width: 85%;
     max-width: 420px;
-    max-height: 70vh;      /* 画面の70%までの高さに制限 */
-    overflow-y: auto;      /* 内容が長いとスクロール */
+    max-height: 70vh;
+    overflow-y: auto;
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -511,7 +462,7 @@ table.timetable {
 
 button.close-modal {
     margin: 12px auto;
-    padding: 4px 10px;
+    padding: 6px 14px;
     background: var(--button-color);
     color: var(--text-strong-color);
     border: 1px solid var(--border-color);
@@ -550,30 +501,136 @@ button.close-modal {
 
 button.external::after {
     content: "↗";
-    font-family: Arial, Helvetica, sans-serif;
     margin-left: 2px;
     font-size: 0.9em;
 }
 
+/* =========================================================
+   BLOCKED STATE
+========================================================= */
 body.blocked *:not(.modal):not(.modal *) {
     pointer-events: none;
     opacity: 0.4;
 }
 
+/* =========================================================
+   ISSUES TABLE
+========================================================= */
 table.issues-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.issues-table p { text-align: justify; }
+.issues-table p {
+    text-align: justify;
+}
 
 .issues-table thead td {
     text-align: center;
 }
 
-.issues-table th, .issues-table  td {
+.issues-table th,
+.issues-table td {
     border: 1px solid #333;
     padding: 8px;
     text-align: left;
 }
 
+.timetable-changed {
+    color: var(--timetable-changed-color);
+}
+
+/* =========================================================
+   RESPONSIVE WIDTH
+========================================================= */
+@media (max-width: 700px) {
+    * { font-size: 14px; }
+    .subject { font-size: 12px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+6),
+    .timetable td:nth-child(n+6) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 40px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    * { font-size: 18px; }
+    .subject { font-size: 16px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+8),
+    .timetable td:nth-child(n+8) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+    * { font-size: 20px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+10),
+    .timetable td:nth-child(n+10) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+    * { font-size: 20px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+14),
+    .timetable td:nth-child(n+14) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1500px) {
+    * { font-size: 20px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+18),
+    .timetable td:nth-child(n+18) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+.timetable th[style*="display: none"],
+.timetable td[style*="display: none"] {
+    pointer-events: none;
+}

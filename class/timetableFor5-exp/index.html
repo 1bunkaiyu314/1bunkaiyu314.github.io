@@ -13,7 +13,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="robots" content="noindex, nofollow">
-        <meta property="og:image" content="https://1bunkaiyu314.github.io/class/timetableFor5/assets/icons/icon-512.png">
+        <meta property="og:image" content="./assets/images/icons/icon-512.png">
         <meta property="og:title" content="時間割・移動教室・行事予定表"> 
         <meta property="og:description" content="選択科目に応じて時間割、移動教室、行事予定表を確認できます。">
         <meta name="theme-color" content="#192F60">
@@ -21,17 +21,63 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <title>時間割・移動教室・行事予定表</title>
+        <script>
+            (function () {
+                try {
+                    var raw = localStorage.getItem("theme");
+                    var theme = null;
+                    if (raw != null) {
+                        try {
+                            theme = JSON.parse(raw);
+                        } catch (e) {
+                            theme = raw;
+                        }
+                    }
+
+                    if (theme !== "light" && theme !== "dark") {
+                        theme = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
+                            ? "dark"
+                            : "light";
+                    }
+
+                    var root = document.documentElement;
+
+                    const setAppHeight = () => {
+                        const vh = window.visualViewport
+                            ? window.visualViewport.height
+                            : window.innerHeight;
+
+                        document.documentElement.style.setProperty(
+                            "--app-height",
+                            `${vh}px`
+                        );
+                    };
+
+                    window.addEventListener("resize", setAppHeight);
+                    window.addEventListener("orientationchange", setAppHeight);
+                    window.addEventListener("pageshow", setAppHeight);
+
+                    setAppHeight();
+
+                    root.classList.toggle("theme-dark", theme === "dark");
+                    root.classList.toggle("theme-light", theme !== "dark");
+                    root.style.colorScheme = theme;
+                } catch (e) {
+                    // ignore
+                }
+            })();
+        </script>
         <link rel="stylesheet" href="./assets/css/style.css"/>
         <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icons/icon-192.png">
-	<link rel="icon" type="image/png" sizes="512x512" href="./assets/images/icons/icon-512.png">
+	    <link rel="icon" type="image/png" sizes="512x512" href="./assets/images/icons/icon-512.png">
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" href="./assets/images/icons/icon-192.png">
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("./sw.js");
+            }
+        </script>
     </head>
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("./sw.js");
-        }
-    </script>
     <body>
         <h1 id="title">時間割表</h1>
             <div class="timetable-toolbar" aria-label="時間割ツール">
@@ -39,26 +85,15 @@
                     <option value="false">クラス名</option>
                     <option value="true">コード</option>
                 </select>
-                <!--
-                <button id="filter-btn" type="button">フィルタ</button>-->
+
+                <div id="toolbar-now" class="toolbar-now" aria-live="polite"></div>
+
+                <button id="filter-btn" type="button">フィルタ</button>
             </div>
             <table class="timetable" id="timetable-main">
                 <thead>
-                    <tr>
+                    <tr id="dates">
                         <th class="toggle-header">日程</th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
                         <th class="date-cell"></th>
                         <th class="date-cell"></th>
                         <th class="date-cell"></th>
@@ -72,33 +107,9 @@
                         <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
                     </tr>
                     <tr>
                         <th>2限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
@@ -110,18 +121,6 @@
                         <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
                     </tr>
                     <tr>
                         <th>4限</th>
@@ -129,33 +128,9 @@
                         <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
                     </tr>
                     <tr>
                         <th>5限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
                         <td class="subject"></td>
@@ -215,9 +190,9 @@
 
             <div class="box">
                 <div class="label">行事</div>
-                <div id="event-cell">内容...</div>
+                <div id="event-cell">読み込み中...</div>
                 <div class="label">メモ</div>
-                <div id="memo-cell" contenteditable="true">内容...</div>
+                <div id="memo-cell" contenteditable="true">読み込み中...</div>
             </div>
 
             <div class="nav-bar">
