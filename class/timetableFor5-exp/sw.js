@@ -19,7 +19,6 @@ self.addEventListener("install", (event) => {
         "./assets/html/help.html",
         "./assets/html/history.html",
         "./assets/html/source_timetable.html",
-        "./assets/html/detail.html",
         "./assets/html/source.html",
         "./assets/html/terms.html",
         "./assets/images/icons/icon-192.png",
