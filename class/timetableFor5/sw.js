@@ -1,4 +1,4 @@
-const CACHE_NAME = "2.0.0-β";
+const CACHE_NAME = "2.0.0-γ";
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
@@ -16,7 +16,6 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) =>
       cache.addAll([
-        "/",
         "/assets/images/icons/icon-192.png",
         "/assets/images/icons/icon-512.png",
         "/assets/images/moon-dark.svg",
