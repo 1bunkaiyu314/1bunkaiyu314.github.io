@@ -42,11 +42,22 @@
 
                     var root = document.documentElement;
 
-                    var setAppHeight = function () {
-                        root.style.setProperty("--app-height", window.innerHeight + "px");
+                    const setAppHeight = () => {
+                        const vh = window.visualViewport
+                            ? window.visualViewport.height
+                            : window.innerHeight;
+
+                        document.documentElement.style.setProperty(
+                            "--app-height",
+                            `${vh}px`
+                        );
                     };
-                    setAppHeight();
+
                     window.addEventListener("resize", setAppHeight);
+                    window.addEventListener("orientationchange", setAppHeight);
+                    window.addEventListener("pageshow", setAppHeight);
+
+                    setAppHeight();
 
                     root.classList.toggle("theme-dark", theme === "dark");
                     root.classList.toggle("theme-light", theme !== "dark");

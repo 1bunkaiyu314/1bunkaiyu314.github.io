@@ -6,7 +6,7 @@ import { storage } from "./modules/storage.js";
 
 if (window.__timetable_app_loaded) {
     // Prevent double-initialization when legacy loaders also inject app.js
-    console.warn("timetable app.js already loaded");
+    warn("timetable app.js already loaded");
 } else {
     window.__timetable_app_loaded = true;
 
@@ -353,7 +353,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     function applyMovingTimetable() {
         const mainRows = timetableMain ? timetableMain.querySelectorAll("tbody tr") : document.querySelectorAll("#timetable-main tbody tr");
-        console.log("Applying moving timetable with choices:", getSubjectChoices(), "and class number:", classNumber);
+        log("Applying moving timetable with choices:", getSubjectChoices(), "and class number:", classNumber);
 
         mainRows.forEach((row, rowIndex) => {
             const cells = row.querySelectorAll("td");
@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             movingData = await fetchJson("./assets/json/subjects_rooms_map.json"); // ←あなたの JSON ファイル名
         } catch (e) {
-            console.error("移動教室データの読み込みに失敗", e);
+            logError("移動教室データの読み込みに失敗", e);
             movingData = [];
         }
     }
@@ -1532,7 +1532,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (baseMap[key]) subjectMap[key] = baseMap[key];
             });
         } catch (error) {
-            console.error("選択科目マップの読み込みに失敗しました", error);
+            logError("選択科目マップの読み込みに失敗しました", error);
             subjectMap = {};
         }
     }
@@ -1768,7 +1768,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("isClassroomCode").addEventListener("change", event => {
         isClassroomCode = event.target.value === "true";
         setSetting("isClassroomCode", isClassroomCode);
-        console.log("Classroom code mode:", isClassroomCode);
+        log("Classroom code mode:", isClassroomCode);
         updateTable();
     });
     // Note: history/help/report/terms/source buttons live inside the settings modal (fetched HTML).

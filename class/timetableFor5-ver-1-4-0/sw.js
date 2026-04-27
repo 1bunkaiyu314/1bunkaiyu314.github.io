@@ -1,4 +1,4 @@
-const CACHE_NAME = "2.0.0";
+const CACHE_NAME = "2.0.0-α";
 
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
