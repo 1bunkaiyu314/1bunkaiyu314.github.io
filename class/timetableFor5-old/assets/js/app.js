@@ -2,11 +2,10 @@ import { fetchText, fetchJson } from "./modules/net.js";
 import { escapeHtml } from "./modules/utils.js";
 import { createModalManager } from "./modules/modal.js";
 import { installSettingsMenuHandlers } from "./modules/settingsMenu.js";
-import { storage } from "./modules/storage.js";
 
 if (window.__timetable_app_loaded) {
     // Prevent double-initialization when legacy loaders also inject app.js
-    warn("timetable app.js already loaded");
+    console.warn("timetable app.js already loaded");
 } else {
     window.__timetable_app_loaded = true;
 
@@ -20,112 +19,42 @@ document.addEventListener("DOMContentLoaded", async () => {
     const memoCell = document.getElementById("memo-cell");
     const monthSelect = document.getElementById("month-select");
     const daySelect = document.getElementById("day-select");
-    const toolbarNowEl = document.getElementById("toolbar-now");
     const today = new Date();
 
     const { openModal: openModalRaw } = createModalManager({ document });
     
     let db;
+    let extraEvents = {};
     let currentColumnIndex = 0;
     let baseDate = new Date();
     let events = {};
     let holidays = {};
     let timetableData = {};
     let subjectMap = {};
+    let expansionMap = [];
     let currentDate = null;
     let movingData = [];
     let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    let isClassroomCode = false;
-
+    
     const TERMS_MODAL_TITLE = "利用規約";
     const TERMS_VIEW_TITLE = "利用規約（再掲）";
     const SUBJECT_SETUP_TITLE = "選択科目の設定";
-    const APP_VERSION = "2.0.0";
-
-    const DEBUG =
-        (() => {
-            try {
-                const params = new URLSearchParams(window.location.search);
-                const byQuery = params.has("debug");
-                const byStorage = storage.get("debug") === true || storage.get("debug") === "true";
-                return Boolean(byQuery || byStorage);
-            } catch {
-                return false;
-            }
-        })();
-
-    const log = (...args) => {
-        if (DEBUG) console.log(...args);
-    };
-    const warn = (...args) => {
-        if (DEBUG) console.warn(...args);
-    };
-    const logError = (...args) => console.error(...args);
-
-    window.__timetable_debug = DEBUG;
-    log("[timetable] init start", { APP_VERSION, isDark });
-
-    function formatNowText(date) {
-        const datePart = new Intl.DateTimeFormat("ja-JP", {
-            month: "numeric",
-            day: "numeric",
-            weekday: "short",
-        }).format(date);
-
-        const timePart = new Intl.DateTimeFormat("ja-JP", DEBUG ? {
-            hour: "numeric",
-            minute: "2-digit",
-            second: "2-digit",
-        } : {
-            hour: "numeric",
-            minute: "2-digit",
-        }).format(date);
-
-        return `${datePart} ${timePart}`;
-    }
-
-    function startNowTicker() {
-        if (!toolbarNowEl) return;
-
-        const update = () => {
-            const now = new Date();
-            toolbarNowEl.textContent = formatNowText(now);
-        };
-
-        update();
-        const intervalMs = DEBUG ? 1000 : 10_000;
-        setInterval(update, intervalMs);
-        document.addEventListener("visibilitychange", () => {
-            if (!document.hidden) update();
-        });
-    }
-
-    startNowTicker();
-    
+    const APP_VERSION = "1.2.1";
     const SETTING_THEME = "theme";
     const SETTING_SUBJECT_CHOICES = "subjectChoices";
     const SETTING_AGREED_TERMS = "agreedTerms";
     const SETTING_CLASS_NUMBER = "classNumber";
     const SETTING_LAST_SEEN_VERSION = "lastSeenVersion";
-    const SETTING_EXTRA_EVENTS = "extraEventsCache";
-    const SETTING_TIMETABLE_CHANGES = "timetableChanges";
+    const SETTING_SUBJECT_FILTER = "subjectFilter";
 
-    let currentTheme = isDark ? "dark" : "light";
+    let currentTheme = "dark";
     let agreedTerms = false;
     let subjectChoices = null;
     let pendingAfterTerms = null;
     let classNumber = null;
     let subjectFilter = "";
-    let hasShownWhatsNew = false;
-    let extraEvents = getSetting(SETTING_EXTRA_EVENTS) || {};
-    let timetableChanges = getSetting(SETTING_TIMETABLE_CHANGES) || {};
 
-    log("[timetable] cache loaded", {
-        extraEventsKeys: Object.keys(extraEvents || {}).length,
-        timetableChangesKeys: Object.keys(timetableChanges || {}).length,
-    });
-
-    const SPLIT_MIN_VIEWPORT_HEIGHT = 830;
+    const SPLIT_MIN_VIEWPORT_HEIGHT = 720;
     const SPLIT_OFFSET = 4;
 
     function updateSplitLayout() {
@@ -185,16 +114,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     };
 
-    const expansionMap = [
-        ["A1","A2","E1","E2","G1","G2","J1","J2"],
-        ["A1","A2","E1","E2","G1","G2","J1","J2"],
-        ["A1","A2","E1","E2","G1","G2","K1","K2"],
-        ["A1","A2","E1","E2","G1","G2","K1","K2"],
-        ["A1","A2","E1","E2","H1","H2","K1","K2"],
-        ["A1","A2","E1","E2","H1","H2","K1","K2"],
-        ["C1","C2","F1","F2","H1","H2","K1","K2"]
-    ];
-
     const class2homeRoom = {
         1: "B11",
         2: "B12",
@@ -218,7 +137,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             transformHeader: h => h.trim(),
             complete: (result) => {
 
-                const extraEventsNew = result.data.reduce((acc, item) => {
+                extraEvents = result.data.reduce((acc, item) => {
                 const datesinCSV = item.dates;
 
                 if (!acc[datesinCSV]) {
@@ -234,66 +153,15 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return acc;
                 }, {});
 
-                extraEvents = extraEventsNew;
-                setSetting(SETTING_EXTRA_EVENTS, extraEventsNew);
-                log("[timetable] extraEvents updated", { keys: Object.keys(extraEventsNew || {}).length });
-
-                const selected = getSelectedDateText();
-                if (selected) {
-                    updateEvent(selected);
-                }
+                console.log(extraEvents);
             }
             });
-        })
-        .catch((e) => warn("[timetable] extraEvents fetch failed", e));
-
-    fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQiStJCsPKp1ndi958BLOajBqizE_aIcO2Z0f9hPgiyPV19rnWB3qVcrLuVEaeCeE5ddaIudtX7VkzE/pub?gid=1149682638&single=true&output=csv")
-        .then(res => res.text())
-        .then(text => {
-            Papa.parse(text, {
-            header: true,
-            skipEmptyLines: true,
-            transformHeader: h => h.trim(),
-            complete: (result) => {
-
-                const timetableChangesNew = result.data.reduce((acc, item) => {
-                const datesinCSV = item.dates;
- 
-                if (!acc[datesinCSV]) {
-                    acc[datesinCSV] = [];
-                }
-
-                acc[datesinCSV].push({
-                    class: Number(item.classes),
-                    period: Number(item.periods),
-                    subject: item.subjects
-                });
- 
-                return acc;
-                }, {});
-
-                timetableChanges = timetableChangesNew;
-                setSetting(SETTING_TIMETABLE_CHANGES, timetableChangesNew);
-                log("[timetable] timetableChanges updated", { keys: Object.keys(timetableChangesNew || {}).length });
-
-                // If timetable has already been loaded, re-render so cached view upgrades to fresh data.
-                if (typeof classNumber === "number") {
-                    loadAndApplyTimetable()
-                        .then(() => updateAllSubjects())
-                        .catch((e) => warn("[timetable] re-render after timetableChanges failed", e));
-                }
-            }
-            });
-        })
-        .catch((e) => warn("[timetable] timetableChanges fetch failed", e));
+        });
 
     function applyTheme(theme) {
         // Preserve other body classes like "use-split" / "blocked"
-        document.documentElement.classList.toggle("theme-light", theme === "light");
-        document.documentElement.classList.toggle("theme-dark", theme !== "light");
         document.body.classList.toggle("theme-light", theme === "light");
         document.body.classList.toggle("theme-dark", theme !== "light");
-        document.documentElement.style.colorScheme = theme === "light" ? "light" : "dark";
         currentTheme = theme;
 
         const btn = document.getElementById("theme-btn");
@@ -319,7 +187,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     function findRoomFor(originCode) {
-        if (!originCode) return "";
+        if (!originCode) return "-";
 
         const chosen = subjectChoices?.[originCode] || "";
 
@@ -336,24 +204,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                 (!d.electives || d.electives.trim() === "")
             );
         }
-        
-        const hasSubject = Object.prototype.hasOwnProperty.call(subjectMap, originCode);
-        let otherCaseRoom = "?";
 
-        if (!hasSubject) {
-            otherCaseRoom = isClassroomCode === true
-                ? (class2homeRoom[classNumber] || "不明")
-                : (homeroom2class[class2homeRoom[classNumber]] || "不明");
+        // 3. どれにも一致しない → "-"
+        if (isClassroomCode === true) {
+            return item?.rooms || class2homeRoom[classNumber] || "不明";
+        } else {
+            return item?.name || homeroom2class[class2homeRoom[classNumber]] || "不明";
         }
-
-        return isClassroomCode === true
-            ? item?.rooms || otherCaseRoom
-            : item?.name || otherCaseRoom
     }
 
     function applyMovingTimetable() {
         const mainRows = timetableMain ? timetableMain.querySelectorAll("tbody tr") : document.querySelectorAll("#timetable-main tbody tr");
-        log("Applying moving timetable with choices:", getSubjectChoices(), "and class number:", classNumber);
+        console.log("Applying moving timetable with choices:", getSubjectChoices(), "and class number:", classNumber);
 
         mainRows.forEach((row, rowIndex) => {
             const cells = row.querySelectorAll("td");
@@ -390,7 +252,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             movingData = await fetchJson("./assets/json/subjects_rooms_map.json"); // ←あなたの JSON ファイル名
         } catch (e) {
-            logError("移動教室データの読み込みに失敗", e);
+            console.error("移動教室データの読み込みに失敗", e);
             movingData = [];
         }
     }
@@ -427,6 +289,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         return text;
     }
 
+    function getSubjectToken(text) {
+        const t = String(text || "").trim();
+        if (!t) return "";
+        const i = t.indexOf(" ");
+        return i >= 0 ? t.slice(0, i) : t;
+    }
+
     function listSubjectTokens() {
         const tokens = new Set();
         Object.keys(timetableData || {}).forEach(dayKey => {
@@ -435,7 +304,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             row.forEach(cell => {
                 const txt = resolveSubjectCellText(cell);
                 if (typeof txt !== "string") return;
-                const token = txt;
+                const token = getSubjectToken(txt);
                 if (token) tokens.add(token);
             });
         });
@@ -464,7 +333,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         allCells.forEach(td => {
             const txt = String(td.textContent || "").trim();
             if (!txt) return;
-            if (txt === token) {
+            if (getSubjectToken(txt) === token) {
                 td.classList.add("filter-hit");
             } else {
                 td.classList.add("filter-dim");
@@ -504,14 +373,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         const sel = modal.querySelector("#filter-select");
         modal.querySelector("#filter-clear")?.addEventListener("click", async () => {
             subjectFilter = "";
+            await setSetting(SETTING_SUBJECT_FILTER, "");
             applySubjectFilter();
             modal.querySelector(".close-modal")?.click();
         });
         modal.querySelector("#filter-save")?.addEventListener("click", async () => {
             subjectFilter = String(sel?.value || "");
-            gtag('event', 'filter_subject', {
-                subject: subjectFilter
-            });
+            await setSetting(SETTING_SUBJECT_FILTER, subjectFilter);
             applySubjectFilter();
             modal.querySelector(".close-modal")?.click();
         });
@@ -540,6 +408,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   body.theme-light .class-error { color: #b00020; }
 </style>
 <div class="class-setup">
+  <p>クラスを選んでください。</p>
   <div class="class-row">
     <label for="class-select">クラス</label>
     <select id="class-select">${options}</select>
@@ -608,8 +477,10 @@ document.addEventListener("DOMContentLoaded", async () => {
                 }
 
                 classNumber = nextClass;
-                setSetting(SETTING_CLASS_NUMBER, nextClass);
-                gtag('event', 'class', `${classNumber}組`);
+                console.log("Selected class:", classNumber);
+                gtag('event', 'select_class', {'class_number': classNumber});
+                updatePageTitle();
+                await setSetting(SETTING_CLASS_NUMBER, nextClass);
                 await loadAndApplyTimetable();
 
                 if (typeof onSave === "function") {
@@ -638,6 +509,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         return `<option value="${escapeHtml(val)}"${selected}>${escapeHtml(val)}</option>`;
                     })
                 ].join("");
+
                 return `
 <label class="subject-row">
   <span class="subject-code">${escapeHtml(code)}</span>
@@ -645,6 +517,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 </label>`;
             })
             .join("");
+
         const content = `
 <style>
   .subject-setup { text-align: left; }
@@ -738,7 +611,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 });
 
                 subjectChoices = nextChoices;
-                setSetting(SETTING_SUBJECT_CHOICES, nextChoices);
+                await setSetting(SETTING_SUBJECT_CHOICES, nextChoices);
                 updateAllSubjects();
                 if (typeof onSave === "function") {
                     onSave();
@@ -767,7 +640,6 @@ document.addEventListener("DOMContentLoaded", async () => {
                 content = await fetchText(file);
             }
         } catch (error) {
-            logError("[timetable] loadAndApplyTimetable() failed", { file, classNumber, error });
             content = `<p style="text-align:left">読み込みに失敗しました。</p><p style="text-align:left"><code>${String(file)}</code></p><p style="text-align:left">${String(error)}</p>`;
         }
 
@@ -817,11 +689,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     async function showWhatsNewIfUpdated() {
-        if (hasShownWhatsNew) return;
+        const lastSeen = await getSetting(SETTING_LAST_SEEN_VERSION);
 
-        const lastSeen = getSetting(SETTING_LAST_SEEN_VERSION);
+        // First run: store but don't show (not an "update" yet)
+        if (lastSeen === undefined) {
+            await setSetting(SETTING_LAST_SEEN_VERSION, APP_VERSION);
+            return;
+        }
 
-        if (lastSeen && String(lastSeen) === APP_VERSION) {
+        if (String(lastSeen) === APP_VERSION) {
             return;
         }
 
@@ -829,31 +705,42 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             historyHtml = await fetchText("./assets/html/history.html");
         } catch (error) {
+            console.error("更新履歴の読み込みに失敗しました", error);
+            await setSetting(SETTING_LAST_SEEN_VERSION, APP_VERSION);
             return;
         }
 
         const latest = extractLatestHistoryBlock(historyHtml);
-        const content = `${latest}`;
+        const content = `${latest}
+<div style="margin-top:12px;text-align:center">
+  <button type="button" id="whatsnew-ok" style="padding:8px 12px; background: var(--button-color); color: var(--text-strong-color); border: 1px solid var(--border-color); border-radius: 8px; cursor: pointer;">OK</button>
+</div>`;
 
         const modal = openModal("更新情報", content);
-
         if (!modal) {
+            await setSetting(SETTING_LAST_SEEN_VERSION, APP_VERSION);
             return;
         }
 
-        // ←ここで初めてセット
-        hasShownWhatsNew = true;
-
         const closeBtn = modal.querySelector(".close-modal");
+        const okBtn = modal.querySelector("#whatsnew-ok");
         let saved = false;
 
-        const saveOnce = () => {
+        const saveOnce = async () => {
             if (saved) return;
             saved = true;
-            setSetting(SETTING_LAST_SEEN_VERSION, APP_VERSION);
+            try {
+                await setSetting(SETTING_LAST_SEEN_VERSION, APP_VERSION);
+            } catch {
+                // ignore
+            }
         };
 
         closeBtn?.addEventListener("click", saveOnce, { once: true });
+        okBtn?.addEventListener("click", async () => {
+            await saveOnce();
+            closeBtn?.click();
+        });
     }
 
     function clearSelection() {
@@ -911,18 +798,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         return `${date.getMonth() + 1}/${date.getDate()}`;
     }
 
-    function formatDateText(dateText) {
-        const parts = dateText.split("/");
-        if (parts.length !== 2) return dateText;
-
-        const month = Number(parts[0]);
-        const day = Number(parts[1]);
-
-        if (Number.isNaN(month) || Number.isNaN(day)) return dateText;
-
-        return `${month}月${day}日`;
-    }
-
     function formatTimetableKey(date) {
         return `${date.getMonth() + 1}月${date.getDate()}日`;
     }
@@ -937,11 +812,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         const eventKey = formatTimetableKey(date);
 
         let base = events[eventKey] || events[dateText] || "";
-        
+        base = base ? "【行事予定表】<br>" + base : base;
 
         const extra =
             extraEvents[eventKey]?.length
-                ? 
+                ? "【入試対策勉強会の予定】<br>" +
                 extraEvents[eventKey]
                     .map(e => {
                         const color = isDark ? e.dark_color : e.light_color;
@@ -1006,10 +881,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         }
     }
-    
+
     function initDB() {
         return new Promise((resolve, reject) => {
-            log("[timetable] initDB() open", { name: "TimetableDB", version: 2 });
             const request = indexedDB.open("TimetableDB", 2);
 
             request.onupgradeneeded = event => {
@@ -1024,83 +898,42 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             request.onsuccess = event => {
                 db = event.target.result;
-                log("[timetable] initDB() success");
                 resolve();
-                
             };
 
             request.onerror = () => {
-                logError("[timetable] initDB() error", request.error);
                 reject("IndexedDB の初期化に失敗しました");
             };
         });
     }
-
-    let dbReadyPromise = null;
-    function ensureDbReady() {
-        if (db) return Promise.resolve();
-        if (dbReadyPromise) return dbReadyPromise;
-
-        dbReadyPromise = initDB().catch((e) => {
-            dbReadyPromise = null;
-            throw e;
-        });
-        return dbReadyPromise;
-    }
-     
+    
     function saveMemo(date, text) {
-        ensureDbReady().then(() => {
-            if (text) {
-                const tx = db.transaction("memos", "readwrite");
-                const store = tx.objectStore("memos");
-                store.put({ date, text });
-            } else {
-                const tx = db.transaction("memos", "readwrite");
-                const store = tx.objectStore("memos");
-                store.delete(currentDate);
-            }
-        }).catch((e) => warn("[timetable] saveMemo() skipped (db not ready)", e));
+        const tx = db.transaction("memos", "readwrite");
+        const store = tx.objectStore("memos");
+        store.put({ date, text });
     }
 
     function loadMemo(date, callback) {
-        ensureDbReady().then(() => {
-            const tx = db.transaction("memos", "readonly");
-            const store = tx.objectStore("memos");
-            const req = store.get(date);
+        const tx = db.transaction("memos", "readonly");
+        const store = tx.objectStore("memos");
+        const req = store.get(date);
 
-            req.onsuccess = () => {
-                callback(req.result ? req.result.text : "");
-            };
-            req.onerror = () => {
-                warn("[timetable] loadMemo() error", req.error);
-                callback("");
-            };
-        }).catch((e) => {
-            warn("[timetable] loadMemo() skipped (db not ready)", e);
-            callback("");
-        });
+        req.onsuccess = () => {
+            callback(req.result ? req.result.text : "");
+        };
     }
 
     function getSetting(key) {
-        return storage.get(key);
-    }
-
-    function getSettingfromDB(key) {
-        return ensureDbReady().then(() => new Promise((resolve, reject) => {
+        return new Promise((resolve, reject) => {
             const tx = db.transaction("settings", "readonly");
             const store = tx.objectStore("settings");
             const req = store.get(key);
             req.onsuccess = () => resolve(req.result ? req.result.value : undefined);
             req.onerror = () => reject(req.error);
-        }));
+        });
     }
 
-    function setSetting(key, value) {
-        storage.set(key, value)
-    }
-
-    async function setSettingToDB(key, value) {
-        await ensureDbReady();
+    async function setSetting(key, value) {
         return new Promise((resolve, reject) => {
             const tx = db.transaction("settings", "readwrite");
             const store = tx.objectStore("settings");
@@ -1148,17 +981,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    function highlightSubject(row, rowIndex, date, td) {
-        const changeList = timetableChanges?.[formatDateText(date)];
-
-        const isChanged = changeList?.some(i =>
-            i.class === classNumber &&
-            i.period === rowIndex + 1
-        );
-
-        td.classList.toggle("timetable-changed", !!isChanged);
-    }
-
     function updateAllSubjects() {
         const mainRows = timetableMain ? timetableMain.querySelectorAll("tbody tr") : document.querySelectorAll("#timetable-main tbody tr");
 
@@ -1169,23 +991,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             mainRows.forEach((row, rowIndex) => {
                 const td = row.querySelectorAll("td")[colIndex];
                 if (!td) return;
-                
-                highlightSubject(row, rowIndex, dateText, td);
                 td.textContent = schedule[rowIndex] ?? "";
             });
         });
-    
+
         if (timetableSplit && splitDateCells.length > 0) {
             const splitRows = timetableSplit.querySelectorAll("tbody tr");
             splitDateCells.forEach((cell, localColIndex) => {
                 const dateText = cell.textContent.trim();
-                
                 const schedule = getScheduleFor(dateText).map(resolveSubjectCellText);
                 splitRows.forEach((row, rowIndex) => {
                     const td = row.querySelectorAll("td")[localColIndex];
                     if (!td) return;
-
-                    highlightSubject(row, rowIndex, dateText, td);
                     td.textContent = schedule[rowIndex] ?? "";
                 });
             });
@@ -1248,7 +1065,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 onAgree: () => {
                     document.body.classList.add("agreed-once");
                     agreedTerms = true;
-                    setSetting(SETTING_AGREED_TERMS, true);
+                    setSetting(SETTING_AGREED_TERMS, true).catch(() => {});
                     if (typeof pendingAfterTerms === "function") {
                         const fn = pendingAfterTerms;
                         pendingAfterTerms = null;
@@ -1272,7 +1089,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     installSettingsMenuHandlers({
         document,
         reportUrl: "https://forms.gle/KiiEAds2vtjAmsZ97",
-        changeReportUrl: "https://docs.google.com/forms/d/e/1FAIpQLSfTOKMLJz896qfq7OKSv7TRwxxJxX4VIqXT4npLcGmqWNyBkg/viewform?usp=preview",
         openModalById,
         openTermsView,
         openSubjectSetup: () => openSubjectSetupModal({ blocking: false }),
@@ -1285,140 +1101,77 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.timetableOpenSubjectSetup = () => openSubjectSetupModal({ blocking: false });
     window.timetableOpenClassSetup = () => openClassSetupModal({ blocking: false, onSave: initToday });
 
-    // One-time migration from IndexedDB -> localStorage settings (prefers existing localStorage values)
+    await initDB();
 
-    async function migrateIndexedDBToLocalStorage() {
-        await ensureDbReady();
-        log("[timetable] migrateIndexedDBToLocalStorage() start");
-        let migratedCount = 0;
-        const keys = [
-            SETTING_THEME,
-            SETTING_AGREED_TERMS,
-            SETTING_SUBJECT_CHOICES,
-            SETTING_CLASS_NUMBER,
-            SETTING_LAST_SEEN_VERSION,
-            SETTING_EXTRA_EVENTS,
-            SETTING_TIMETABLE_CHANGES,
-            "isClassroomCode",
-        ];
-
-        for (const key of keys) {
-            const lsValue = storage.get(key);
-            if (lsValue !== null) continue;
-
-            const dbValue = await getSettingfromDB(key);
-            if (dbValue === undefined || dbValue === null) continue;
-
-            storage.set(key, dbValue);
-            migratedCount++;
-            log("[timetable] migrated setting", { key });
-
-            await new Promise((resolve, reject) => {
-                const tx = db.transaction("settings", "readwrite");
-                const store = tx.objectStore("settings");
-                store.delete(key);
-                tx.oncomplete = () => resolve();
-                tx.onerror = () => reject(tx.error);
-                tx.onabort = () => reject(tx.error);
-            });
-        }
-
-        log("[timetable] migrateIndexedDBToLocalStorage() done", { migratedCount });
-    }
-
-    function refreshCachedDataFromStorage() {
-        extraEvents = getSetting(SETTING_EXTRA_EVENTS) || {};
-        timetableChanges = getSetting(SETTING_TIMETABLE_CHANGES) || {};
-        log("[timetable] cache refreshed", {
-            extraEventsKeys: Object.keys(extraEvents || {}).length,
-            timetableChangesKeys: Object.keys(timetableChanges || {}).length,
-        });
-    }
-
-    let bootstrapFromIdbPromise = null;
+    // One-time migration from localStorage -> IndexedDB settings (then delete localStorage keys)
     try {
-        const probablyFirstRun = (typeof localStorage !== "undefined") && localStorage.length === 0;
-        const missingCritical =
-            getSetting(SETTING_AGREED_TERMS) === null ||
-            getSetting(SETTING_CLASS_NUMBER) === null ||
-            getSetting(SETTING_THEME) === null;
-
-        if (!probablyFirstRun && missingCritical) {
-            bootstrapFromIdbPromise = (async () => {
-                try {
-                    await migrateIndexedDBToLocalStorage();
-                } catch (e) {
-                    warn("[timetable] migrateIndexedDBToLocalStorage() failed", e);
-                }
-                refreshCachedDataFromStorage();
-            })();
-        } else {
-            refreshCachedDataFromStorage();
-        }
-    } catch (e) {
-        warn("[timetable] bootstrap check failed", e);
-        refreshCachedDataFromStorage();
-    }
-
-    function deleteEmptyMemos() {
-        ensureDbReady().then(() => {
-            const tx = db.transaction("memos", "readwrite");
-            const store = tx.objectStore("memos");
-
-            const req = store.openCursor();
-
-            req.onsuccess = (event) => {
-                const cursor = event.target.result;
-                if (!cursor) return;
-
-                const value = cursor.value?.text;
-
-                if (!value || String(value).trim() === "") {
-                    store.delete(cursor.key);
-                }
-
-                cursor.continue();
-            };
-        }).catch((e) => warn("[timetable] deleteEmptyMemos() skipped (db not ready)", e));
-    }
-    
-    function loadSettingsFromStorage() {
-        try {
-            const storedTheme = getSetting(SETTING_THEME);
-
-            function getSystemTheme() {
-                return window.matchMedia &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches
-                    ? "dark"
-                    : "light";
+        if (typeof localStorage !== "undefined") {
+            const lsTheme = localStorage.getItem(SETTING_THEME);
+            if (lsTheme === "light" || lsTheme === "dark") {
+                await setSetting(SETTING_THEME, lsTheme);
+                localStorage.removeItem(SETTING_THEME);
             }
 
-            currentTheme =
-                storedTheme === "dark" || storedTheme === "light"
-                    ? storedTheme
-                    : getSystemTheme();
+            const lsAgreed = localStorage.getItem("agreedTerms");
+            if (lsAgreed === "true") {
+                await setSetting(SETTING_AGREED_TERMS, true);
+                localStorage.removeItem("agreedTerms");
+            }
 
-            applyTheme(currentTheme);
+            const lsChoices = localStorage.getItem("subjectChoices");
+            if (lsChoices) {
+                try {
+                    const parsed = JSON.parse(lsChoices);
+                    if (parsed && typeof parsed === "object") {
+                        await setSetting(SETTING_SUBJECT_CHOICES, parsed);
+                    }
+                } catch {
+                    // ignore
+                }
+                localStorage.removeItem("subjectChoices");
+            }
 
-            subjectChoices = getSetting(SETTING_SUBJECT_CHOICES) || null;
-
-            agreedTerms = getSetting(SETTING_AGREED_TERMS) === true;
-
-            const storedClass = Number(getSetting(SETTING_CLASS_NUMBER));
-            classNumber =
-                Number.isFinite(storedClass) && storedClass >= 1 && storedClass <= 9
-                    ? storedClass
-                    : null;
-        } catch (error) {
-            currentTheme = "light";
-            subjectChoices = null;
-            agreedTerms = false;
-            classNumber = null;
-            subjectFilter = "";
+            const lsClass = localStorage.getItem(SETTING_CLASS_NUMBER);
+            if (lsClass) {
+                const parsed = Number(lsClass);
+                if (Number.isFinite(parsed) && parsed >= 1 && parsed <= 9) {
+                    await setSetting(SETTING_CLASS_NUMBER, parsed);
+                }
+                localStorage.removeItem(SETTING_CLASS_NUMBER);
+            }
         }
+    } catch (error) {
+        console.error("localStorage からの移行に失敗しました", error);
     }
 
-    loadSettingsFromStorage();
+    // Load app settings from IndexedDB
+    try {
+        const storedTheme = await getSetting(SETTING_THEME);
+        currentTheme = storedTheme === "light" || storedTheme === "dark" ? storedTheme : "light";
+        applyTheme(currentTheme);
+
+        const storedChoices = await getSetting(SETTING_SUBJECT_CHOICES);
+        subjectChoices = storedChoices && typeof storedChoices === "object" ? storedChoices : null;
+
+        agreedTerms = Boolean(await getSetting(SETTING_AGREED_TERMS));
+
+        const storedClass = await getSetting(SETTING_CLASS_NUMBER);
+        classNumber =
+            typeof storedClass === "number" && Number.isFinite(storedClass) && storedClass >= 1 && storedClass <= 9
+                ? storedClass
+                : null;
+
+        const storedFilter = await getSetting(SETTING_SUBJECT_FILTER);
+        subjectFilter = typeof storedFilter === "string" ? storedFilter : "";
+    } catch (error) {
+        console.error("設定の読み込みに失敗しました", error);
+        currentTheme = "dark";
+        applyTheme(currentTheme);
+        subjectChoices = null;
+        agreedTerms = false;
+        classNumber = null;
+        subjectFilter = "";
+    }
 
     monthSelect.value = today.getMonth() + 1;
     updateDayOptions();
@@ -1428,14 +1181,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     generateDates();
     selectColumn(0);
     
-    let value = getSetting("isClassroomCode");
+    let value = await getSetting("isClassroomCode");
 
     if (value === undefined) {
-        value = false;
-        setSetting("isClassroomCode", value);
+        value = "false";
+        await setSetting("isClassroomCode", value);
     }
 
-    isClassroomCode = value === true || value === "true";
+    let isClassroomCode = value;
 
     const updateDateDisplay = () => {
         const month = Number(monthSelect.value);
@@ -1460,15 +1213,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     daySelect.addEventListener("change", updateDateDisplay);
 
     const themeBtn = document.getElementById("theme-btn");
-
     if (themeBtn) {
         themeBtn.addEventListener("click", () => {
             const nextTheme = currentTheme === "dark" ? "light" : "dark";
             applyTheme(nextTheme);
-            setSetting(SETTING_THEME, nextTheme);
+            setSetting(SETTING_THEME, nextTheme).catch(() => {});
             updateSplitLayout();
             updateTable();
         });
+        applyTheme(currentTheme);
     }
 
     const filterBtn = document.getElementById("filter-btn");
@@ -1478,6 +1231,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    function updatePageTitle() {
+        if (typeof classNumber !== "number") {
+            return;
+        }
+        const titleText = `3年${classNumber}組 時間割表`;
+        const titleEl = document.getElementById("title");
+        if (titleEl) {
+            titleEl.textContent = titleText;
+        }
+        document.title = titleText;
+    }
+
     async function loadAndApplyTimetable() {
         if (typeof classNumber !== "number") {
             return;
@@ -1485,20 +1250,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         const file = getTimetableFileForClass(classNumber);
         try {
-            log("[timetable] loadAndApplyTimetable() start", { file, classNumber });
             timetableData = await fetchJson(file);
-            if (timetableChanges) {
-                for (const date in timetableChanges) {
-                    for (const change of timetableChanges[date]) {
-                        if (change.class !== classNumber) continue;
-                        if (timetableData[date]) {
-                            timetableData[date][change.period - 1] = change.subject;
-                            log("[timetable] timetable change", change);
-                        }
-                    }
-                }
-            }
-            log("[timetable] loadAndApplyTimetable() done", { days: Object.keys(timetableData || {}).length });
+            updatePageTitle();
         } catch (error) {
             openModal("時間割の読み込みに失敗", `<p style="text-align:left"><code>${escapeHtml(file)}</code></p><p style="text-align:left">${escapeHtml(String(error))}</p>`);
             timetableData = {};
@@ -1532,76 +1285,47 @@ document.addEventListener("DOMContentLoaded", async () => {
                 if (baseMap[key]) subjectMap[key] = baseMap[key];
             });
         } catch (error) {
-            logError("選択科目マップの読み込みに失敗しました", error);
+            console.error("選択科目マップの読み込みに失敗しました", error);
             subjectMap = {};
         }
     }
 
     async function loadAppData() {
         try {
-            log("[timetable] loadAppData() start");
-            const [eventsData, holidaysData] = await Promise.all([
+            const [eventsData, expansionMapData, holidaysData] = await Promise.all([
                 fetchJson("./assets/json/events.json"),
+                fetchJson("./assets/json/class_expansion_map.json"),
                 fetchJson("./assets/json/holidays.json")
             ]);
-
             events = eventsData;
+            expansionMap = expansionMapData || [];
             holidays = holidaysData || {};
-            log("[timetable] events/holidays loaded", {
-                eventsKeys: Object.keys(eventsData || {}).length,
-                holidaysKeys: Object.keys(holidaysData || {}).length,
-            });
-
             await loadAndApplyTimetable();
             await loadSubjectMapForClass(classNumber);
-            log("[timetable] loadAppData() done");
-
         } catch (error) {
-            logError("[timetable] loadAppData() failed", error);
+            console.error("データの読み込みに失敗しました", error);
         }
     }
 
     function continueAfterDataLoaded() {
-            const usedCodes = findUsedSubjectCodes();
-            const stored = getSubjectChoices() || {};
-            const firstVisit =
-                usedCodes.length > 0 &&
-                (!subjectChoices || Object.keys(subjectChoices).length === 0);
-            const missing = usedCodes.some(code => typeof stored[code] !== "string" || stored[code].trim().length === 0);
+        updatePageTitle();
+        const usedCodes = findUsedSubjectCodes();
+        const stored = getSubjectChoices();
+        const firstVisit = usedCodes.length > 0 && subjectChoices === null;
+        const missing = usedCodes.some(code => typeof stored[code] !== "string" || stored[code].trim().length === 0);
 
-            if (firstVisit) {
-                openSubjectSetupModal({
-                    blocking: true,
-                    onSave: () => {
-                        initToday();
-                        showWhatsNewIfUpdated();
-                    }
-                });
-                return;
-            }
-
-            // Data has been loaded (timetable/events/holidays). Ensure we render actual subjects now.
-            initToday();
-            showWhatsNewIfUpdated();
-            // initToday() -> showDate() already rendered subjects, so avoid a redundant full redraw here.
-            updateTable({ renderSubjects: false });
+        if (firstVisit) {
+            openSubjectSetupModal({ blocking: true, onSave: initToday });
+            return;
         }
-
-        async function startAfterRender() {
-        await loadAppData(); // ここに重い処理を隔離
-        continueAfterDataLoaded();
+        // if (missing) {
+        //     openSubjectSetupModal({ blocking: false });
+        // }
+        initToday();
     }
 
     async function start() {
         updateSplitLayout();
-
-        if (bootstrapFromIdbPromise) {
-            log("[timetable] bootstrapping settings from IndexedDB...");
-            await bootstrapFromIdbPromise;
-            refreshCachedDataFromStorage();
-            loadSettingsFromStorage();
-        }
-
         if (!agreedTerms) {
             pendingAfterTerms = start;
             fetch("./assets/html/terms.html")
@@ -1613,6 +1337,9 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
+        // Show "what's new" once per update (after agreeing to terms)
+        await showWhatsNewIfUpdated();
+
         if (typeof classNumber !== "number") {
             openClassSetupModal({
                 blocking: true,
@@ -1621,30 +1348,13 @@ document.addEventListener("DOMContentLoaded", async () => {
             return;
         }
 
-        // ここで画面を一度出す（重要）
-        generateDates();
-        selectColumn(0);
-        requestAnimationFrame(() => {
-            applyTheme(currentTheme);
-            updateSplitLayout();
-            // Avoid doing a full subject render before data is loaded.
-            updateTable({ renderSubjects: false });
-
-            // Moving-room data isn't needed for the initial "日程" view, so load it in the background.
-            loadMovingData().then(() => {
-                if (isMovingMode) {
-                    updateTable();
-                }
-            }).catch(() => {});
-        });
-        startAfterRender(); // 後処理へ
-
-        gtag('event', 'page_view');
+        await loadMovingData();
+        await loadAppData();
+        continueAfterDataLoaded();
     }
 
     start();
 
-    
     // Re-evaluate split layout on rotation/resize
     window.addEventListener("resize", () => {
         updateSplitLayout();
@@ -1652,8 +1362,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     memoCell.addEventListener("input", () => {
         if (currentDate) {
-            const text = memoCell.textContent.trim()
-            saveMemo(currentDate, text);
+            saveMemo(currentDate, memoCell.textContent.trim());
         }
     });
 
@@ -1716,14 +1425,14 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 利用規約の表示は、設定読み込み後に判定して表示する
 
-    document.getElementById("prev-btn").addEventListener("click", () => {      
+    document.getElementById("prev-btn").addEventListener("click", () => {
         const prevDate = new Date(baseDate);
         prevDate.setDate(prevDate.getDate() - 1);
         showDate(prevDate);
         updateTable();
     });
 
-    document.getElementById("next-btn").addEventListener("click", () => {        
+    document.getElementById("next-btn").addEventListener("click", () => {
         const nextDate = new Date(baseDate);
         nextDate.setDate(nextDate.getDate() + 1);
         showDate(nextDate);
@@ -1734,18 +1443,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const toggleHeader = document.querySelector(".toggle-header");
     
-    function updateTable(options = {}) {
-        const renderSubjects =
-            options && typeof options === "object" ? options.renderSubjects !== false : true;
-
+    function updateTable() {
         if (isMovingMode) {
             applyMovingTimetable();
             toggleHeader.classList.add("active");
             toggleHeader.textContent = "教室";
         } else {
-            if (renderSubjects) {
-                updateAllSubjects();
-            }
+            updateAllSubjects();
             toggleHeader.classList.remove("active");
             toggleHeader.textContent = "日程";
         }
@@ -1759,16 +1463,15 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     toggleHeader.addEventListener("click", () => {
         isMovingMode = !isMovingMode;
-        gtag('event', 'toggle_mode', {
-            mode: isMovingMode ? 'room' : 'schedule'
-        });
         updateTable();
     });
 
+    document.body.classList.add(isDark ? 'theme-dark' : 'theme-light');
+    
     document.getElementById("isClassroomCode").addEventListener("change", event => {
         isClassroomCode = event.target.value === "true";
-        setSetting("isClassroomCode", isClassroomCode);
-        log("Classroom code mode:", isClassroomCode);
+        setSetting("isClassroomCode", isClassroomCode).catch(() => {});
+        console.log("Classroom code mode:", isClassroomCode);
         updateTable();
     });
     // Note: history/help/report/terms/source buttons live inside the settings modal (fetched HTML).
