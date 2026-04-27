@@ -1,0 +1,636 @@
+/* =========================================================
+   THEME VARIABLES
+========================================================= */
+html.theme-dark,
+body.theme-dark {
+    --main-color: #230b57;
+    --accent-color: #fff;
+
+    --background-color: #000;
+    --surface-color: #1e1e1e;
+    --surface-2-color: #272727;
+    --surface-3-color: #151515;
+
+    --border-color: #333;
+    --border-strong-color: #777;
+
+    --text-color: #e0e0e0;
+    --text-strong-color: #ffffff;
+
+    --selectable-color: #cab8d9;
+
+    --button-color: #000;
+
+    --link-color: #00FFFF;
+
+    --today-color: #e4007f;
+    --saturday-color: #8c7ec4;
+    --holiday-color: #c17d93;
+    --filter-hit-color: #00FFFF;
+    --timetable-changed-color: #ee7800;
+}
+
+html.theme-light,
+body.theme-light {
+    --main-color: #230b57;
+    --accent-color: #fff;
+
+    --background-color: #fff;
+    --surface-color: #ffffff;
+    --surface-2-color: #192f60;
+    --surface-3-color: #192f60;
+
+    --border-color: #d0d0d5;
+    --border-strong-color: #b8b8c0;
+
+    --text-color: #2a2a2e;
+    --text-strong-color: #FFF;
+
+    --selectable-color: #c1ab05;
+
+    --button-color: #192f60;
+
+    --link-color: #3366ff;
+
+    --today-color: #e4007f;
+    --saturday-color: #58a0e4;
+    --holiday-color: #e25882;
+    --filter-hit-color: #006a6c;
+    --timetable-changed-color: #f8991c;
+}
+
+/* =========================================================
+   BASE LAYOUT
+========================================================= */
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 12px;
+    min-height: 100%;
+    padding-bottom: env(safe-area-inset-bottom);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+* {
+    font-family: "Noto Serif JP", "Hiragino Mincho ProN", serif;
+}
+
+select {
+    text-align: center;
+    background-color: var(--button-color);
+    color: var(--selectable-color);
+    border: 1.5px solid var(--border-color);
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+select::-webkit-scrollbar {
+    width: 0;
+}
+
+#isClassroomCode {
+    color: var(--selectable-color);
+    display: inline-block;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+#isClassroomCode,
+.timetable-toolbar button {
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+#toolbar-now {
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+
+#title {
+    font-size: 32px;
+    text-align: center;
+}
+
+/* =========================================================
+   TIMETABLE BASE
+========================================================= */
+.timetable {
+    flex: 1;
+}
+
+table.timetable {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 8px auto;
+    background: var(--surface-color);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    table-layout: fixed;
+}
+
+.timetable-toolbar {
+    width: 90%;
+    margin: 0 auto -6px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.timetable-toolbar .toolbar-now {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-strong-color);
+    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.timetable-toolbar #filter-btn {
+    margin-left: auto;
+}
+
+.timetable-toolbar button, .timetable-toolbar select {
+    padding: 6px 10px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.timetable td.filter-dim {
+    opacity: 0.18;
+}
+
+.timetable td.filter-hit {
+    color: var(--filter-hit-color);
+    font-weight: 700;
+}
+
+.timetable-split {
+    display: none;
+}
+
+/* JSで縦サイズに応じて付与 */
+body.use-split .timetable-split {
+    display: table;
+}
+
+/* 2段表示時はメインは4日分に固定（それ以降は2段目へ） */
+body.use-split #timetable-main th:nth-child(n+6),
+body.use-split #timetable-main td:nth-child(n+6) {
+    display: none;
+}
+
+.nav-bar {
+    flex: 0 0 auto;
+}
+
+table.timetable {
+    flex: 1 1 auto;
+}
+
+.timetable thead {
+    background: var(--surface-3-color);
+}
+
+.timetable thead th {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--border-strong-color);
+}
+
+/* 追加: 今日/土曜/休日の色 (2段目も同じクラスが付く) */
+.timetable thead th.today {
+    background: var(--today-color);
+    color: var(--text-strong-color);
+}
+
+.timetable thead th.saturday {
+    color: var(--saturday-color);
+}
+
+.timetable thead th.holiday {
+    color: var(--holiday-color);
+}
+
+.timetable tbody th {
+    background-color: var(--surface-3-color);
+}
+
+.timetable th,
+.timetable td {
+    padding: 6px 0px;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+}
+
+.timetable th {
+    font-weight: 600;
+    color: var(--text-strong-color);
+}
+
+.timetable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.timetable .toggle-header {
+    background-color: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.selected {
+    background-color: rgba(0, 161, 233, 0.3);
+    box-shadow: 0 0 10px #00a1e9;
+    transition: 0.2s;
+}
+
+/* クリック可能 */
+.timetable td,
+.timetable .date-cell {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* 日付セルの選択色 */
+.timetable .date-selected {
+    background-color: rgba(0, 161, 233, 0.3);
+    box-shadow: 0 0 10px #00a1e9;
+    transition: 0.2s;
+}
+
+/* 選択中でも「今日」色の背景は保持する（date-selected の青が上書きしないように） */
+.timetable thead th.today.date-selected {
+    background: var(--today-color);
+    background-color: var(--today-color);
+}
+
+.timetable .subject-selected {
+    background: rgba(255, 255, 255, 0.05);
+    transition: 0.2s;
+}
+
+/* =========================================================
+   EVENT & MEMO BOX
+========================================================= */
+.box {
+    margin: 8px auto;
+    display: grid;
+    width: 90%;
+    height: 25%;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+    border-collapse: collapse;
+    border-radius: 10px;
+    background: var(--surface-color);
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.label {
+    border-right: 2px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8px;
+}
+
+.content {
+    padding: 5px;
+    overflow: auto;
+}
+
+/* 区切り線 */
+.label:nth-of-type(3),
+#memo-cell {
+    border-top: 1px dashed var(--border-color);
+}
+
+#event-cell,
+#memo-cell {
+    padding: 8px;
+}
+
+.subject-row span,
+.subject-row select {
+    font-size: small;
+}
+
+#memo-cell {
+    color: var(--selectable-color);
+}
+
+#memo-cell:focus {
+    outline: none;
+}
+
+/* =========================================================
+   NAVIGATION BAR
+========================================================= */
+
+.nav-bar {
+    width: 90%;
+    margin: 8px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.nav-bar-1,
+.nav-bar-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.date-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    min-width: 0;
+}
+
+.nav-bar button,
+#month-select,
+#day-select {
+    height: 44px;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.nav-bar button {
+    min-width: 0;
+    padding: 10px 12px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-bar button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+#month-select,
+#day-select {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    height: 44px;
+    box-sizing: border-box;
+
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 16px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+
+    background-color: var(--button-color);
+    color: var(--selectable-color);
+
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background: var(--background-color);
+    border: 1px solid #555;
+    padding: 20px;
+    width: 85%;
+    max-width: 420px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transform: scale(0.95);
+}
+
+button.close-modal {
+    margin: 12px auto;
+    padding: 6px 14px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.modal-body li {
+    text-align: justify;
+}
+
+.modal-body .settings-menu {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.modal-body .settings-menu button {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--button-color);
+    color: var(--text-strong-color);
+    border: 1px solid #555;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.modal-body .settings-menu button:active {
+    transform: translateY(1px);
+}
+
+@media (max-width: 650px) {
+    /* モバイルでも設定メニューは2列のまま */
+}
+
+button.external::after {
+    content: "↗";
+    margin-left: 2px;
+    font-size: 0.9em;
+}
+
+/* =========================================================
+   BLOCKED STATE
+========================================================= */
+body.blocked *:not(.modal):not(.modal *) {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+/* =========================================================
+   ISSUES TABLE
+========================================================= */
+table.issues-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.issues-table p {
+    text-align: justify;
+}
+
+.issues-table thead td {
+    text-align: center;
+}
+
+.issues-table th,
+.issues-table td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+}
+
+.timetable-changed {
+    color: var(--timetable-changed-color);
+}
+
+/* =========================================================
+   RESPONSIVE WIDTH
+========================================================= */
+@media (max-width: 700px) {
+    * { font-size: 14px; }
+    .subject { font-size: 12px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+6),
+    .timetable td:nth-child(n+6) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 40px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+    * { font-size: 18px; }
+    .subject { font-size: 16px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+8),
+    .timetable td:nth-child(n+8) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1300px) {
+    * { font-size: 20px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+10),
+    .timetable td:nth-child(n+10) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+    * { font-size: 20px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+14),
+    .timetable td:nth-child(n+14) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 1500px) {
+    * { font-size: 20px; }
+    #title { font-size: 24px; text-align: center; }
+
+    .timetable th:nth-child(n+18),
+    .timetable td:nth-child(n+18) {
+        display: none;
+    }
+
+    .other-table thead th:nth-child(1),
+    .other-table tbody th:nth-child(1) {
+        width: 80px;
+        height: 50px;
+        white-space: nowrap;
+    }
+}
+
+.timetable th[style*="display: none"],
+.timetable td[style*="display: none"] {
+    pointer-events: none;
+}

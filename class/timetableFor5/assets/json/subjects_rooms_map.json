@@ -49,127 +49,127 @@
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡLa①",
+    "electives": "ⅡLa①",
     "rooms": "B11",
-    "name": "1組教室"
+    "name": "1組教室教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡS①",
+    "electives": "ⅡS①",
     "rooms": "B12",
-    "name": "2組教室"
+    "name": "2組教室教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡLa②",
+    "electives": "ⅡLa②",
     "rooms": "B13",
     "name": "3組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡS②",
+    "electives": "ⅡS②",
     "rooms": "B14",
     "name": "4組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡS③",
+    "electives": "ⅡS③",
     "rooms": "C11",
     "name": "5組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡS④",
+    "electives": "ⅡS④",
     "rooms": "C12",
     "name": "6組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡS⑤",
+    "electives": "ⅡS⑤",
     "rooms": "C13",
     "name": "7組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡLa④",
+    "electives": "ⅡLa④",
     "rooms": "C14",
     "name": "8組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡS⑥",
+    "electives": "ⅡS⑥",
     "rooms": "C15",
     "name": "9組教室"
   },
   {
     "origin": "数Ⅱ S/La",
-    "electives": "数ⅡLa③",
+    "electives": "ⅡLa③",
     "rooms": "B31",
     "name": "B31"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡLb①",
+    "electives": "ⅡLb①",
     "rooms": "B11",
     "name": "1組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡS①",
+    "electives": "ⅡS①",
     "rooms": "B12",
     "name": "2組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡLb②",
+    "electives": "ⅡLb②",
     "rooms": "B13",
     "name": "3組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡS②",
+    "electives": "ⅡS②",
     "rooms": "B14",
     "name": "4組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡS③",
+    "electives": "ⅡS③",
     "rooms": "C11",
     "name": "5組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡS④",
+    "electives": "ⅡS④",
     "rooms": "C12",
     "name": "6組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡS⑤",
+    "electives": "ⅡS⑤",
     "rooms": "C13",
     "name": "7組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡLb④",
+    "electives": "ⅡLb④",
     "rooms": "C14",
     "name": "8組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡS⑥",
+    "electives": "ⅡS⑥",
     "rooms": "C15",
     "name": "9組教室"
   },
   {
     "origin": "数Ⅱ S/Lb",
-    "electives": "数ⅡLb③",
+    "electives": "ⅡLb③",
     "rooms": "B31",
     "name": "B31"
   },
   {
     "origin": "A1",
-    "electives": "現世読①",
+    "electives": "現読①",
     "rooms": "B11",
     "name": "1組教室"
   },
@@ -307,7 +307,7 @@
   },
   {
     "origin": "E1",
-    "electives": "現世読②",
+    "electives": "現読②",
     "rooms": "B11",
     "name": "1組教室"
   },
@@ -439,7 +439,7 @@
   },
   {
     "origin": "G1",
-    "electives": "現世読③",
+    "electives": "現読③",
     "rooms": "B11",
     "name": "1組教室"
   },
@@ -535,7 +535,7 @@
   },
   {
     "origin": "H2",
-    "electives": "現世読④",
+    "electives": "現読④",
     "rooms": "C11",
     "name": "5組教室"
   },
