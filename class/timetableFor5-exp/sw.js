@@ -45,7 +45,6 @@ self.addEventListener("install", (event) => {
         "./assets/js/modules/db.js",
         "./assets/js/modules/modal.js",
         "./assets/js/modules/net.js",
-        "./assets/js/modules/settingMenu.js",
         "./assets/js/modules/theme.js",
         "./assets/js/modules/utils.js",
         "./assets/css/style.css",
