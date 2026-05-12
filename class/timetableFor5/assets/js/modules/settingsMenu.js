@@ -1,6 +1,7 @@
 export function installSettingsMenuHandlers({
   document,
   reportUrl,
+  changeReportUrl,
   openModalById,
   openTermsView,
   openSubjectSetup,
@@ -48,6 +49,11 @@ export function installSettingsMenuHandlers({
     if (id === "report") {
       event.preventDefault();
       window.open(reportUrl, "_blank");
+    }
+
+    if (id === "change-report") {
+      event.preventDefault();
+      window.open(changeReportUrl, "_blank");
     }
   });
 }
