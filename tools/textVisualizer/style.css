@@ -1,0 +1,419 @@
+:root {
+  --transition-theme: background .2s, color .2s, border-color .2s;
+}
+[data-theme="dark"] {
+  --bg:          #111318;
+  --surface:     #191c24;
+  --surface2:    #1f2330;
+  --border:      #2a2f3f;
+  --border2:     #353c52;
+  --ink:         #dde2f0;
+  --muted:       #606880;
+  --muted2:      #8892aa;
+  --accent:      #7eb8e0;
+  --arrow-clr:   #7eb8e0;
+  --head-glow:   rgba(126,184,224,.25);
+  --tag-bg:      #22273a;
+  --tag-brd:     #2e3550;
+}
+[data-theme="light"] {
+  --bg:          #f5f2ec;
+  --surface:     #ffffff;
+  --surface2:    #f0ede6;
+  --border:      #ddd8ce;
+  --border2:     #c8c0b4;
+  --ink:         #1a1714;
+  --muted:       #8c8278;
+  --muted2:      #6b6056;
+  --accent:      #1a6b8a;
+  --arrow-clr:   #1a6b8a;
+  --head-glow:   rgba(26,107,138,.15);
+  --tag-bg:      #ede9e2;
+  --tag-brd:     #cec8be;
+}
+
+/* ── リセット＆ベース ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+  padding: 48px 24px 100px;
+  transition: var(--transition-theme);
+}
+
+/* ── ヘッダー ─────────────────────────────────────── */
+.site-header {
+  max-width: 820px;
+  margin: 0 auto 44px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  border-bottom: 1.5px solid var(--border2);
+  padding-bottom: 14px;
+}
+.site-header h1 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .85rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* テーマ切替ボタン */
+.theme-toggle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .68rem;
+  color: var(--muted2);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-theme);
+  white-space: nowrap;
+}
+.theme-toggle:hover { border-color: var(--border2); color: var(--ink); }
+.theme-icon { font-size: .9rem; }
+
+/* ── ファイルローダー ─────────────────────────────── */
+.loader {
+  max-width: 820px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.loader-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .7rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.loader input[type=file] {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .7rem;
+  color: var(--muted2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+  flex: 1;
+  transition: var(--transition-theme);
+}
+.loader input[type=file]::file-selector-button {
+  background: var(--border2);
+  border: none;
+  color: var(--ink);
+  padding: 3px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: .7rem;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-right: 8px;
+  transition: var(--transition-theme);
+}
+
+.loader select {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .7rem;
+
+    color: var(--ink);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 4px;
+
+    padding: 5px 10px;
+
+    width: 100%;
+    flex-shrink: 0;
+
+    cursor: pointer;
+
+    transition: var(--transition-theme);
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#jsonSelect:hover {
+  border-color: var(--border2);
+}
+
+#jsonSelect:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--head-glow);
+}
+.loader {
+  max-width: 820px;
+  margin: 0 auto 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+/* ── センテンスカード ─────────────────────────────── */
+.sentence-card {
+  max-width: 820px;
+  margin: 0 auto 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: var(--transition-theme);
+}
+
+/* カード内番号バー */
+.card-index-bar {
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.card-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .65rem;
+  color: var(--muted);
+  letter-spacing: .1em;
+}
+.card-hint {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .62rem;
+  color: var(--muted);
+  opacity: .7;
+}
+
+/* ── トークン行＋SVGオーバーレイコンテナ ────────── */
+.token-area {
+  position: relative;
+}
+
+/* ── トークン行 ────────────────────────────────── */
+.token-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 12px 20px 20px;
+  gap: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── SVGオーバーレイ（トークン行に重ねる） ─────── */
+.arc-svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 2;
+}
+.token-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 5px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .12s;
+  position: relative;
+  user-select: none;
+  touch-action: manipulation;
+}
+.token-wrap:hover   { background: var(--surface2); }
+.token-wrap.selected {
+  background: var(--head-glow);
+  outline: 1.5px solid var(--accent);
+  outline-offset: -1px;
+}
+.token-wrap.is-head {
+  background: var(--head-glow);
+}
+
+.token-word {
+  font-family: 'Crimson Pro', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--ink);
+  white-space: pre;
+  line-height: 1.3;
+}
+.token-wrap.selected .token-word { color: var(--accent); font-weight: 600; }
+.token-wrap.is-head   .token-word { color: var(--accent); }
+
+.token-deprel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .56rem;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: .02em;
+}
+.token-wrap.selected .token-deprel { color: var(--accent); opacity: .8; }
+
+/* ── 日本語訳 ──────────────────────────────────── */
+.translation-row {
+  padding: 0 20px 16px;
+  font-size: .75rem;
+  font-style: italic;
+  color: var(--muted2);
+  border-top: 1px dashed var(--border);
+  padding-top: 12px;
+  margin: 0 20px 0;
+}
+.translation-row:empty { display: none; }
+.trans-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .6rem;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin-right: 8px;
+  font-style: normal;
+}
+
+/* ── 詳細パネル ─────────────────────────────────── */
+.detail-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .28s ease;
+  border-top: 1px solid transparent;
+}
+.detail-panel.open {
+  max-height: 300px;
+  border-top-color: var(--border);
+}
+.detail-inner {
+  padding: 18px 24px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 32px;
+}
+.detail-word-heading {
+  grid-column: 1 / -1;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 2px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.detail-id {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .65rem;
+  color: var(--muted);
+}
+.detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.detail-key {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .6rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.detail-val {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .82rem;
+  color: var(--ink);
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-brd);
+  border-radius: 3px;
+  padding: 2px 8px;
+  display: inline-block;
+  transition: var(--transition-theme);
+}
+.detail-val.accent {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--head-glow);}
+
+/* -------------------- Mobile tuning (no color changes) -------------------- */
+@media (max-width: 600px) {
+  body {
+    font-size: 17px;
+    padding: 20px 14px 64px;
+  }
+
+  .theme-toggle {
+    padding: 8px 14px;
+    font-size: .7rem;
+    min-height: 44px;
+  }
+
+  .loader {
+    margin: 0 auto 18px;
+    gap: 8px;
+  }
+
+  .loader-label {
+    width: 100%;
+  }
+
+  .loader select,
+  .loader input[type=file] {
+    width: 100%;
+  }
+
+  .sentence-card {
+    margin: 0 auto 18px;
+  }
+
+  .card-index-bar {
+    padding: 8px 14px;
+  }
+
+  .token-row {
+    padding: 10px 12px 14px;
+  }
+
+  .token-wrap {
+    padding: 10px 8px 8px;
+    min-height: 44px;
+  }
+
+  .token-word {
+    line-height: 1.4;
+  }
+
+  .translation-row {
+    padding: 0 12px 14px;
+    padding-top: 10px;
+    margin: 0 12px 0;
+  }
+
+  .detail-inner {
+    padding: 14px 14px 16px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,6506 @@
+{
+  "sentences": [
+    {
+      "text": "An elephant should run faster than a horse – at least in theory.",
+      "ja_text": "ゾウはウマよりも速く走るはずだ ― 少なくとも理論上は。",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "An",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 2
+        },
+        {
+          "id": 2,
+          "text": "elephant",
+          "lemma": "elephant",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 4
+        },
+        {
+          "id": 3,
+          "text": "should",
+          "lemma": "should",
+          "upos": "助動詞",
+          "xpos": "法助動詞",
+          "ufeats": [
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "run",
+          "lemma": "run",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 5,
+          "text": "faster",
+          "lemma": "fast",
+          "upos": "形容詞",
+          "xpos": "比較級形容詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "主語共有型補文",
+          "head": 4
+        },
+        {
+          "id": 6,
+          "text": "than",
+          "lemma": "than",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 8
+        },
+        {
+          "id": 7,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 8
+        },
+        {
+          "id": 8,
+          "text": "horse",
+          "lemma": "horse",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 5
+        },
+        {
+          "id": 9,
+          "text": "–",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": ":",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 13
+        },
+        {
+          "id": 10,
+          "text": "at",
+          "lemma": "at",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [
+            "ExtPos=ADV"
+          ],
+          "deprel": "副詞修飾",
+          "head": 13
+        },
+        {
+          "id": 11,
+          "text": "least",
+          "lemma": "least",
+          "upos": "形容詞",
+          "xpos": "最上級形容詞",
+          "ufeats": [
+            "最上級"
+          ],
+          "deprel": "固定表現",
+          "head": 10
+        },
+        {
+          "id": 12,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 13
+        },
+        {
+          "id": 13,
+          "text": "theory",
+          "lemma": "theory",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 4
+        },
+        {
+          "id": 14,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 4
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "That’s because big creatures have more of the type of muscle cells used for acceleration.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "That",
+          "lemma": "that",
+          "upos": "代名詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "単数",
+            "指示代名詞"
+          ],
+          "deprel": "外側主語",
+          "head": 6
+        },
+        {
+          "id": 2,
+          "text": "’s",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 6
+        },
+        {
+          "id": 3,
+          "text": "because",
+          "lemma": "because",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 6
+        },
+        {
+          "id": 4,
+          "text": "big",
+          "lemma": "big",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "creatures",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 6
+        },
+        {
+          "id": 6,
+          "text": "have",
+          "lemma": "have",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 7,
+          "text": "more",
+          "lemma": "more",
+          "upos": "形容詞",
+          "xpos": "比較級形容詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "目的語",
+          "head": 6
+        },
+        {
+          "id": 8,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 10
+        },
+        {
+          "id": 9,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "type",
+          "lemma": "type",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 7
+        },
+        {
+          "id": 11,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 13
+        },
+        {
+          "id": 12,
+          "text": "muscle",
+          "lemma": "muscle",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 13
+        },
+        {
+          "id": 13,
+          "text": "cells",
+          "lemma": "cell",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 10
+        },
+        {
+          "id": 14,
+          "text": "used",
+          "lemma": "use",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "名詞修飾節",
+          "head": 13
+        },
+        {
+          "id": 15,
+          "text": "for",
+          "lemma": "for",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 16
+        },
+        {
+          "id": 16,
+          "text": "acceleration",
+          "lemma": "acceleration",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 14
+        },
+        {
+          "id": 17,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 6
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "Yet mid-sized animals are the fastest on Earth, a trend that researchers have long struggled to explain.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "Yet",
+          "lemma": "yet",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 6
+        },
+        {
+          "id": 2,
+          "text": "mid-sized",
+          "lemma": "mid-sized",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 3
+        },
+        {
+          "id": 3,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 6
+        },
+        {
+          "id": 4,
+          "text": "are",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 6
+        },
+        {
+          "id": 5,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 6
+        },
+        {
+          "id": 6,
+          "text": "fastest",
+          "lemma": "fast",
+          "upos": "形容詞",
+          "xpos": "最上級形容詞",
+          "ufeats": [
+            "最上級"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 7,
+          "text": "on",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 8
+        },
+        {
+          "id": 8,
+          "text": "Earth",
+          "lemma": "Earth",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 6
+        },
+        {
+          "id": 9,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 11
+        },
+        {
+          "id": 10,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 11
+        },
+        {
+          "id": 11,
+          "text": "trend",
+          "lemma": "trend",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "並列節",
+          "head": 6
+        },
+        {
+          "id": 12,
+          "text": "that",
+          "lemma": "that",
+          "upos": "代名詞",
+          "xpos": "Wh限定詞",
+          "ufeats": [
+            "関係代名詞"
+          ],
+          "deprel": "目的語",
+          "head": 18
+        },
+        {
+          "id": 13,
+          "text": "researchers",
+          "lemma": "researcher",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 16
+        },
+        {
+          "id": 14,
+          "text": "have",
+          "lemma": "have",
+          "upos": "助動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 16
+        },
+        {
+          "id": 15,
+          "text": "long",
+          "lemma": "long",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "副詞修飾",
+          "head": 16
+        },
+        {
+          "id": 16,
+          "text": "struggled",
+          "lemma": "struggle",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞"
+          ],
+          "deprel": "関係節",
+          "head": 11
+        },
+        {
+          "id": 17,
+          "text": "to",
+          "lemma": "to",
+          "upos": "助詞",
+          "xpos": "to",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 18
+        },
+        {
+          "id": 18,
+          "text": "explain",
+          "lemma": "explain",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "主語共有型補文",
+          "head": 16
+        },
+        {
+          "id": 19,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 6
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "Now, an analysis of nearly 500 species ranging from fruit flies to whales has an answer:",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "Now",
+          "lemma": "now",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "指示代名詞"
+          ],
+          "deprel": "副詞修飾",
+          "head": 15
+        },
+        {
+          "id": 2,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 1
+        },
+        {
+          "id": 3,
+          "text": "an",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "analysis",
+          "lemma": "analysis",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 15
+        },
+        {
+          "id": 5,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 8
+        },
+        {
+          "id": 6,
+          "text": "nearly",
+          "lemma": "nearly",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "500",
+          "lemma": "500",
+          "upos": "数詞",
+          "xpos": "基数",
+          "ufeats": [
+            "NumForm=Digit",
+            "基数"
+          ],
+          "deprel": "数詞修飾",
+          "head": 8
+        },
+        {
+          "id": 8,
+          "text": "species",
+          "lemma": "species",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 4
+        },
+        {
+          "id": 9,
+          "text": "ranging",
+          "lemma": "range",
+          "upos": "動詞",
+          "xpos": "動名詞／現在分詞",
+          "ufeats": [
+            "動名詞"
+          ],
+          "deprel": "名詞修飾節",
+          "head": 8
+        },
+        {
+          "id": 10,
+          "text": "from",
+          "lemma": "from",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 12
+        },
+        {
+          "id": 11,
+          "text": "fruit",
+          "lemma": "fruit",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 12
+        },
+        {
+          "id": 12,
+          "text": "flies",
+          "lemma": "fly",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 9
+        },
+        {
+          "id": 13,
+          "text": "to",
+          "lemma": "to",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "whales",
+          "lemma": "whale",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 9
+        },
+        {
+          "id": 15,
+          "text": "has",
+          "lemma": "have",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 16,
+          "text": "an",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 17
+        },
+        {
+          "id": 17,
+          "text": "answer",
+          "lemma": "answer",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 15
+        },
+        {
+          "id": 18,
+          "text": ":",
+          "lemma": ":",
+          "upos": "句読点",
+          "xpos": ":",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 15
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "The muscle cells in big animals run out of fuel before the creatures can reach their theoretical maximum speed.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "The",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 3
+        },
+        {
+          "id": 2,
+          "text": "muscle",
+          "lemma": "muscle",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 3
+        },
+        {
+          "id": 3,
+          "text": "cells",
+          "lemma": "cell",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 7
+        },
+        {
+          "id": 4,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 6
+        },
+        {
+          "id": 5,
+          "text": "big",
+          "lemma": "big",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 6
+        },
+        {
+          "id": 6,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 3
+        },
+        {
+          "id": 7,
+          "text": "run",
+          "lemma": "run",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 8,
+          "text": "out",
+          "lemma": "out",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 10
+        },
+        {
+          "id": 9,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "fuel",
+          "lemma": "fuel",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 7
+        },
+        {
+          "id": 11,
+          "text": "before",
+          "lemma": "before",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 15
+        },
+        {
+          "id": 12,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 13
+        },
+        {
+          "id": 13,
+          "text": "creatures",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 15
+        },
+        {
+          "id": 14,
+          "text": "can",
+          "lemma": "can",
+          "upos": "助動詞",
+          "xpos": "法助動詞",
+          "ufeats": [
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 15
+        },
+        {
+          "id": 15,
+          "text": "reach",
+          "lemma": "reach",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 7
+        },
+        {
+          "id": 16,
+          "text": "their",
+          "lemma": "their",
+          "upos": "代名詞",
+          "xpos": "所有格",
+          "ufeats": [
+            "属格",
+            "複数",
+            "三人称",
+            "所有",
+            "人称代名詞"
+          ],
+          "deprel": "所有修飾",
+          "head": 19
+        },
+        {
+          "id": 17,
+          "text": "theoretical",
+          "lemma": "theoretical",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 19
+        },
+        {
+          "id": 18,
+          "text": "maximum",
+          "lemma": "maximum",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "speed",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 15
+        },
+        {
+          "id": 20,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 7
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "The work may also help scientists come up with estimates for the running speeds of certain dinosaurs.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "The",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 2
+        },
+        {
+          "id": 2,
+          "text": "work",
+          "lemma": "work",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 5
+        },
+        {
+          "id": 3,
+          "text": "may",
+          "lemma": "may",
+          "upos": "助動詞",
+          "xpos": "法助動詞",
+          "ufeats": [
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 5
+        },
+        {
+          "id": 4,
+          "text": "also",
+          "lemma": "also",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "help",
+          "lemma": "help",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 6,
+          "text": "scientists",
+          "lemma": "scientist",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "目的語",
+          "head": 5
+        },
+        {
+          "id": 7,
+          "text": "come",
+          "lemma": "come",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "主語共有型補文",
+          "head": 5
+        },
+        {
+          "id": 8,
+          "text": "up",
+          "lemma": "up",
+          "upos": "前置詞",
+          "xpos": "不変化詞",
+          "ufeats": [],
+          "deprel": "句動詞の小辞",
+          "head": 7
+        },
+        {
+          "id": 9,
+          "text": "with",
+          "lemma": "with",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "estimates",
+          "lemma": "estimate",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 7
+        },
+        {
+          "id": 11,
+          "text": "for",
+          "lemma": "for",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 14
+        },
+        {
+          "id": 12,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 14
+        },
+        {
+          "id": 13,
+          "text": "running",
+          "lemma": "running",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "speeds",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 10
+        },
+        {
+          "id": 15,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 17
+        },
+        {
+          "id": 16,
+          "text": "certain",
+          "lemma": "certain",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 17
+        },
+        {
+          "id": 17,
+          "text": "dinosaurs",
+          "lemma": "dinosaur",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 14
+        },
+        {
+          "id": 18,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 5
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "Previous studies of animal speed have focused only on certain groups of animals, such as mammals.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "Previous",
+          "lemma": "previous",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 2
+        },
+        {
+          "id": 2,
+          "text": "studies",
+          "lemma": "study",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 7
+        },
+        {
+          "id": 3,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 5
+        },
+        {
+          "id": 4,
+          "text": "animal",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "speed",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 2
+        },
+        {
+          "id": 6,
+          "text": "have",
+          "lemma": "have",
+          "upos": "助動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "focused",
+          "lemma": "focus",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 8,
+          "text": "only",
+          "lemma": "only",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 11
+        },
+        {
+          "id": 9,
+          "text": "on",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 11
+        },
+        {
+          "id": 10,
+          "text": "certain",
+          "lemma": "certain",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 11
+        },
+        {
+          "id": 11,
+          "text": "groups",
+          "lemma": "group",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 7
+        },
+        {
+          "id": 12,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 13
+        },
+        {
+          "id": 13,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 11
+        },
+        {
+          "id": 14,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 17
+        },
+        {
+          "id": 15,
+          "text": "such",
+          "lemma": "such",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "ExtPos=ADP"
+          ],
+          "deprel": "格標識",
+          "head": 17
+        },
+        {
+          "id": 16,
+          "text": "as",
+          "lemma": "as",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "固定表現",
+          "head": 15
+        },
+        {
+          "id": 17,
+          "text": "mammals",
+          "lemma": "mammal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 11
+        },
+        {
+          "id": 18,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 7
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "But that premise often looks at creatures within a limited size range, says Myriam Hirt, a zoologist at the German Centre for Integrative Biodiversity Research in Leipzig.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "But",
+          "lemma": "but",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 5
+        },
+        {
+          "id": 2,
+          "text": "that",
+          "lemma": "that",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "単数",
+            "指示代名詞"
+          ],
+          "deprel": "限定詞",
+          "head": 3
+        },
+        {
+          "id": 3,
+          "text": "premise",
+          "lemma": "premise",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 5
+        },
+        {
+          "id": 4,
+          "text": "often",
+          "lemma": "often",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "looks",
+          "lemma": "look",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "内容節補文",
+          "head": 14
+        },
+        {
+          "id": 6,
+          "text": "at",
+          "lemma": "at",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "creatures",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 5
+        },
+        {
+          "id": 8,
+          "text": "within",
+          "lemma": "within",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 12
+        },
+        {
+          "id": 9,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 12
+        },
+        {
+          "id": 10,
+          "text": "limited",
+          "lemma": "limited",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 12
+        },
+        {
+          "id": 11,
+          "text": "size",
+          "lemma": "size",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 12
+        },
+        {
+          "id": 12,
+          "text": "range",
+          "lemma": "range",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 7
+        },
+        {
+          "id": 13,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 5
+        },
+        {
+          "id": 14,
+          "text": "says",
+          "lemma": "say",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 15,
+          "text": "Myriam",
+          "lemma": "Myriam",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 14
+        },
+        {
+          "id": 16,
+          "text": "Hirt",
+          "lemma": "Hirt",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "平坦構造",
+          "head": 15
+        },
+        {
+          "id": 17,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 19
+        },
+        {
+          "id": 18,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "zoologist",
+          "lemma": "zoologist",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "同格",
+          "head": 15
+        },
+        {
+          "id": 20,
+          "text": "at",
+          "lemma": "at",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 23
+        },
+        {
+          "id": 21,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 23
+        },
+        {
+          "id": 22,
+          "text": "German",
+          "lemma": "German",
+          "upos": "形容詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 23
+        },
+        {
+          "id": 23,
+          "text": "Centre",
+          "lemma": "Centre",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 19
+        },
+        {
+          "id": 24,
+          "text": "for",
+          "lemma": "for",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 27
+        },
+        {
+          "id": 25,
+          "text": "Integrative",
+          "lemma": "integrative",
+          "upos": "形容詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 27
+        },
+        {
+          "id": 26,
+          "text": "Biodiversity",
+          "lemma": "Biodiversity",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 27
+        },
+        {
+          "id": 27,
+          "text": "Research",
+          "lemma": "Research",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 23
+        },
+        {
+          "id": 28,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 29
+        },
+        {
+          "id": 29,
+          "text": "Leipzig",
+          "lemma": "Leipzig",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 23
+        },
+        {
+          "id": 30,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 14
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "That approach may also hide underlying factors by focusing on animals that are closely related, she notes.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "That",
+          "lemma": "that",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "単数",
+            "指示代名詞"
+          ],
+          "deprel": "限定詞",
+          "head": 2
+        },
+        {
+          "id": 2,
+          "text": "approach",
+          "lemma": "approach",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 5
+        },
+        {
+          "id": 3,
+          "text": "may",
+          "lemma": "may",
+          "upos": "助動詞",
+          "xpos": "法助動詞",
+          "ufeats": [
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 5
+        },
+        {
+          "id": 4,
+          "text": "also",
+          "lemma": "also",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "hide",
+          "lemma": "hide",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "内容節補文",
+          "head": 18
+        },
+        {
+          "id": 6,
+          "text": "underlying",
+          "lemma": "underlying",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "factors",
+          "lemma": "factor",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "目的語",
+          "head": 5
+        },
+        {
+          "id": 8,
+          "text": "by",
+          "lemma": "by",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 9
+        },
+        {
+          "id": 9,
+          "text": "focusing",
+          "lemma": "focus",
+          "upos": "動詞",
+          "xpos": "動名詞／現在分詞",
+          "ufeats": [
+            "現在形",
+            "分詞"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 5
+        },
+        {
+          "id": 10,
+          "text": "on",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 11
+        },
+        {
+          "id": 11,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 9
+        },
+        {
+          "id": 12,
+          "text": "that",
+          "lemma": "that",
+          "upos": "代名詞",
+          "xpos": "Wh限定詞",
+          "ufeats": [
+            "関係代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 15
+        },
+        {
+          "id": 13,
+          "text": "are",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 15
+        },
+        {
+          "id": 14,
+          "text": "closely",
+          "lemma": "closely",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 15
+        },
+        {
+          "id": 15,
+          "text": "related",
+          "lemma": "related",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "関係節",
+          "head": 11
+        },
+        {
+          "id": 16,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 5
+        },
+        {
+          "id": 17,
+          "text": "she",
+          "lemma": "she",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "女性",
+            "単数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 18
+        },
+        {
+          "id": 18,
+          "text": "notes",
+          "lemma": "note",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 19,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 18
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "To get around those limitations, Hirt and her colleagues looked at previously collected data for a wide variety of creatures, including ectotherms (so-called cold-blooded animals) as well as warm-blooded endotherms.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "To",
+          "lemma": "to",
+          "upos": "助詞",
+          "xpos": "to",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 2
+        },
+        {
+          "id": 2,
+          "text": "get",
+          "lemma": "get",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 11
+        },
+        {
+          "id": 3,
+          "text": "around",
+          "lemma": "around",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 5
+        },
+        {
+          "id": 4,
+          "text": "those",
+          "lemma": "that",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "複数",
+            "指示代名詞"
+          ],
+          "deprel": "限定詞",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "limitations",
+          "lemma": "limitation",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 2
+        },
+        {
+          "id": 6,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 2
+        },
+        {
+          "id": 7,
+          "text": "Hirt",
+          "lemma": "Hirt",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 11
+        },
+        {
+          "id": 8,
+          "text": "and",
+          "lemma": "and",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 10
+        },
+        {
+          "id": 9,
+          "text": "her",
+          "lemma": "her",
+          "upos": "代名詞",
+          "xpos": "所有格",
+          "ufeats": [
+            "属格",
+            "女性",
+            "単数",
+            "三人称",
+            "所有",
+            "人称代名詞"
+          ],
+          "deprel": "所有修飾",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "colleagues",
+          "lemma": "colleague",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "並列要素",
+          "head": 7
+        },
+        {
+          "id": 11,
+          "text": "looked",
+          "lemma": "look",
+          "upos": "動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 12,
+          "text": "at",
+          "lemma": "at",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 15
+        },
+        {
+          "id": 13,
+          "text": "previously",
+          "lemma": "previously",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "collected",
+          "lemma": "collect",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 15
+        },
+        {
+          "id": 15,
+          "text": "data",
+          "lemma": "datum",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 11
+        },
+        {
+          "id": 16,
+          "text": "for",
+          "lemma": "for",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 19
+        },
+        {
+          "id": 17,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 19
+        },
+        {
+          "id": 18,
+          "text": "wide",
+          "lemma": "wide",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "variety",
+          "lemma": "variety",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 15
+        },
+        {
+          "id": 20,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 21
+        },
+        {
+          "id": 21,
+          "text": "creatures",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 19
+        },
+        {
+          "id": 22,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 24
+        },
+        {
+          "id": 23,
+          "text": "including",
+          "lemma": "include",
+          "upos": "動詞",
+          "xpos": "動名詞／現在分詞",
+          "ufeats": [
+            "現在形",
+            "分詞"
+          ],
+          "deprel": "格標識",
+          "head": 24
+        },
+        {
+          "id": 24,
+          "text": "ectotherms",
+          "lemma": "ectotherm",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 21
+        },
+        {
+          "id": 25,
+          "text": "(",
+          "lemma": "(",
+          "upos": "句読点",
+          "xpos": "-LRB-",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 32
+        },
+        {
+          "id": 26,
+          "text": "so",
+          "lemma": "so",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 28
+        },
+        {
+          "id": 27,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 26
+        },
+        {
+          "id": 28,
+          "text": "called",
+          "lemma": "call",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 32
+        },
+        {
+          "id": 29,
+          "text": "cold",
+          "lemma": "cold",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 31
+        },
+        {
+          "id": 30,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 29
+        },
+        {
+          "id": 31,
+          "text": "blooded",
+          "lemma": "blood",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 32
+        },
+        {
+          "id": 32,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "同格",
+          "head": 24
+        },
+        {
+          "id": 33,
+          "text": ")",
+          "lemma": ")",
+          "upos": "句読点",
+          "xpos": "-RRB-",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 32
+        },
+        {
+          "id": 34,
+          "text": "as",
+          "lemma": "as",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "ExtPos=CCONJ"
+          ],
+          "deprel": "等位接続詞",
+          "head": 40
+        },
+        {
+          "id": 35,
+          "text": "well",
+          "lemma": "well",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "固定表現",
+          "head": 34
+        },
+        {
+          "id": 36,
+          "text": "as",
+          "lemma": "as",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "固定表現",
+          "head": 34
+        },
+        {
+          "id": 37,
+          "text": "warm",
+          "lemma": "warm",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 39
+        },
+        {
+          "id": 38,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 37
+        },
+        {
+          "id": 39,
+          "text": "blooded",
+          "lemma": "blooded",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 40
+        },
+        {
+          "id": 40,
+          "text": "endotherms",
+          "lemma": "endotherm",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "並列要素",
+          "head": 24
+        },
+        {
+          "id": 41,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 11
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "The 474 species they considered included runners, swimmers, and flyers that ranged in weight from 30 micrograms to 100 tons.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "The",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 3
+        },
+        {
+          "id": 2,
+          "text": "474",
+          "lemma": "474",
+          "upos": "数詞",
+          "xpos": "基数",
+          "ufeats": [
+            "NumForm=Digit",
+            "基数"
+          ],
+          "deprel": "数詞修飾",
+          "head": 3
+        },
+        {
+          "id": 3,
+          "text": "species",
+          "lemma": "species",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 6
+        },
+        {
+          "id": 4,
+          "text": "they",
+          "lemma": "they",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "複数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 5
+        },
+        {
+          "id": 5,
+          "text": "considered",
+          "lemma": "consider",
+          "upos": "動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "関係節",
+          "head": 3
+        },
+        {
+          "id": 6,
+          "text": "included",
+          "lemma": "include",
+          "upos": "動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 7,
+          "text": "runners",
+          "lemma": "runner",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "目的語",
+          "head": 6
+        },
+        {
+          "id": 8,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 9
+        },
+        {
+          "id": 9,
+          "text": "swimmers",
+          "lemma": "swimmer",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "並列要素",
+          "head": 7
+        },
+        {
+          "id": 10,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 12
+        },
+        {
+          "id": 11,
+          "text": "and",
+          "lemma": "and",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 12
+        },
+        {
+          "id": 12,
+          "text": "flyers",
+          "lemma": "flyer",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "並列要素",
+          "head": 7
+        },
+        {
+          "id": 13,
+          "text": "that",
+          "lemma": "that",
+          "upos": "代名詞",
+          "xpos": "Wh限定詞",
+          "ufeats": [
+            "関係代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "ranged",
+          "lemma": "rang",
+          "upos": "動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "関係節",
+          "head": 7
+        },
+        {
+          "id": 15,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 16
+        },
+        {
+          "id": 16,
+          "text": "weight",
+          "lemma": "weight",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 14
+        },
+        {
+          "id": 17,
+          "text": "from",
+          "lemma": "from",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 19
+        },
+        {
+          "id": 18,
+          "text": "30",
+          "lemma": "30",
+          "upos": "数詞",
+          "xpos": "基数",
+          "ufeats": [
+            "NumForm=Digit",
+            "基数"
+          ],
+          "deprel": "数詞修飾",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "micrograms",
+          "lemma": "microgram",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 14
+        },
+        {
+          "id": 20,
+          "text": "to",
+          "lemma": "to",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 22
+        },
+        {
+          "id": 21,
+          "text": "100",
+          "lemma": "100",
+          "upos": "数詞",
+          "xpos": "基数",
+          "ufeats": [
+            "NumForm=Digit",
+            "基数"
+          ],
+          "deprel": "数詞修飾",
+          "head": 22
+        },
+        {
+          "id": 22,
+          "text": "tons",
+          "lemma": "ton",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 14
+        },
+        {
+          "id": 23,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 6
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "When the scientists mapped* a creature’s top speed versus its weight, they got an inverted-U-shaped graph, with moderately sized animals on top, they report today in Nature Ecology and Evolution.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "When",
+          "lemma": "when",
+          "upos": "副詞",
+          "xpos": "wh副詞",
+          "ufeats": [
+            "疑問代名詞"
+          ],
+          "deprel": "副詞修飾",
+          "head": 4
+        },
+        {
+          "id": 2,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 3
+        },
+        {
+          "id": 3,
+          "text": "scientists",
+          "lemma": "scientist",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "mapped",
+          "lemma": "map",
+          "upos": "動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 16
+        },
+        {
+          "id": 5,
+          "text": "*",
+          "lemma": "*",
+          "upos": "句読点",
+          "xpos": "NFP",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 4
+        },
+        {
+          "id": 6,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "creature",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "所有修飾",
+          "head": 10
+        },
+        {
+          "id": 8,
+          "text": "’s",
+          "lemma": "'s",
+          "upos": "助詞",
+          "xpos": "所有格語尾",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 7
+        },
+        {
+          "id": 9,
+          "text": "top",
+          "lemma": "top",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "speed",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 4
+        },
+        {
+          "id": 11,
+          "text": "versus",
+          "lemma": "versus",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 13
+        },
+        {
+          "id": 12,
+          "text": "its",
+          "lemma": "its",
+          "upos": "代名詞",
+          "xpos": "所有格",
+          "ufeats": [
+            "属格",
+            "中性",
+            "単数",
+            "三人称",
+            "所有",
+            "人称代名詞"
+          ],
+          "deprel": "所有修飾",
+          "head": 13
+        },
+        {
+          "id": 13,
+          "text": "weight",
+          "lemma": "weight",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 4
+        },
+        {
+          "id": 14,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 4
+        },
+        {
+          "id": 15,
+          "text": "they",
+          "lemma": "they",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "複数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 16
+        },
+        {
+          "id": 16,
+          "text": "got",
+          "lemma": "get",
+          "upos": "動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "内容節補文",
+          "head": 33
+        },
+        {
+          "id": 17,
+          "text": "an",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 23
+        },
+        {
+          "id": 18,
+          "text": "inverted",
+          "lemma": "invert",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 20
+        },
+        {
+          "id": 19,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 18
+        },
+        {
+          "id": 20,
+          "text": "U",
+          "lemma": "U",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 22
+        },
+        {
+          "id": 21,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 20
+        },
+        {
+          "id": 22,
+          "text": "shaped",
+          "lemma": "shape",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 23
+        },
+        {
+          "id": 23,
+          "text": "graph",
+          "lemma": "graph",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 16
+        },
+        {
+          "id": 24,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 30
+        },
+        {
+          "id": 25,
+          "text": "with",
+          "lemma": "with",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 30
+        },
+        {
+          "id": 26,
+          "text": "moderately",
+          "lemma": "moderately",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 27
+        },
+        {
+          "id": 27,
+          "text": "sized",
+          "lemma": "sized",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 28
+        },
+        {
+          "id": 28,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 30
+        },
+        {
+          "id": 29,
+          "text": "on",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 30
+        },
+        {
+          "id": 30,
+          "text": "top",
+          "lemma": "top",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 16
+        },
+        {
+          "id": 31,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 16
+        },
+        {
+          "id": 32,
+          "text": "they",
+          "lemma": "they",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "複数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 33
+        },
+        {
+          "id": 33,
+          "text": "report",
+          "lemma": "report",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 34,
+          "text": "today",
+          "lemma": "today",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "標識なし斜格",
+          "head": 33
+        },
+        {
+          "id": 35,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 37
+        },
+        {
+          "id": 36,
+          "text": "Nature",
+          "lemma": "Nature",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 37
+        },
+        {
+          "id": 37,
+          "text": "Ecology",
+          "lemma": "Ecology",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 33
+        },
+        {
+          "id": 38,
+          "text": "and",
+          "lemma": "and",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 39
+        },
+        {
+          "id": 39,
+          "text": "Evolution",
+          "lemma": "Evolution",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "並列要素",
+          "head": 37
+        },
+        {
+          "id": 40,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 33
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "On the largest scale, the trend doesn’t seem to be related to biomechanics, or how an animal’s body parts are arranged and how its joints function, among other factors, Hirt says.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "On",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 4
+        },
+        {
+          "id": 2,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 4
+        },
+        {
+          "id": 3,
+          "text": "largest",
+          "lemma": "large",
+          "upos": "形容詞",
+          "xpos": "最上級形容詞",
+          "ufeats": [
+            "最上級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "scale",
+          "lemma": "scale",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 10
+        },
+        {
+          "id": 5,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 4
+        },
+        {
+          "id": 6,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "trend",
+          "lemma": "trend",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 10
+        },
+        {
+          "id": 8,
+          "text": "does",
+          "lemma": "do",
+          "upos": "助動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 10
+        },
+        {
+          "id": 9,
+          "text": "n’t",
+          "lemma": "not",
+          "upos": "助詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "否定"
+          ],
+          "deprel": "副詞修飾",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "seem",
+          "lemma": "seem",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "内容節補文",
+          "head": 37
+        },
+        {
+          "id": 11,
+          "text": "to",
+          "lemma": "to",
+          "upos": "助詞",
+          "xpos": "to",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 13
+        },
+        {
+          "id": 12,
+          "text": "be",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 13
+        },
+        {
+          "id": 13,
+          "text": "related",
+          "lemma": "related",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "主語共有型補文",
+          "head": 10
+        },
+        {
+          "id": 14,
+          "text": "to",
+          "lemma": "to",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 15
+        },
+        {
+          "id": 15,
+          "text": "biomechanics",
+          "lemma": "biomechanic",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 13
+        },
+        {
+          "id": 16,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 25
+        },
+        {
+          "id": 17,
+          "text": "or",
+          "lemma": "or",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 25
+        },
+        {
+          "id": 18,
+          "text": "how",
+          "lemma": "how",
+          "upos": "副詞",
+          "xpos": "wh副詞",
+          "ufeats": [
+            "疑問代名詞"
+          ],
+          "deprel": "並列要素",
+          "head": 15
+        },
+        {
+          "id": 19,
+          "text": "an",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 20
+        },
+        {
+          "id": 20,
+          "text": "animal",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "所有修飾",
+          "head": 23
+        },
+        {
+          "id": 21,
+          "text": "’s",
+          "lemma": "'s",
+          "upos": "助詞",
+          "xpos": "所有格語尾",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 20
+        },
+        {
+          "id": 22,
+          "text": "body",
+          "lemma": "body",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 23
+        },
+        {
+          "id": 23,
+          "text": "parts",
+          "lemma": "part",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "受動文の主語",
+          "head": 25
+        },
+        {
+          "id": 24,
+          "text": "are",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "受動助動詞",
+          "head": 25
+        },
+        {
+          "id": 25,
+          "text": "arranged",
+          "lemma": "arrange",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "並列要素",
+          "head": 15
+        },
+        {
+          "id": 26,
+          "text": "and",
+          "lemma": "and",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 30
+        },
+        {
+          "id": 27,
+          "text": "how",
+          "lemma": "how",
+          "upos": "副詞",
+          "xpos": "wh副詞",
+          "ufeats": [
+            "疑問代名詞"
+          ],
+          "deprel": "副詞修飾",
+          "head": 30
+        },
+        {
+          "id": 28,
+          "text": "its",
+          "lemma": "its",
+          "upos": "代名詞",
+          "xpos": "所有格",
+          "ufeats": [
+            "属格",
+            "中性",
+            "単数",
+            "三人称",
+            "所有",
+            "人称代名詞"
+          ],
+          "deprel": "所有修飾",
+          "head": 29
+        },
+        {
+          "id": 29,
+          "text": "joints",
+          "lemma": "joint",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 30
+        },
+        {
+          "id": 30,
+          "text": "function",
+          "lemma": "function",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "並列要素",
+          "head": 25
+        },
+        {
+          "id": 31,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 34
+        },
+        {
+          "id": 32,
+          "text": "among",
+          "lemma": "among",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 34
+        },
+        {
+          "id": 33,
+          "text": "other",
+          "lemma": "other",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 34
+        },
+        {
+          "id": 34,
+          "text": "factors",
+          "lemma": "factor",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 25
+        },
+        {
+          "id": 35,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 10
+        },
+        {
+          "id": 36,
+          "text": "Hirt",
+          "lemma": "Hirt",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 37
+        },
+        {
+          "id": 37,
+          "text": "says",
+          "lemma": "say",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 38,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 37
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "Instead, it appears to be related to a much more fundamental metabolic constraint: the length of time required for the animal to reach its theoretical maximum speed, based on the number of “fast-twitch” muscle fiber cells in the creature’s muscles, as compared to the length of time it takes for those cells to run out of readily available energy.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "Instead",
+          "lemma": "instead",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 4
+        },
+        {
+          "id": 2,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 1
+        },
+        {
+          "id": 3,
+          "text": "it",
+          "lemma": "it",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "中性",
+            "単数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "appears",
+          "lemma": "appear",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 5,
+          "text": "to",
+          "lemma": "to",
+          "upos": "助詞",
+          "xpos": "to",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 7
+        },
+        {
+          "id": 6,
+          "text": "be",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 7
+        },
+        {
+          "id": 7,
+          "text": "related",
+          "lemma": "related",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "主語共有型補文",
+          "head": 4
+        },
+        {
+          "id": 8,
+          "text": "to",
+          "lemma": "to",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 14
+        },
+        {
+          "id": 9,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 14
+        },
+        {
+          "id": 10,
+          "text": "much",
+          "lemma": "much",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 11
+        },
+        {
+          "id": 11,
+          "text": "more",
+          "lemma": "more",
+          "upos": "副詞",
+          "xpos": "比較級副詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "副詞修飾",
+          "head": 12
+        },
+        {
+          "id": 12,
+          "text": "fundamental",
+          "lemma": "fundamental",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 14
+        },
+        {
+          "id": 13,
+          "text": "metabolic",
+          "lemma": "metabolic",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "constraint",
+          "lemma": "constraint",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 7
+        },
+        {
+          "id": 15,
+          "text": ":",
+          "lemma": ":",
+          "upos": "句読点",
+          "xpos": ":",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 17
+        },
+        {
+          "id": 16,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 17
+        },
+        {
+          "id": 17,
+          "text": "length",
+          "lemma": "length",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "同格",
+          "head": 14
+        },
+        {
+          "id": 18,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "time",
+          "lemma": "time",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 17
+        },
+        {
+          "id": 20,
+          "text": "required",
+          "lemma": "require",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "名詞修飾節",
+          "head": 19
+        },
+        {
+          "id": 21,
+          "text": "for",
+          "lemma": "for",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 25
+        },
+        {
+          "id": 22,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 23
+        },
+        {
+          "id": 23,
+          "text": "animal",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 25
+        },
+        {
+          "id": 24,
+          "text": "to",
+          "lemma": "to",
+          "upos": "助詞",
+          "xpos": "to",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 25
+        },
+        {
+          "id": 25,
+          "text": "reach",
+          "lemma": "reach",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 20
+        },
+        {
+          "id": 26,
+          "text": "its",
+          "lemma": "its",
+          "upos": "代名詞",
+          "xpos": "所有格",
+          "ufeats": [
+            "属格",
+            "中性",
+            "単数",
+            "三人称",
+            "所有",
+            "人称代名詞"
+          ],
+          "deprel": "所有修飾",
+          "head": 29
+        },
+        {
+          "id": 27,
+          "text": "theoretical",
+          "lemma": "theoretical",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 29
+        },
+        {
+          "id": 28,
+          "text": "maximum",
+          "lemma": "maximum",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 29
+        },
+        {
+          "id": 29,
+          "text": "speed",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 25
+        },
+        {
+          "id": 30,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 31
+        },
+        {
+          "id": 31,
+          "text": "based",
+          "lemma": "base",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "名詞修飾節",
+          "head": 17
+        },
+        {
+          "id": 32,
+          "text": "on",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 34
+        },
+        {
+          "id": 33,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 34
+        },
+        {
+          "id": 34,
+          "text": "number",
+          "lemma": "number",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 31
+        },
+        {
+          "id": 35,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 43
+        },
+        {
+          "id": 36,
+          "text": "“",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "``",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 39
+        },
+        {
+          "id": 37,
+          "text": "fast",
+          "lemma": "fast",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 39
+        },
+        {
+          "id": 38,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 37
+        },
+        {
+          "id": 39,
+          "text": "twitch",
+          "lemma": "twitch",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 43
+        },
+        {
+          "id": 40,
+          "text": "”",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "''",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 39
+        },
+        {
+          "id": 41,
+          "text": "muscle",
+          "lemma": "muscle",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 42
+        },
+        {
+          "id": 42,
+          "text": "fiber",
+          "lemma": "fiber",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 43
+        },
+        {
+          "id": 43,
+          "text": "cells",
+          "lemma": "cell",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 34
+        },
+        {
+          "id": 44,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 48
+        },
+        {
+          "id": 45,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 46
+        },
+        {
+          "id": 46,
+          "text": "creature",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "所有修飾",
+          "head": 48
+        },
+        {
+          "id": 47,
+          "text": "’s",
+          "lemma": "'s",
+          "upos": "助詞",
+          "xpos": "所有格語尾",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 46
+        },
+        {
+          "id": 48,
+          "text": "muscles",
+          "lemma": "muscle",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 43
+        },
+        {
+          "id": 49,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 51
+        },
+        {
+          "id": 50,
+          "text": "as",
+          "lemma": "as",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 51
+        },
+        {
+          "id": 51,
+          "text": "compared",
+          "lemma": "compare",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 31
+        },
+        {
+          "id": 52,
+          "text": "to",
+          "lemma": "to",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 54
+        },
+        {
+          "id": 53,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 54
+        },
+        {
+          "id": 54,
+          "text": "length",
+          "lemma": "length",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 51
+        },
+        {
+          "id": 55,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 56
+        },
+        {
+          "id": 56,
+          "text": "time",
+          "lemma": "time",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 54
+        },
+        {
+          "id": 57,
+          "text": "it",
+          "lemma": "it",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "中性",
+            "単数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "虚辞",
+          "head": 58
+        },
+        {
+          "id": 58,
+          "text": "takes",
+          "lemma": "take",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "関係節",
+          "head": 54
+        },
+        {
+          "id": 59,
+          "text": "for",
+          "lemma": "for",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 63
+        },
+        {
+          "id": 60,
+          "text": "those",
+          "lemma": "that",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "複数",
+            "指示代名詞"
+          ],
+          "deprel": "限定詞",
+          "head": 61
+        },
+        {
+          "id": 61,
+          "text": "cells",
+          "lemma": "cell",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 63
+        },
+        {
+          "id": 62,
+          "text": "to",
+          "lemma": "to",
+          "upos": "助詞",
+          "xpos": "to",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 63
+        },
+        {
+          "id": 63,
+          "text": "run",
+          "lemma": "run",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "節主語",
+          "head": 58
+        },
+        {
+          "id": 64,
+          "text": "out",
+          "lemma": "out",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 68
+        },
+        {
+          "id": 65,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 68
+        },
+        {
+          "id": 66,
+          "text": "readily",
+          "lemma": "readily",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 67
+        },
+        {
+          "id": 67,
+          "text": "available",
+          "lemma": "available",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 68
+        },
+        {
+          "id": 68,
+          "text": "energy",
+          "lemma": "energy",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 63
+        },
+        {
+          "id": 69,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 4
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "(“Fast-twitch” muscle fibers contract more quickly than “slow-twitch*” fibers and generate more force more quickly, but they also fatigue more quickly.)",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "(",
+          "lemma": "(",
+          "upos": "句読点",
+          "xpos": "-LRB-",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 9
+        },
+        {
+          "id": 2,
+          "text": "“",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "``",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 5
+        },
+        {
+          "id": 3,
+          "text": "Fast",
+          "lemma": "fast",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 5
+        },
+        {
+          "id": 4,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 3
+        },
+        {
+          "id": 5,
+          "text": "twitch",
+          "lemma": "twitch",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 8
+        },
+        {
+          "id": 6,
+          "text": "”",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "''",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 5
+        },
+        {
+          "id": 7,
+          "text": "muscle",
+          "lemma": "muscle",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 8
+        },
+        {
+          "id": 8,
+          "text": "fibers",
+          "lemma": "fiber",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 9
+        },
+        {
+          "id": 9,
+          "text": "contract",
+          "lemma": "contract",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 10,
+          "text": "more",
+          "lemma": "more",
+          "upos": "副詞",
+          "xpos": "比較級副詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "副詞修飾",
+          "head": 11
+        },
+        {
+          "id": 11,
+          "text": "quickly",
+          "lemma": "quickly",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 9
+        },
+        {
+          "id": 12,
+          "text": "than",
+          "lemma": "than",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 19
+        },
+        {
+          "id": 13,
+          "text": "“",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "``",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 16
+        },
+        {
+          "id": 14,
+          "text": "slow",
+          "lemma": "slow",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 16
+        },
+        {
+          "id": 15,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 14
+        },
+        {
+          "id": 16,
+          "text": "twitch",
+          "lemma": "twitch",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 19
+        },
+        {
+          "id": 17,
+          "text": "*",
+          "lemma": "*",
+          "upos": "句読点",
+          "xpos": "NFP",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 16
+        },
+        {
+          "id": 18,
+          "text": "”",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "''",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 16
+        },
+        {
+          "id": 19,
+          "text": "fibers",
+          "lemma": "fiber",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 9
+        },
+        {
+          "id": 20,
+          "text": "and",
+          "lemma": "and",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 21
+        },
+        {
+          "id": 21,
+          "text": "generate",
+          "lemma": "generate",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "並列要素",
+          "head": 9
+        },
+        {
+          "id": 22,
+          "text": "more",
+          "lemma": "more",
+          "upos": "形容詞",
+          "xpos": "比較級形容詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 23
+        },
+        {
+          "id": 23,
+          "text": "force",
+          "lemma": "force",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 21
+        },
+        {
+          "id": 24,
+          "text": "more",
+          "lemma": "more",
+          "upos": "副詞",
+          "xpos": "比較級副詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "副詞修飾",
+          "head": 25
+        },
+        {
+          "id": 25,
+          "text": "quickly",
+          "lemma": "quickly",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 21
+        },
+        {
+          "id": 26,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 30
+        },
+        {
+          "id": 27,
+          "text": "but",
+          "lemma": "but",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 30
+        },
+        {
+          "id": 28,
+          "text": "they",
+          "lemma": "they",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "複数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 30
+        },
+        {
+          "id": 29,
+          "text": "also",
+          "lemma": "also",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 30
+        },
+        {
+          "id": 30,
+          "text": "fatigue",
+          "lemma": "fatigue",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "並列要素",
+          "head": 9
+        },
+        {
+          "id": 31,
+          "text": "more",
+          "lemma": "more",
+          "upos": "副詞",
+          "xpos": "比較級副詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "副詞修飾",
+          "head": 32
+        },
+        {
+          "id": 32,
+          "text": "quickly",
+          "lemma": "quickly",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 30
+        },
+        {
+          "id": 33,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 9
+        },
+        {
+          "id": 34,
+          "text": ")",
+          "lemma": ")",
+          "upos": "句読点",
+          "xpos": "-RRB-",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 9
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "According to the researchers’ notion, the “fast-twitch” muscle fibers in immense creatures such as elephants and whales run out of cellular fuel long before they can reach max speed based on the overall number of such fibers.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "According",
+          "lemma": "accord",
+          "upos": "動詞",
+          "xpos": "動名詞／現在分詞",
+          "ufeats": [
+            "ExtPos=ADP",
+            "現在形",
+            "分詞"
+          ],
+          "deprel": "格標識",
+          "head": 6
+        },
+        {
+          "id": 2,
+          "text": "to",
+          "lemma": "to",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "固定表現",
+          "head": 1
+        },
+        {
+          "id": 3,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "researchers",
+          "lemma": "researcher",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "所有修飾",
+          "head": 6
+        },
+        {
+          "id": 5,
+          "text": "’",
+          "lemma": "'s",
+          "upos": "助詞",
+          "xpos": "所有格語尾",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 4
+        },
+        {
+          "id": 6,
+          "text": "notion",
+          "lemma": "notion",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 24
+        },
+        {
+          "id": 7,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 6
+        },
+        {
+          "id": 8,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 15
+        },
+        {
+          "id": 9,
+          "text": "“",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "``",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 12
+        },
+        {
+          "id": 10,
+          "text": "fast",
+          "lemma": "fast",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 12
+        },
+        {
+          "id": 11,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 10
+        },
+        {
+          "id": 12,
+          "text": "twitch",
+          "lemma": "twitch",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 15
+        },
+        {
+          "id": 13,
+          "text": "”",
+          "lemma": "''",
+          "upos": "句読点",
+          "xpos": "''",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 12
+        },
+        {
+          "id": 14,
+          "text": "muscle",
+          "lemma": "muscle",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 15
+        },
+        {
+          "id": 15,
+          "text": "fibers",
+          "lemma": "fiber",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 24
+        },
+        {
+          "id": 16,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 18
+        },
+        {
+          "id": 17,
+          "text": "immense",
+          "lemma": "immense",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 18
+        },
+        {
+          "id": 18,
+          "text": "creatures",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 15
+        },
+        {
+          "id": 19,
+          "text": "such",
+          "lemma": "such",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "ExtPos=ADP"
+          ],
+          "deprel": "格標識",
+          "head": 21
+        },
+        {
+          "id": 20,
+          "text": "as",
+          "lemma": "as",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "固定表現",
+          "head": 19
+        },
+        {
+          "id": 21,
+          "text": "elephants",
+          "lemma": "elephant",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 18
+        },
+        {
+          "id": 22,
+          "text": "and",
+          "lemma": "and",
+          "upos": "等位接続詞",
+          "xpos": "等位接続詞",
+          "ufeats": [],
+          "deprel": "等位接続詞",
+          "head": 23
+        },
+        {
+          "id": 23,
+          "text": "whales",
+          "lemma": "whale",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "並列要素",
+          "head": 21
+        },
+        {
+          "id": 24,
+          "text": "run",
+          "lemma": "run",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 25,
+          "text": "out",
+          "lemma": "out",
+          "upos": "前置詞",
+          "xpos": "不変化詞",
+          "ufeats": [],
+          "deprel": "句動詞の小辞",
+          "head": 24
+        },
+        {
+          "id": 26,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 28
+        },
+        {
+          "id": 27,
+          "text": "cellular",
+          "lemma": "cellular",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 28
+        },
+        {
+          "id": 28,
+          "text": "fuel",
+          "lemma": "fuel",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 24
+        },
+        {
+          "id": 29,
+          "text": "long",
+          "lemma": "long",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "副詞修飾",
+          "head": 33
+        },
+        {
+          "id": 30,
+          "text": "before",
+          "lemma": "before",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 33
+        },
+        {
+          "id": 31,
+          "text": "they",
+          "lemma": "they",
+          "upos": "代名詞",
+          "xpos": "人称代名詞",
+          "ufeats": [
+            "主格",
+            "複数",
+            "三人称",
+            "人称代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 33
+        },
+        {
+          "id": 32,
+          "text": "can",
+          "lemma": "can",
+          "upos": "助動詞",
+          "xpos": "法助動詞",
+          "ufeats": [
+            "定形動詞"
+          ],
+          "deprel": "助動詞",
+          "head": 33
+        },
+        {
+          "id": 33,
+          "text": "reach",
+          "lemma": "reach",
+          "upos": "動詞",
+          "xpos": "原形動詞",
+          "ufeats": [
+            "不定詞"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 24
+        },
+        {
+          "id": 34,
+          "text": "max",
+          "lemma": "max",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 35
+        },
+        {
+          "id": 35,
+          "text": "speed",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 33
+        },
+        {
+          "id": 36,
+          "text": "based",
+          "lemma": "base",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "格標識",
+          "head": 40
+        },
+        {
+          "id": 37,
+          "text": "on",
+          "lemma": "on",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 40
+        },
+        {
+          "id": 38,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 40
+        },
+        {
+          "id": 39,
+          "text": "overall",
+          "lemma": "overall",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 40
+        },
+        {
+          "id": 40,
+          "text": "number",
+          "lemma": "number",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 33
+        },
+        {
+          "id": 41,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 43
+        },
+        {
+          "id": 42,
+          "text": "such",
+          "lemma": "such",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 43
+        },
+        {
+          "id": 43,
+          "text": "fibers",
+          "lemma": "fiber",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 40
+        },
+        {
+          "id": 44,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 24
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "The study is also a good starting point for revealing other factors that influence a creature’s maximum speed, says Christofer Clemente, an ecophysiologist at the University of the Sunshine Coast in Maroochydore, Australia, who wasn’t involved in the research.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "The",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 2
+        },
+        {
+          "id": 2,
+          "text": "study",
+          "lemma": "study",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 8
+        },
+        {
+          "id": 3,
+          "text": "is",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 8
+        },
+        {
+          "id": 4,
+          "text": "also",
+          "lemma": "also",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 8
+        },
+        {
+          "id": 5,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 8
+        },
+        {
+          "id": 6,
+          "text": "good",
+          "lemma": "good",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 8
+        },
+        {
+          "id": 7,
+          "text": "starting",
+          "lemma": "starting",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 8
+        },
+        {
+          "id": 8,
+          "text": "point",
+          "lemma": "point",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "内容節補文",
+          "head": 21
+        },
+        {
+          "id": 9,
+          "text": "for",
+          "lemma": "for",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 10
+        },
+        {
+          "id": 10,
+          "text": "revealing",
+          "lemma": "reveal",
+          "upos": "動詞",
+          "xpos": "動名詞／現在分詞",
+          "ufeats": [
+            "動名詞"
+          ],
+          "deprel": "名詞修飾節",
+          "head": 8
+        },
+        {
+          "id": 11,
+          "text": "other",
+          "lemma": "other",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 12
+        },
+        {
+          "id": 12,
+          "text": "factors",
+          "lemma": "factor",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "目的語",
+          "head": 10
+        },
+        {
+          "id": 13,
+          "text": "that",
+          "lemma": "that",
+          "upos": "代名詞",
+          "xpos": "Wh限定詞",
+          "ufeats": [
+            "関係代名詞"
+          ],
+          "deprel": "名詞主語",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "influence",
+          "lemma": "influence",
+          "upos": "動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "関係節",
+          "head": 12
+        },
+        {
+          "id": 15,
+          "text": "a",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 16
+        },
+        {
+          "id": 16,
+          "text": "creature",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "所有修飾",
+          "head": 19
+        },
+        {
+          "id": 17,
+          "text": "’s",
+          "lemma": "'s",
+          "upos": "助詞",
+          "xpos": "所有格語尾",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 16
+        },
+        {
+          "id": 18,
+          "text": "maximum",
+          "lemma": "maximum",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "speed",
+          "lemma": "speed",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "目的語",
+          "head": 14
+        },
+        {
+          "id": 20,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 8
+        },
+        {
+          "id": 21,
+          "text": "says",
+          "lemma": "say",
+          "upos": "動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 22,
+          "text": "Christofer",
+          "lemma": "Christofer",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 21
+        },
+        {
+          "id": 23,
+          "text": "Clemente",
+          "lemma": "Clemente",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "平坦構造",
+          "head": 22
+        },
+        {
+          "id": 24,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 26
+        },
+        {
+          "id": 25,
+          "text": "an",
+          "lemma": "a",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "不定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 26
+        },
+        {
+          "id": 26,
+          "text": "ecophysiologist",
+          "lemma": "ecophysiologist",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "同格",
+          "head": 22
+        },
+        {
+          "id": 27,
+          "text": "at",
+          "lemma": "at",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 29
+        },
+        {
+          "id": 28,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 29
+        },
+        {
+          "id": 29,
+          "text": "University",
+          "lemma": "University",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 26
+        },
+        {
+          "id": 30,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 33
+        },
+        {
+          "id": 31,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 33
+        },
+        {
+          "id": 32,
+          "text": "Sunshine",
+          "lemma": "Sunshine",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 33
+        },
+        {
+          "id": 33,
+          "text": "Coast",
+          "lemma": "Coast",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 29
+        },
+        {
+          "id": 34,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 35
+        },
+        {
+          "id": 35,
+          "text": "Maroochydore",
+          "lemma": "Maroochydore",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 29
+        },
+        {
+          "id": 36,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 37
+        },
+        {
+          "id": 37,
+          "text": "Australia",
+          "lemma": "Australia",
+          "upos": "固有名詞",
+          "xpos": "単数形固有名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "同格",
+          "head": 35
+        },
+        {
+          "id": 38,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 42
+        },
+        {
+          "id": 39,
+          "text": "who",
+          "lemma": "who",
+          "upos": "代名詞",
+          "xpos": "Wh代名詞",
+          "ufeats": [
+            "関係代名詞"
+          ],
+          "deprel": "受動文の主語",
+          "head": 42
+        },
+        {
+          "id": 40,
+          "text": "was",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "過去形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "過去形",
+            "定形動詞"
+          ],
+          "deprel": "受動助動詞",
+          "head": 42
+        },
+        {
+          "id": 41,
+          "text": "n’t",
+          "lemma": "not",
+          "upos": "助詞",
+          "xpos": "副詞",
+          "ufeats": [
+            "否定"
+          ],
+          "deprel": "副詞修飾",
+          "head": 42
+        },
+        {
+          "id": 42,
+          "text": "involved",
+          "lemma": "involve",
+          "upos": "動詞",
+          "xpos": "過去分詞",
+          "ufeats": [
+            "過去形",
+            "分詞",
+            "受動態"
+          ],
+          "deprel": "関係節",
+          "head": 22
+        },
+        {
+          "id": 43,
+          "text": "in",
+          "lemma": "in",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 45
+        },
+        {
+          "id": 44,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 45
+        },
+        {
+          "id": 45,
+          "text": "research",
+          "lemma": "research",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 42
+        },
+        {
+          "id": 46,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 21
+        }
+      ],
+      "clauses": []
+    },
+    {
+      "text": "One such unexplained trend is that warm-blooded land animals are usually faster than cold-blooded creatures of comparable size, whereas at sea the reverse is usually true.",
+      "ja_text": "",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "One",
+          "lemma": "one",
+          "upos": "数詞",
+          "xpos": "基数",
+          "ufeats": [
+            "NumForm=Word",
+            "基数"
+          ],
+          "deprel": "数詞修飾",
+          "head": 4
+        },
+        {
+          "id": 2,
+          "text": "such",
+          "lemma": "such",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 4
+        },
+        {
+          "id": 3,
+          "text": "unexplained",
+          "lemma": "unexplained",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 4
+        },
+        {
+          "id": 4,
+          "text": "trend",
+          "lemma": "trend",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "外側主語",
+          "head": 14
+        },
+        {
+          "id": 5,
+          "text": "is",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 14
+        },
+        {
+          "id": 6,
+          "text": "that",
+          "lemma": "that",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 14
+        },
+        {
+          "id": 7,
+          "text": "warm",
+          "lemma": "warm",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 9
+        },
+        {
+          "id": 8,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 7
+        },
+        {
+          "id": 9,
+          "text": "blooded",
+          "lemma": "blooded",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 11
+        },
+        {
+          "id": 10,
+          "text": "land",
+          "lemma": "land",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "複合語",
+          "head": 11
+        },
+        {
+          "id": 11,
+          "text": "animals",
+          "lemma": "animal",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "名詞主語",
+          "head": 14
+        },
+        {
+          "id": 12,
+          "text": "are",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "非三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "複数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 14
+        },
+        {
+          "id": 13,
+          "text": "usually",
+          "lemma": "usually",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 14
+        },
+        {
+          "id": 14,
+          "text": "faster",
+          "lemma": "fast",
+          "upos": "形容詞",
+          "xpos": "比較級形容詞",
+          "ufeats": [
+            "比較級"
+          ],
+          "deprel": "-",
+          "head": 0
+        },
+        {
+          "id": 15,
+          "text": "than",
+          "lemma": "than",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 19
+        },
+        {
+          "id": 16,
+          "text": "cold",
+          "lemma": "cold",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 18
+        },
+        {
+          "id": 17,
+          "text": "-",
+          "lemma": "-",
+          "upos": "句読点",
+          "xpos": "HYPH",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 16
+        },
+        {
+          "id": 18,
+          "text": "blooded",
+          "lemma": "blooded",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 19
+        },
+        {
+          "id": 19,
+          "text": "creatures",
+          "lemma": "creature",
+          "upos": "名詞",
+          "xpos": "複数形名詞",
+          "ufeats": [
+            "複数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 14
+        },
+        {
+          "id": 20,
+          "text": "of",
+          "lemma": "of",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 22
+        },
+        {
+          "id": 21,
+          "text": "comparable",
+          "lemma": "comparable",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "形容詞修飾",
+          "head": 22
+        },
+        {
+          "id": 22,
+          "text": "size",
+          "lemma": "size",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞修飾",
+          "head": 19
+        },
+        {
+          "id": 23,
+          "text": ",",
+          "lemma": ",",
+          "upos": "句読点",
+          "xpos": ",",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 31
+        },
+        {
+          "id": 24,
+          "text": "whereas",
+          "lemma": "whereas",
+          "upos": "従属接続詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "従属標識",
+          "head": 31
+        },
+        {
+          "id": 25,
+          "text": "at",
+          "lemma": "at",
+          "upos": "前置詞",
+          "xpos": "前置詞/従属接続詞",
+          "ufeats": [],
+          "deprel": "格標識",
+          "head": 26
+        },
+        {
+          "id": 26,
+          "text": "sea",
+          "lemma": "sea",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "斜格要素（副詞的名詞句）",
+          "head": 31
+        },
+        {
+          "id": 27,
+          "text": "the",
+          "lemma": "the",
+          "upos": "限定詞",
+          "xpos": "限定詞",
+          "ufeats": [
+            "定",
+            "PronType=Art"
+          ],
+          "deprel": "限定詞",
+          "head": 28
+        },
+        {
+          "id": 28,
+          "text": "reverse",
+          "lemma": "reverse",
+          "upos": "名詞",
+          "xpos": "単数形名詞/不可算名詞",
+          "ufeats": [
+            "単数"
+          ],
+          "deprel": "名詞主語",
+          "head": 31
+        },
+        {
+          "id": 29,
+          "text": "is",
+          "lemma": "be",
+          "upos": "助動詞",
+          "xpos": "三人称単数現在形動詞",
+          "ufeats": [
+            "直説法",
+            "単数",
+            "三人称",
+            "現在形",
+            "定形動詞"
+          ],
+          "deprel": "コピュラ（be動詞等）",
+          "head": 31
+        },
+        {
+          "id": 30,
+          "text": "usually",
+          "lemma": "usually",
+          "upos": "副詞",
+          "xpos": "副詞",
+          "ufeats": [],
+          "deprel": "副詞修飾",
+          "head": 31
+        },
+        {
+          "id": 31,
+          "text": "true",
+          "lemma": "true",
+          "upos": "形容詞",
+          "xpos": "形容詞",
+          "ufeats": [
+            "原級"
+          ],
+          "deprel": "副詞節修飾",
+          "head": 14
+        },
+        {
+          "id": 32,
+          "text": ".",
+          "lemma": ".",
+          "upos": "句読点",
+          "xpos": ".",
+          "ufeats": [],
+          "deprel": "句読点",
+          "head": 14
+        }
+      ],
+      "clauses": []
+    }
+  ]
+}

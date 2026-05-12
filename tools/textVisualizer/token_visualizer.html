@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Token Dependency Visualizer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <h1>Token Dependency Visualizer</h1>
+  <div class="header-right">
+    <button class="theme-toggle" id="themeBtn">
+      <span class="theme-icon">☀️</span>
+      <span id="themeLabel">ライトモード</span>
+    </button>
+  </div>
+</header>
+
+<div class="loader">
+  <span class="loader-label">下から選択</span>
+  <select id="jsonSelect"></select>
+  <input type="file" id="jsonFile" accept=".json">
+</div>
+
+<div id="main"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
