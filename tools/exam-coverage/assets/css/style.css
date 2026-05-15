@@ -16,29 +16,27 @@ body {
 
 .footer {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 48px;
-  margin: 20px;
-
-  color: var(--text-color);
-  text-align: right;
-  font-size: 1.5vh;   
+  bottom: 20px;
+  right: 20px;
+  background: var(--bg0-color);
   
-  background-color: white;
-  border-radius: 100%; 
-  cursor: pointer;
-
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
 }
 
+.footer a {
+  display: block;
+}
+
+.footer img {
+  background: var(--bg0-color);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+  border-radius: 4px;
+  display: block;
+  width: 48px;
+  height: 48px;
+}
 
 * {
   font-family: "Crimson Pro", Georgia, serif;
-}
-
-hr {
-  border-color: var(--border-color);
 }
 
 /* タイトル */
