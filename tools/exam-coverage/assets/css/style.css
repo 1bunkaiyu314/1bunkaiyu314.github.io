@@ -1,0 +1,127 @@
+/* 変数 */
+:root {
+  --bg0-color: rgb(17, 19, 24);
+  --bg1-color: rgb(25, 28, 36);
+  --text-color: rgb(221, 226, 240);
+  --border-color: rgb(42, 47, 63);
+
+  --button-color: rgb(37, 41, 54);
+  --button-text-color: rgb(221, 226, 240);
+  --button-border-color: #FFFFFF;  
+}
+
+body {
+  background-color: var(--bg0-color);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 48px;
+  margin: 20px;
+
+  color: var(--text-color);
+  text-align: right;
+  font-size: 1.5vh;   
+  
+  background-color: white;
+  border-radius: 100%; 
+  cursor: pointer;
+
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.75);
+}
+
+
+* {
+  font-family: "Crimson Pro", Georgia, serif;
+}
+
+hr {
+  border-color: var(--border-color);
+}
+
+/* タイトル */
+.title {
+  color: var(--text-color);
+  font-size: 3vh;
+  text-align: center;
+}
+
+.filter {
+  margin: 4px;
+  background-color: var(--bg1-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+/* 日付 */
+.dates {
+  background-color: var(--bg1-color);
+
+  display: flex;
+
+  margin: 8px 4px;
+  padding: 4px 12px;
+  justify-content: space-between;
+  gap: 1vh;
+}
+
+.date-item {
+  color: var(--button-text-color);
+  background-color: var(--button-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+
+  font-size: 2vh;
+  flex: 1;
+
+  padding: 2px 4px;
+}
+
+.subjects {
+  background-color: var(--bg1-color);
+  border: 1px solid var(--border-color);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+  margin: 8px 4px;
+  padding: 8px;
+  justify-content: space-between;
+  gap: 1vh;
+}
+
+.subject-item {
+  color: var(--button-text-color);
+  background-color: var(--button-color);
+  border: 1px solid var(--border-color);
+
+  font-size: 2vh;
+  flex: 1;
+
+  padding: 4px;
+}
+
+.date-item:active,
+.subject-item:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.details {
+  color: var(--text-color);
+  background-color: var(--bg1-color);
+
+  margin: 8px 4px;
+  padding: 16px;
+  white-space: pre-line;
+
+  font-size: 2vh;
+}
+
+.details h3 {
+  background-color: var(--button-color);
+  font-size: 3vh;
+  margin: 16px 4px 16px;
+  padding: 4px 16px;
+}

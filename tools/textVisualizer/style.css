@@ -215,16 +215,65 @@ body {
 }
 
 /* ── トークン行 ────────────────────────────────── */
-.token-row {
+/* 行ごとに flex 配置するためのクラス */
+/* 行ごとに flex 配置 */
+.line {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 12px 20px 20px;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 0;
+  margin-bottom: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.line.last {
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+/* token-wrap の基本（長い語の折返しは JS で切り替える） */
+.line .token-wrap {
+  display: inline-block;
+  margin: 0;
+  padding: 6px 8px;
+  vertical-align: top;
+  white-space: nowrap; /* デフォルトは nowrap、必要時に JS が normal にする */
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* 長すぎるトークンに対する安全策（JS が max-width を付与するが念のため） */
+.token-wrap.long {
+  white-space: normal;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+
+/* 既存の token-row は行ラッパーとして使う（中身は .line に置き換わる） */
+.token-row {
+  padding: 12px 20px 20px;
   position: relative;
   z-index: 1;
 }
 
+.token-row {
+  text-align: justify;
+  text-align-last: left;
+  -moz-text-align-last: left;
+  -webkit-text-align-last: left;
+  padding: 12px 20px 20px;
+  line-height: 1.3;
+  white-space: normal;
+  position: relative;
+  z-index: 1;
+}
+.token-row::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 0;
+}
 /* ── SVGオーバーレイ（トークン行に重ねる） ─────── */
 .arc-svg {
   position: absolute;
@@ -235,10 +284,10 @@ body {
   z-index: 2;
 }
 .token-wrap {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6px 5px 4px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px 8px; /* トークン間のスペースはここで調整 */
+  padding: 6px 8px 6px;
   border-radius: 4px;
   cursor: pointer;
   transition: background .12s;
@@ -257,6 +306,7 @@ body {
 }
 
 .token-word {
+  display: block;       /* ← ここを block に */
   font-family: 'Crimson Pro', serif;
   font-size: 1rem;
   font-weight: 400;
@@ -268,13 +318,69 @@ body {
 .token-wrap.is-head   .token-word { color: var(--accent); }
 
 .token-deprel {
+  display: block;       /* ← ここを block にして下に表示 */
   font-family: 'IBM Plex Mono', monospace;
   font-size: .56rem;
   color: var(--muted);
-  margin-top: 2px;
+  margin-top: 6px;
   letter-spacing: .02em;
+  text-align: center;   /* 好みで center / left に */
 }
 .token-wrap.selected .token-deprel { color: var(--accent); opacity: .8; }
+
+/* ===== 構文可視化レイヤー ===== */
+.syntax-container {
+  font-family: "Crimson Pro", serif;
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 12px 20px;
+  background: transparent;
+}
+
+/* span 基本 */
+.span-unit {
+  position: relative;
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: background-color .12s ease, box-shadow .12s ease;
+  cursor: pointer;
+  display: inline;
+  white-space: pre-wrap;
+}
+
+/* type -> color */
+.clause { --color: #ffb347; }
+.np     { --color: #8fd3f4; }
+.pp     { --color: #c3f584; }
+.adjp   { --color: #f7a8b8; }
+.advp   { --color: #fce38a; }
+.phrase { --color: #d0d0d0; }
+
+/* 括弧ラベル */
+.span-unit::before,
+.span-unit::after {
+  color: var(--color);
+  font-weight: 700;
+  opacity: 0.85;
+  font-size: 0.85em;
+  margin: 0 2px;
+  pointer-events: none;
+}
+.clause::before { content: "[ "; } .clause::after  { content: "]"; }
+.np::before     { content: "[ "; } .np::after     { content: "]"; }
+.pp::before     { content: "[ "; } .pp::after     { content: "]"; }
+.adjp::before   { content: "[ "; } .adjp::after  { content: "]"; }
+.advp::before   { content: "[ "; } .advp::after  { content: "]"; }
+
+/* ハイライト */
+.span-unit.highlight {
+  background-color: rgba(255, 235, 59, 0.18);
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.04), 0 0 0 2px var(--color);
+  border-radius: 4px;
+}
+
+/* token 内部 */
+.token { display:inline; white-space:pre; }
 
 /* ── 日本語訳 ──────────────────────────────────── */
 .translation-row {

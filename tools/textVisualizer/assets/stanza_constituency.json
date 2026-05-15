@@ -1,0 +1,333 @@
+{
+  "sentences": [
+    {
+      "text": "I know the man who lives next door.",
+      "tokens": [
+        {
+          "id": 1,
+          "text": "I",
+          "lemma": "I",
+          "upos": "PRON",
+          "xpos": "PRP",
+          "ufeats": "Case=Nom|Number=Sing|Person=1|PronType=Prs",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 1,
+            "token_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "type": "type",
+            "label": "ROOT",
+            "category": "category",
+            "stopped_at": [],
+            "text": "I know the man who lives next door ."
+          }
+        },
+        {
+          "id": 2,
+          "text": "know",
+          "lemma": "know",
+          "upos": "VERB",
+          "xpos": "VBP",
+          "ufeats": "Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 2,
+            "token_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "type": "type",
+            "label": "S",
+            "category": "category",
+            "stopped_at": [],
+            "text": "I know the man who lives next door ."
+          }
+        },
+        {
+          "id": 3,
+          "text": "the",
+          "lemma": "the",
+          "upos": "DET",
+          "xpos": "DT",
+          "ufeats": "Definite=Def|PronType=Art",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 3,
+            "token_ids": [
+              3
+            ],
+            "type": "type",
+            "label": "DT",
+            "category": "category",
+            "stopped_at": [],
+            "text": "the"
+          }
+        },
+        {
+          "id": 4,
+          "text": "man",
+          "lemma": "man",
+          "upos": "NOUN",
+          "xpos": "NN",
+          "ufeats": "Number=Sing",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 4,
+            "token_ids": [
+              3,
+              4
+            ],
+            "type": "type",
+            "label": "NP",
+            "category": "category",
+            "stopped_at": [],
+            "text": "the man"
+          }
+        },
+        {
+          "id": 5,
+          "text": "who",
+          "lemma": "who",
+          "upos": "PRON",
+          "xpos": "WP",
+          "ufeats": "PronType=Rel",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 5,
+            "token_ids": [
+              5
+            ],
+            "type": "type",
+            "label": "WHNP",
+            "category": "category",
+            "stopped_at": [],
+            "text": "who"
+          }
+        },
+        {
+          "id": 6,
+          "text": "lives",
+          "lemma": "live",
+          "upos": "VERB",
+          "xpos": "VBZ",
+          "ufeats": "Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 6,
+            "token_ids": [
+              5,
+              6,
+              7,
+              8
+            ],
+            "type": "type",
+            "label": "SBAR",
+            "category": "category",
+            "stopped_at": [],
+            "text": "who lives next door"
+          }
+        },
+        {
+          "id": 7,
+          "text": "next",
+          "lemma": "next",
+          "upos": "ADJ",
+          "xpos": "JJ",
+          "ufeats": "Degree=Pos",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 7,
+            "token_ids": [
+              7,
+              8
+            ],
+            "type": "type",
+            "label": "ADVP",
+            "category": "category",
+            "stopped_at": [],
+            "text": "next door"
+          }
+        },
+        {
+          "id": 8,
+          "text": "door",
+          "lemma": "door",
+          "upos": "NOUN",
+          "xpos": "NN",
+          "ufeats": "Number=Sing",
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 8,
+            "token_ids": [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "type": "type",
+            "label": "NP",
+            "category": "category",
+            "stopped_at": [],
+            "text": "the man who lives next door"
+          }
+        },
+        {
+          "id": 9,
+          "text": ".",
+          "lemma": ".",
+          "upos": "PUNCT",
+          "xpos": ".",
+          "ufeats": null,
+          "deprel": null,
+          "head": null,
+          "head_span": {
+            "head_id": 9,
+            "token_ids": [
+              9
+            ],
+            "type": "type",
+            "label": ".",
+            "category": "category",
+            "stopped_at": [],
+            "text": "."
+          }
+        }
+      ],
+      "constituents": [
+        {
+          "label": "ROOT",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "text": "I know the man who lives next door ."
+        },
+        {
+          "label": "S",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "text": "I know the man who lives next door ."
+        },
+        {
+          "label": "DT",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            3
+          ],
+          "text": "the"
+        },
+        {
+          "label": "NP",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            3,
+            4
+          ],
+          "text": "the man"
+        },
+        {
+          "label": "NP",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "text": "the man who lives next door"
+        },
+        {
+          "label": "WHNP",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            5
+          ],
+          "text": "who"
+        },
+        {
+          "label": "SBAR",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "text": "who lives next door"
+        },
+        {
+          "label": "ADVP",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            7,
+            8
+          ],
+          "text": "next door"
+        },
+        {
+          "label": ".",
+          "type": "type",
+          "category": "category",
+          "token_ids": [
+            9
+          ],
+          "text": "."
+        }
+      ]
+    }
+  ]
+}
