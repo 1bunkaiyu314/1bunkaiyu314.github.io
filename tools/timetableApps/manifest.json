@@ -1,8 +1,8 @@
 {
-  "name": "時間割アプリ",
-  "short_name": "時間割",
+  "name": "時間割表",
+  "short_name": "時間割表",
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#ffffff",
   "theme_color": "#192F60",
   "id": "/timetable/",
