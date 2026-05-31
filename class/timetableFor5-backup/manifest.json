@@ -2,7 +2,7 @@
   "name": "時間割表",
   "short_name": "時間割表",
   "start_url": "./index.html",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#192F60",
   "id": "/class/timetableFor5/",
