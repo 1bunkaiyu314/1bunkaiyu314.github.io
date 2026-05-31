@@ -21,54 +21,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
         <title>時間割・移動教室・行事予定表</title>
-        <script>
-            (function () {
-                try {
-                    var raw = localStorage.getItem("theme");
-                    var theme = null;
-                    if (raw != null) {
-                        try {
-                            theme = JSON.parse(raw);
-                        } catch (e) {
-                            theme = raw;
-                        }
-                    }
-
-                    if (theme !== "light" && theme !== "dark") {
-                        theme = (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)
-                            ? "dark"
-                            : "light";
-                    }
-
-                    var root = document.documentElement;
-
-                    const setAppHeight = () => {
-                        const vh = window.visualViewport
-                            ? window.visualViewport.height
-                            : window.innerHeight;
-
-                        document.documentElement.style.setProperty(
-                            "--app-height",
-                            `${vh}px`
-                        );
-                    };
-
-                    window.addEventListener("resize", setAppHeight);
-                    window.addEventListener("orientationchange", setAppHeight);
-                    window.addEventListener("pageshow", setAppHeight);
-
-                    setAppHeight();
-
-                    root.classList.toggle("theme-dark", theme === "dark");
-                    root.classList.toggle("theme-light", theme !== "dark");
-                    root.style.colorScheme = theme;
-                } catch (e) {
-                    // ignore
-                }
-            })();
-        </script>
-        <link rel="stylesheet" href="./assets/css/style.css"/>
-
         <link rel="manifest" href="manifest.json">
         <link rel="apple-touch-icon" href="./assets/images/icons/icon-192.png">
         <script>
@@ -76,165 +28,56 @@
                 navigator.serviceWorker.register("./sw.js");
             }
         </script>
+        <style>
+            body {
+                font-family: 'Times New Roman', Times, serif;
+            }
+
+            .flame {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: justify;
+            }
+            
+            .acordion {
+                margin: 4px;
+                padding: 4px 16px;
+            }
+
+            .acordion-content {
+                padding: 4px;
+                margin: 2px 0;
+            }
+
+            h1 {
+                font-size: 32px
+            }
+
+            h3 {
+                font-size: 28px;
+            }
+
+            .center-link {
+                margin: 8px;
+                display: block;
+                text-align: center;
+            }
+        </style>
     </head>
-    <body>
-        <h1 id="title">時間割表</h1>
-            <div class="timetable-toolbar" aria-label="時間割ツール">
-                <select id="isClassroomCode">
-                    <option value="false">クラス名</option>
-                    <option value="true">コード</option>
-                </select>
-
-                <div id="toolbar-now" class="toolbar-now" aria-live="polite"></div>
-
-                <button id="filter-btn" type="button">フィルタ</button>
-            </div>
-            <table class="timetable" id="timetable-main">
-                <thead>
-                    <tr id="dates">
-                        <th class="toggle-header">日程</th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>1限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>2限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>3限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>4限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>5限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <table class="timetable timetable-split" id="timetable-split" aria-label="時間割（続き）">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                        <th class="date-cell"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th>1限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>2限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>3限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>4限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                    <tr>
-                        <th>5限</th>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                        <td class="subject"></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="box">
-                <div class="label">行事</div>
-                <div id="event-cell">読み込み中...</div>
-                <div class="label">メモ</div>
-                <div id="memo-cell" contenteditable="true">読み込み中...</div>
-            </div>
-
-            <div class="nav-bar">
-                <div class="nav-bar-1">
-                    <button id="prev-btn">前へ</button>
-                    <button id="today-btn">今日に戻る</button>
-                    <button id="next-btn">次へ</button>
-                </div>
-                <div class="nav-bar-2">
-                    <button id="theme-btn" type="button">テーマ</button>
-
-                    <div class="date-group">
-                        <select id="month-select">
-                            <option value="1">1月</option>
-                            <option value="2">2月</option>
-                            <option value="3">3月</option>
-                            <option value="4">4月</option>
-                            <option value="5">5月</option>
-                            <option value="6">6月</option>
-                            <option value="7">7月</option>
-                            <option value="8">8月</option>
-                            <option value="9">9月</option>
-                            <option value="10">10月</option>
-                            <option value="11">11月</option>
-                            <option value="12">12月</option>
-                        </select>
-                        <select id="day-select"></select>
-                    </div>
-                    <button id="setting">その他</button>
-                </div>
-            </div>
-
-            <template id="modal-template">
-                <div class="modal">
-                    <div class="modal-content">
-                        <h2 class="modal-title"></h2>
-                        <div class="modal-body"></div>
-                        <button class="close-modal">閉じる</button>
-                    </div>
-                </div>
-            </template>
-
-        <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-        <script type="module" src="./assets/js/app.js"></script>
+    <body class="flame">
+        <h1>時間割アプリのURLは変更されました</h1>
+        <p>アプリ化してホーム画面に追加している人は、<br><a class="center-link" href="../../tools/timetableApps/">こちら</a><br>の新URLで再度インストールしてください。インストール方法は以下を参照してください。</p>
+        
+<!--
+        <details>
+            <summary>インストール方法</summary>
+            <ul class="acordion">
+                <h3 class="acordion-content">Android</h3>
+                <p class="acordion-content">Chromeを開く</p>
+                <p>↓</p>
+            </ul>
+        </details>
+-->
     </body>
 </html>
