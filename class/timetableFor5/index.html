@@ -1,83 +1,35 @@
 <!DOCTYPE html>
-<html lang="ja">
-    <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4089Q2JD7J"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+<html lang="ja" class="theme-light">
+  <head>
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4089Q2JD7J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4089Q2JD7J');
+    </script>
 
-            gtag('config', 'G-4089Q2JD7J');
-        </script>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="robots" content="noindex, nofollow">
-        <meta property="og:image" content="./assets/images/icons/icon-512.png">
-        <meta property="og:title" content="時間割・移動教室・行事予定表"> 
-        <meta property="og:description" content="選択科目に応じて時間割、移動教室、行事予定表を確認できます。">
-        <meta name="theme-color" content="#192F60">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <title>時間割・移動教室・行事予定表</title>
-        <link rel="manifest" href="manifest.json">
-        <link rel="apple-touch-icon" href="./assets/images/icons/icon-192.png">
-        <script>
-            if ("serviceWorker" in navigator) {
-                navigator.serviceWorker.register("./sw.js");
-            }
-        </script>
-        <style>
-            body {
-                font-family: 'Times New Roman', Times, serif;
-            }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:image" content="/images/icon-512.png" />
+    <meta property="og:title" content="時間割アプリ" />
+    <meta property="og:description" content="選択科目に応じて時間割、移動教室、行事予定表を確認できます。" />
+    <meta name="theme-color" content="#192F60" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-            .flame {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                text-align: justify;
-            }
-            
-            .acordion {
-                margin: 4px;
-                padding: 4px 16px;
-            }
+    <link rel="icon" type="image/png" sizes="192x192" href="/tools/timetableApps/images/icon-192.png">
+	  <link rel="icon" type="image/png" sizes="512x512" href="/tools/timetableApps/images/icon-512.png">
+    <link rel="apple-touch-icon" href="/tools/timetableApps/images/icon-192.png" />
 
-            .acordion-content {
-                padding: 4px;
-                margin: 2px 0;
-            }
-
-            h1 {
-                font-size: 32px
-            }
-
-            h3 {
-                font-size: 28px;
-            }
-
-            .center-link {
-                margin: 8px;
-                display: block;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body class="flame">
-        <h1>時間割アプリのURLは変更されました</h1>
-        <p>アプリ化してホーム画面に追加している人は、<br><a class="center-link" href="../../tools/timetableApps/">こちら</a><br>の新URLで再度インストールしてください。インストール方法は以下を参照してください。</p>
-        
-<!--
-        <details>
-            <summary>インストール方法</summary>
-            <ul class="acordion">
-                <h3 class="acordion-content">Android</h3>
-                <p class="acordion-content">Chromeを開く</p>
-                <p>↓</p>
-            </ul>
-        </details>
--->
-    </body>
+    <title>時間割アプリ</title>
+    <script type="module" crossorigin src="/tools/timetableApps/assets/index-DmR7jJpR.js"></script>
+    <link rel="stylesheet" crossorigin href="/tools/timetableApps/assets/index-rStZaVsO.css">
+  <link rel="manifest" href="/tools/timetableApps/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
