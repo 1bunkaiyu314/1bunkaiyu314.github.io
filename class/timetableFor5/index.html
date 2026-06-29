@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja" class="theme-light">
   <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4089Q2JD7J"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4089Q2JD7J');
+      if (location.pathname.startsWith("/class/timetableFor5/")) {
+        location.replace("/tools/timetableApps/");
+      }
     </script>
 
     <meta charset="UTF-8" />
@@ -26,9 +23,6 @@
     <link rel="apple-touch-icon" href="/tools/timetableApps/images/icon-192.png" />
 
     <title>時間割アプリ</title>
-    <script type="module" crossorigin src="/tools/timetableApps/assets/index-Bdkrttaw.js"></script>
-    <link rel="stylesheet" crossorigin href="/tools/timetableApps/assets/index-DD1hBpGP.css">
-  <link rel="manifest" href="/tools/timetableApps/manifest.webmanifest"></head>
   <body>
     <div id="root"></div>
   </body>
