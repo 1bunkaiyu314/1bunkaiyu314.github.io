@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja" class="theme-light">
   <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4089Q2JD7J"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-4089Q2JD7J');
+      if (location.pathname.startsWith("/class/timetableFor5/")) {
+        location.replace("/tools/timetableApps/");
+      }
     </script>
 
     <meta charset="UTF-8" />
@@ -27,9 +24,6 @@
 
     <title>時間割アプリ</title>
   <body>
-    <div id="root">
-      <h1>URLは変更されました</h1>
-      <p>時間割アプリは<a href="/tools/timetableApps/">新しいURL</a>に変更されました...こちらで再度インストールしてください。</p>
-    </div>
+    <div id="root"></div>
   </body>
 </html>
